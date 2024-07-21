@@ -1,13 +1,10 @@
 ---
 import Tecnologies from "./Tecnologies.astro"
+import ArticleContainer from "./ArticleContainer.astro"
 ---
-<article class="mt-10 font-medium">
-    <h2 class="text-4xl font-bold">
-        Sobre mí
-    </h2>
-    <hr class="opacity-35 my-1">
+<ArticleContainer title="Sobre mí">
     <section>
-        <p class="text-wrap text-xl mt-2">
+        <p class="text-wrap text-xl">
             Estudiante de <bold class="text-yellow-300/90">Ingeniería Informática</bold> en la mención de Ingeniería de Computadores, actualmente cursando el
             tercer año con una <bold class="text-yellow-300/90">nota media de 8,4</bold>. Sólida base teórica y habilidades técnicas en desarrollo de software y
             resolución de problemas. Capaz de aprender rápidamente, trabajar en equipo y enfrentar desafíos con
@@ -44,4 +41,5 @@ import Tecnologies from "./Tecnologies.astro"
         </h4>
         <Tecnologies />     
     </section>
-</article>
+</ArticleContainer>
+ 

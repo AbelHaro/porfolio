@@ -2,11 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Nabvar from '../components/Nabvar.astro';
 import AboutMe from '../components/AboutMe.astro';
+import PersonalInfo from '../components/PersonalInfo.astro';
 ---
 
 <Layout title="Porfolio de Abel Haro Armero">
 	<main>
 		<Nabvar />
-		<AboutMe />
+		<main class="flex flex-col min-h-screen px-96 mt-20">
+			<PersonalInfo />
+			<AboutMe />
+		</main>
 	</main>
 </Layout>

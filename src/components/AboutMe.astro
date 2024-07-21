@@ -1,11 +1,8 @@
 ---
-import TecnologyIcon from './TecnologyIcon.astro';
-import GithubIcon from './icons/Github.astro';
-import JavaIcon from './icons/Java.astro';
+import Tecnologies from "./Tecnologies.astro"
 ---
-
-<main class="flex flex-col min-h-screen px-96 mt-20">
-    <h2 class="text-4xl">
+<article class="mt-10 font-medium">
+    <h2 class="text-4xl font-bold">
         Sobre mí
     </h2>
     <hr class="opacity-35 my-1">
@@ -45,23 +42,6 @@ import JavaIcon from './icons/Java.astro';
         <h4 class=" text-3xl mb-3">
             Tecnologías utilizadas
         </h4>
-        <div class="flex flex-row flex-wrap gap-3">
-            <TecnologyIcon>
-                <GithubIcon class="size-24" />
-                <p>
-                    Github
-                </p>
-            </TecnologyIcon>
-            <TecnologyIcon>
-                <JavaIcon class="size-24" />
-                    <p>
-                        Java
-                    </p>
-            </TecnologyIcon>               
-        </div>
-        </div>
-        
-
+        <Tecnologies />     
     </section>
-    
-</main>
+</article>

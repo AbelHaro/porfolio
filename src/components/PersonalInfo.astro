@@ -1,0 +1,39 @@
+---
+import GithubIcon from "./icons/Github.astro"
+import LinkedinIcon from "./icons/Linkedin.astro"
+---
+
+<article class="grid grid-cols-2 text-xl font-medium">
+    <div class="flex flex-row flex-initial">
+        <img src="../../public/foto.webp" alt="Abel Haro Armero" class="rounded-sm w-1/4"/>
+        <div class="flex flex-col flex-initial pl-10">
+            <span class="text-2xl font-bold">
+                Abel Haro Armero
+            </span>
+            <span>
+                26 - 02 - 2003
+            </span>
+            <span>
+                Altea / Valencia
+            </span>
+        </div>
+    </div>
+    <div class="text-right flex flex-col">
+        <p class="flex flex-row justify-end items-center gap-2">
+            <span>+34 685 018 048</span>
+        </p>
+        <a href="mailto:ahararm@upv.es" class="flex flex-row justify-end items-center gap-2">
+            <span>ahararm@upv.es</span>
+        </a>
+        <a href="https://github.com/AbelHaro" class="flex flex-row justify-end items-center gap-2" target="_blank" rel="noreferrer">
+            <GithubIcon class="size-5"/>
+            <span>AbelHaro</span>
+        </a>
+        <a href="https://www.linkedin.com/in/abel-haro-54bb6518a" class="flex flex-row justify-end items-center gap-2" target="_blank" rel="noreferrer">
+            <LinkedinIcon class="size-5"/>
+            <span>Abel Haro</span>
+        </a>
+
+        
+    </div>
+</article>

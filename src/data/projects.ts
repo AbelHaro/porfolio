@@ -1,4 +1,3 @@
-import SQLite from "../components/icons/SQLite.astro";
 import SQLiteIcon from "../components/icons/SQLite.astro";
 
 export interface Project {
@@ -24,9 +23,6 @@ export const projects: Project[] = [
             name: "SQLite",
             source: "/public/icons/SQLite.svg",
             },
-            {
-            
-            }
         ],
         date: "junio 2024",
         image: "https://i.imgur.com/0ZsLc4L.png",

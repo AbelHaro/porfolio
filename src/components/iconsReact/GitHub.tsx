@@ -1,9 +1,4 @@
-import React from "react";
-
-// Define the possible size types
 type Size = "size-6" | "size-8" | "size-12" | "size-16";
-
-// Define the props interface
 interface GitHubProps {
     size?: Size;
 }

@@ -1,48 +1,14 @@
 ---
-import TecnologyIcon from './TecnologyIcon.astro';
-import GithubIcon from './icons/Github.astro';
-import JavaIcon from './icons/Java.astro';
-import SQLiteIcon from './icons/SQLite.astro';
-import TypeScriptIcon from './icons/TypeScript.astro';
-import AstroLogoIcon from './icons/AstroLogo.astro';
-import ReactIcon from './icons/React.astro';
+import { tecnologies } from '../data/tecnologies';
 ---
 
-<div class="flex flex-row flex-wrap gap-3">
-    <TecnologyIcon>
-        <GithubIcon class="size-24" />
-        <p>
-            Github
-        </p>
-    </TecnologyIcon>
-    <TecnologyIcon>
-        <JavaIcon class="size-24" />
-            <p>
-                Java
+<div class="flex flex-row flex-wrap gap-4">
+    {tecnologies.map((tecnology) => (
+        <div class='flex flex-col gap-1 border rounded-md p-3 size-36 items-center justify-between transform hover:scale-110 hover:border-blue-500'>
+            <img src={tecnology.source} alt={tecnology.name} class="size-20" />
+            <p class="mt-auto text-lg">
+                {tecnology.name}
             </p>
-    </TecnologyIcon>       
-    <TecnologyIcon>
-        <SQLiteIcon class="size-24" />
-        <p>
-            SQLite
-        </p>    
-    </TecnologyIcon>
-    <TecnologyIcon>
-        <TypeScriptIcon class="size-24" />
-        <p>
-            TypeScript
-        </p>
-    </TecnologyIcon>
-    <TecnologyIcon>
-        <AstroLogoIcon class="size-24" />
-        <p>
-            Astro
-        </p>
-    </TecnologyIcon>
-    <TecnologyIcon>
-        <ReactIcon class="size-24" />
-        <p>
-            React
-        </p>
-    </TecnologyIcon>
+        </div>
+    ))}
 </div>

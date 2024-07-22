@@ -6,7 +6,10 @@ export interface Project {
     description: string;
     url: string;
     image: string;
-    technologies: string[];
+    technologies: {
+        name: string;
+        source: string;
+    }[];
     date: string;
     }
 
@@ -17,7 +20,14 @@ export const projects: Project[] = [
         se comunica con el servidor a través de una API REST. El servidor almacena los registros en una base de datos
         y se visualizan en Ubidots.`,
         url: "https://github.com/AbelHaro/RFID-RC522-Key-Reading",
-        technologies: ["SQLite"],
+        technologies: [{
+            name: "SQLite",
+            source: "/public/icons/SQLite.svg",
+            },
+            {
+            
+            }
+        ],
         date: "junio 2024",
         image: "https://i.imgur.com/0ZsLc4L.png",
     },

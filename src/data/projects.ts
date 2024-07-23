@@ -1,5 +1,3 @@
-import SQLiteIcon from "../components/icons/SQLite.astro";
-
 export interface Project {
     title: string;
     description: string;
@@ -20,19 +18,15 @@ export const projects: Project[] = [
         y se visualizan en Ubidots.`,
         url: "https://github.com/AbelHaro/RFID-RC522-Key-Reading",
         technologies: [{
-            name: "SQLite",
-            source: "/public/icons/SQLite.svg",
+                name: "SQLite",
+                source: "/icons/sqlite.svg",
+            },
+            {
+                name: "Python",
+                source: "/icons/python.svg",
             },
         ],
         date: "junio 2024",
         image: "https://i.imgur.com/0ZsLc4L.png",
     },
 ];
-
-type IconMappingType = {
-    [key: string]: any;
-};
-
-export const technologyIcons: IconMappingType = {
-    SQLite: SQLiteIcon,
-};

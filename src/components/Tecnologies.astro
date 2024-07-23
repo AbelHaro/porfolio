@@ -4,7 +4,7 @@ import { tecnologies } from '../data/tecnologies';
 
 <div class="flex flex-row flex-wrap gap-4">
     {tecnologies.map((tecnology) => (
-        <div class='flex flex-col gap-1 border rounded-md p-3 size-36 items-center justify-between transform hover:scale-110 hover:border-blue-500'>
+        <div class='flex flex-col gap-1 border rounded-md p-3 size-36 bg-gradient-to-b from-purple-500 to-black items-center justify-between transform hover:scale-110 hover:border-blue-500'>
             <img src={tecnology.source} alt={tecnology.name} class="size-20" />
             <p class="mt-auto text-lg">
                 {tecnology.name}

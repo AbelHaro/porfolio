@@ -6,26 +6,31 @@ interface TecnologiesProps {
 export const tecnologies: TecnologiesProps[] = [
     {
         name: 'Github',
-        source: '/public/icons/github.svg'
+        source: '/icons/github.svg'
     },
     {
         name: 'Java',
-        source: '/public/icons/java.svg'
+        source: '/icons/java.svg'
     },
     {
         name: 'SQLite',
-        source: '/public/icons/sqlite.svg'
+        source: '/icons/sqlite.svg'
     },
     {
         name: 'TypeScript',
-        source: '/public/icons/typescript.svg'
+        source: '/icons/typescript.svg'
     },
     {
         name: 'Astro',
-        source: '/public/icons/astro.svg'
+        source: '/icons/astro.svg'
     },
     {
         name: 'React',
-        source: '/public/icons/react.svg'
+        source: '/icons/react.svg'
+    },
+    {
+        name: 'Python',
+        source: '/icons/python.svg'
     }
+
 ]

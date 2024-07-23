@@ -11,10 +11,13 @@ import ArticleContainer from './ArticleContainer.astro';
                 <div class="flex flex-col">
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
-                    <div class="flex flex-row flex-wrap gap-3">
-                      <IconPill>
-                        <img src="/public/icons/react.svg" alt="React logo" width="30" height="30" />
-                      </IconPill>
+                    <div class="mt-3 flex flex-row flex-wrap gap-3">
+                      {project.technologies.map((technology) => (
+                        <IconPill>
+                          <img src={technology.source} alt={technology.name + "logo"} class="size-10" />
+                          <p>{technology.name}</p>
+                        </IconPill>
+                      ))}
                     </div>
                     <a href={project.url} target="_blank" rel="noreferrer">View project</a>
                 </div>

@@ -1,6 +1,17 @@
+---
+import NavItem from "./NavItem.astro"
+const navItems = [
+    { href: "#home", text: "Home" },
+    { href: "#aboutMe", text: "Sobre mí" },
+    { href: "#projects", text: "Proyectos" },
+    { href: "#contact", text: "Contacto" }
+]
+---
+
+
 <nav class="flex align-middle justify-center gap-10 text-3xl py-6 font-bold bg-black">
-    <a>Home</a>
-    <a>Sobre mí</a>
-    <a>Proyectos</a>
-    <a>Contacto</a>
+    {
+        navItems.map((item) => 
+        <NavItem href={item.href} text={item.text}></NavItem>)
+    }
 </nav>

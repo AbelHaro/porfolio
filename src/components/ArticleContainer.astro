@@ -1,5 +1,13 @@
-<article class="mt-10 font-medium">
-    <h2 class="text-4xl font-bold">{Astro.props.title}</h2>
+---
+interface ArticleContainerProps {
+    articleId: string;
+    title: string;
+}
+const { articleId, title } = Astro.props as ArticleContainerProps;
+---
+
+<article id={articleId} class="mt-10 font-medium">
+    <h2 class="text-4xl font-bold">{title}</h2>
     <hr class="opacity-35 mt-1 mb-3">
     <slot />
 </article>

@@ -1,0 +1,10 @@
+---
+interface NavItem {
+  href: string;
+  text: string;
+}
+
+const { href, text } = Astro.props as NavItem;
+---
+
+<a class="hover:scale-110 hover:text-gray-500" href={href}>{text}</a>

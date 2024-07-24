@@ -1,20 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nabvar from '../components/Nabvar.astro';
-import AboutMe from '../components/AboutMe.astro';
-import PersonalInfo from '../components/PersonalInfo.astro';
-import Projects from '../components/Projects.astro';
-import Footer from '../components/Footer.astro';
+import Hero from '../sections/Hero.astro';
+import AboutMe from '../sections/AboutMe.astro';
+import PersonalInfo from '../sections/PersonalInfo.astro';
+import Projects from '../sections/Projects.astro';
+import Footer from '../sections/Footer.astro';
+import Experience from '../sections/Experience.astro';
 ---
 
 <Layout title="Porfolio de Abel Haro Armero">
 	<main>
-		<Nabvar />
+		<Hero />
 		<main class="flex flex-col min-h-screen px-96 mt-20">
 			<PersonalInfo />
 			<AboutMe />
-			<Projects />
+			<Experience />
+			<Projects/>
 		</main>
 		<Footer />
 	</main>
 </Layout>
+<style>
+	html {
+		scroll-behavior: smooth;
+	}
+</style>

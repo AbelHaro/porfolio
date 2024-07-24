@@ -1,10 +1,10 @@
 ---
 import { projects } from '../data/projects';
-import IconPill from './IconPill.astro';
-import ArticleContainer from './ArticleContainer.astro';
+import IconPill from '../components/IconPill.astro';
+import ArticleContainer from '../components/ArticleContainer.astro';
 ---
-<ArticleContainer title="Proyectos">
-    <ul>
+<ArticleContainer title="Proyectos" articleId="projects">
+    <ul >
         {projects.map((project) => (
           <li>
             <section class="flex flex-row p-10 border border-cyan-300">

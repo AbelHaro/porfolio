@@ -6,22 +6,29 @@ import PersonalInfo from '../sections/PersonalInfo.astro';
 import Projects from '../sections/Projects.astro';
 import Footer from '../sections/Footer.astro';
 import Experience from '../sections/Experience.astro';
+import Intro from '../sections/Intro.astro';
 ---
 
 <Layout title="Porfolio de Abel Haro Armero">
-	<main>
-		<Hero />
-		<main class="flex flex-col min-h-screen px-96 mt-20">
-			<PersonalInfo />
-			<AboutMe />
-			<Experience />
-			<Projects/>
-		</main>
-		<Footer />
+	<Intro/>
+	<Hero />
+	<main class="flex flex-col min-h-screen px-96 mt-20">
+		<PersonalInfo />
+		<AboutMe />
+		<Experience />
+		<Projects/>
 	</main>
+	<Footer/>
 </Layout>
 <style>
+	@font-face {
+            font-family: 'RobotoSlab';
+            src: url('../../public/fonts/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 900; /* Define el rango de pesos si es aplicable */
+            font-style: normal;
+        }
 	html {
+		font-family: 'RobotoSlab', sans-serif;
 		scroll-behavior: smooth;
 	}
 </style>

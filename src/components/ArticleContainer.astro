@@ -6,7 +6,7 @@ interface ArticleContainerProps {
 const { articleId, title } = Astro.props as ArticleContainerProps;
 ---
 
-<article id={articleId} class="mt-10 font-medium">
+<article id={articleId} class="font-medium pt-24">
     <h2 class="text-4xl font-bold">{title}</h2>
     <hr class="opacity-35 mt-1 mb-3">
     <slot />

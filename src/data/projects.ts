@@ -30,4 +30,30 @@ export const projects: Project[] = [
     date: "junio 2024",
     image: "https://i.imgur.com/0ZsLc4L.png",
   },
+  {
+    title: "Proyecto 2",
+    description:
+      "Descripción del proyecto 2 Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2Descripción del proyecto 2",
+    url: "https://github.com/AbelHaro/RFID-RC522-Key-Reading",
+    technologies: [
+      {
+        name: "Java",
+        source: "/icons/java.svg",
+      },
+      {
+        name: "React",
+        source: "/icons/react.svg",
+      },
+      {
+        name: "Astro",
+        source: "/icons/astro.svg",
+      },
+      {
+        name: "Typescript",
+        source: "/icons/typescript.svg",
+      },
+    ],
+    date: "Agosto 2024",
+    image: "",
+  },
 ];

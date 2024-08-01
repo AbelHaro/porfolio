@@ -4,13 +4,19 @@ import IconPill from '../components/IconPill.astro';
 import ArticleContainer from '../components/ArticleContainer.astro';
 ---
 <ArticleContainer title="Proyectos" articleId="projects">
-    <ul >
+    <ul class="flex flex-col gap-14">
         {projects.map((project) => (
           <li>
-            <section class="flex flex-row p-10 border border-cyan-300">
+            <section class="flex flex-row">
                 <div class="flex flex-col">
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
+                    <a href={project.url} target="_blank" rel="noreferrer" class="flex gap-4 items-center">
+                      <h3 class="text-2xl">{project.title}</h3>
+                      <IconPill>
+                       <img src="icons/github.svg" alt="github icon" class="size-5 hover:scale-110"/>
+                       <p class="ml-2">Ver en Github</p>
+                      </IconPill>
+                      </a>
+                    <p class="text-lg mt-3">{project.description}</p>
                     <div class="mt-3 flex flex-row flex-wrap gap-3">
                       {project.technologies.map((technology) => (
                         <IconPill>
@@ -19,7 +25,7 @@ import ArticleContainer from '../components/ArticleContainer.astro';
                         </IconPill>
                       ))}
                     </div>
-                    <a href={project.url} target="_blank" rel="noreferrer">View project</a>
+                    
                 </div>
             </section>
           </li>

@@ -1,4 +1,5 @@
 ---
+// Assuming this is your .astro file
 import NavItem from "./NavItem.astro"
 const navItems = [
     { href: "#home", text: "Home" },
@@ -8,8 +9,15 @@ const navItems = [
 ]
 ---
 
+<style>
+    nav#hero {
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0); /* Light background with transparency */
+        -webkit-backdrop-filter: blur(10px); /* For Safari */
+    }
+</style>
 
-<nav class="flex align-middle justify-center gap-10 text-3xl py-6 font-bold bg-black sticky top-0 z-10" id="hero">
+<nav class="flex align-middle justify-center gap-10 text-xl py-3 font-bold sticky top-0 z-10" id="hero">
     {
         navItems.map((item) => 
         <NavItem href={item.href} text={item.text}></NavItem>)

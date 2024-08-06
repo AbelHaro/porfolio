@@ -1,3 +1,13 @@
-<div class="flex flex-row flex-wrap py-1 px-2 border-2 rounded-md border-custom-blue justify-center items-center hover:scale-110">
+<style>
+    .hover-animation {
+        transition: transform 0.3s ease;
+    }
+
+    .hover-animation:hover {
+        transform: scale(1.1);
+    }
+</style>
+
+<div class="flex flex-row flex-wrap py-1 px-2 border-2 rounded-md border-custom-blue justify-center items-center hover-animation">
     <slot/>
 </div>

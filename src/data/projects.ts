@@ -40,7 +40,7 @@ export const projects: Project[] = [
       },
     ],
     date: "Agosto 2024",
-    image: "",
+    image: "images/f1.webp",
     production_url: "https://f1-sandy.vercel.app/",
   },
   {
@@ -60,6 +60,6 @@ export const projects: Project[] = [
       },
     ],
     date: "junio 2024",
-    image: "https://i.imgur.com/0ZsLc4L.png",
+    image: "/images/rfid2.webp",
   },
 ];

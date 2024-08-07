@@ -3,45 +3,45 @@ import { projects } from '../data/projects';
 import IconPill from '../components/IconPill.astro';
 import ArticleContainer from '../components/ArticleContainer.astro';
 ---
+
 <ArticleContainer title="Proyectos" articleId="projects">
-    <ul class="flex flex-col gap-14">
+    <div class="flex flex-col gap-14">
         {projects.map((project) => (
-          <li>
             <section class="flex flex-row">
                 <div class="flex flex-col">
-                  <div class="flex flex-row gap-6">
-                  <h3 class="text-4xl font-bold">{`${project.title}`}</h3>
-                    <a href={project.url} target="_blank" rel="noreferrer" class="flex gap-4 items-center align-middle">
-                      <IconPill>
-                       <img src="icons/github.svg" alt="github icon" class="size-5 hover:scale-110"/>
-                       <p class="ml-2">Ver en Github</p>
-                      </IconPill>
-                      </a>
-                      {
-                        project.production_url &&
-                        <a href={project.production_url} target="_blank" rel="noreferrer" class="flex gap-4 items-center align-middle">
-                        <IconPill>
-                          <img src="icons/link.svg" alt="external link icon" class="size-5 hover:scale-110"/>
-                          <p class="ml-2">Ver en producción</p>
-                        </IconPill>
+                    <header class="flex flex-row gap-6 items-center align-middle">
+                        <h3 class="text-4xl font-bold">{project.title}</h3>
+                        <a href={project.url} target="_blank" rel="noreferrer" class="flex gap-4 items-center">
+                            <IconPill>
+                                <img src="icons/github.svg" alt="GitHub icon" class="w-5 hover:scale-110" />
+                                <p class="ml-2">Ver en GitHub</p>
+                            </IconPill>
                         </a>
-                      }
-                    </div>
-                    <p class="text-lg mt-8">{project.description}</p>
-                    <div class="mt-8 flex flex-row flex-wrap gap-3">
-                      {project.technologies.map((technology) => (
-                        <IconPill>
-                          <img src={technology.source} alt={technology.name + "logo"} class="size-10" />
-                          <p class="pl-2">{technology.name}</p>
-                        </IconPill>
-                      ))}
-                    </div>
-                    
+                        {project.production_url && (
+                            <a href={project.production_url} target="_blank" rel="noreferrer" class="flex gap-4 items-center">
+                                <IconPill>
+                                    <img src="icons/link.svg" alt="External link icon" class="w-5" />
+                                    <p class="ml-2">Ver en producción</p>
+                                </IconPill>
+                            </a>
+                        )}
+                    </header>
+                    <main class="flex flex-row items-center gap-6 mt-8">
+                        <img src={project.image} alt={`${project.title} image`} class="w-[500px] rounded-lg" />
+                        <div>
+                            <p class="text-lg">{project.description}</p>
+                            <div class="mt-8 flex flex-row flex-wrap gap-3">
+                                {project.technologies.map((technology) => (
+                                    <IconPill key={technology.name}>
+                                        <img src={technology.source} alt={`${technology.name} logo`} class="w-4" />
+                                        <p class="pl-2">{technology.name}</p>
+                                    </IconPill>
+                                ))}
+                            </div>
+                        </div>
+                    </main>
                 </div>
             </section>
-          </li>
         ))}
-      </ul>
+    </div>
 </ArticleContainer>
-  
-

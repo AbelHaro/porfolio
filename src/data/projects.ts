@@ -62,4 +62,28 @@ export const projects: Project[] = [
     date: "junio 2024",
     image: "/images/rfid2.webp",
   },
+
+  {
+    title : "Demo de CI/CD",
+    description:
+      "Demostración de CI/CD con GitHub Actions. El proyecto está configurado para ejecutar pruebas unitarias y desplegar automáticamente en un VPS.",
+    url: "https://github.com/AbelHaro/TRD-demo-CI-CD",
+    technologies: [
+      {
+        name: "GitHub Actions",
+        source: "/icons/github.svg",
+      },
+      {
+        name: "Node.js",
+        source: "/icons/nodejs.svg",
+      },
+      {
+        name: "Docker",
+        source: "/icons/docker.svg",
+      },
+    ],
+    date: "diciembre 2024",
+    image: "/images/cicd.webp",
+  },
+  
 ];

@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "viewGithub": "Ver en GitHub",
+    "viewLive": "Ver en producción"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "description": "Desarrollador de software apasionado por crear soluciones que marquen la diferencia. Me especializo en desarrollo web y disfruto aprendiendo nuevas tecnologías."
+  },
+  "experience": {
+    "title": "Experiencia",
+    "present": "Actual"
+  },
+  "contact": {
+    "title": "Contacto",
+    "getInTouch": "Contactar"
+  }
+}

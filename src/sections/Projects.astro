@@ -13,27 +13,27 @@ import ArticleContainer from '../components/ArticleContainer.astro';
                         <h3 class="text-4xl font-bold">{project.title}</h3>
                         <a href={project.url} target="_blank" rel="noreferrer" class="flex gap-4 items-center">
                             <IconPill>
-                                <img src="icons/github.svg" alt="GitHub icon" class="w-5 hover:scale-110" />
+                                <img src="icons/github.svg" alt="GitHub icon" class="w-5 hover:scale-110" loading="lazy" />
                                 <p class="ml-2">Ver en GitHub</p>
                             </IconPill>
                         </a>
                         {project.production_url && (
                             <a href={project.production_url} target="_blank" rel="noreferrer" class="flex gap-4 items-center">
                                 <IconPill>
-                                    <img src="icons/link.svg" alt="External link icon" class="w-5" />
+                                    <img src="icons/link.svg" alt="External link icon" class="w-5" loading="lazy" />
                                     <p class="ml-2">Ver en producción</p>
                                 </IconPill>
                             </a>
                         )}
                     </header>
                     <main class="flex flex-row items-center gap-6 mt-8">
-                        <img src={project.image} alt={`${project.title} image`} class="w-[500px] rounded-lg" />
+                        <img src={project.image} alt={project.title} class="w-[500px] rounded-lg" loading="lazy" />
                         <div>
                             <p class="text-lg">{project.description}</p>
                             <div class="mt-8 flex flex-row flex-wrap gap-3">
                                 {project.technologies.map((technology) => (
                                     <IconPill key={technology.name}>
-                                        <img src={technology.source} alt={`${technology.name} logo`} class="w-4" />
+                                        <img src={technology.source} alt={`${technology.name} logo`} class="w-4" loading="lazy" />
                                         <p class="pl-2">{technology.name}</p>
                                     </IconPill>
                                 ))}

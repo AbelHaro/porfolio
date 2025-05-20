@@ -1,3 +1,6 @@
+---
+import IconPill from "../components/IconPill.astro";
+---
 <section id="home" class="grid grid-cols-2 text-xl font-medium pt-24">
     <div class="flex flex-row flex-initial">
         <!-- <img src="../../public/foto.webp" alt="Abel Haro Armero" class="rounded-sm w-1/4"/> -->
@@ -25,7 +28,17 @@
             <img src="icons/linkedin.svg" alt="linkedin icon" class="size-5 hover:scale-110" loading="lazy"/>
             <span>Abel Haro</span>
         </a>
-
-        
+        <div class="flex flex-row justify-end items-center gap-4 mt-2">
+            <a href="/curriculum/abel_haro_armero_cv_es.pdf" target="_blank" rel="noreferrer">
+                <IconPill>
+                    <span class="text-base">CV (ES)</span>
+                </IconPill>
+            </a>
+            <a href="/curriculum/abel_haro_armero_cv_en.pdf" target="_blank" rel="noreferrer">
+                <IconPill>
+                    <span class="text-base">CV (EN)</span>
+                </IconPill>
+            </a>
+        </div>
     </div>
 </section>

@@ -1,8 +1,8 @@
 export interface Project {
   title: string;
   description: string;
-  url: string;
-  image: string;
+  url?: string;
+  image?: string;
   technologies: {
     name: string;
     source: string;
@@ -13,77 +13,62 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "F1 Stats",
-    description:
-      "Una aplicación web que muestra las estadísticas históricas de los pilotos y constructores en la F1. Los datos almacenados en una base de datos SQLite se obtienen de una API creada con Express hosteada dentro de un contenedor en Render.com. El frontend está desarrollado con React y hosteado en Vercel.com. Ambos servicios de hosting estan configurados para desplegar automáticamente los cambios en el repositorio de GitHub.",
-    url: "https://github.com/AbelHaro/F1",
+    title: "DescubreUPV",
+    description: "Aplicación móvil para ayudar a los nuevos estudiantes a conocer la universidad, sus instalaciones y servicios. La aplicación cuenta con un mapa interactivo que permite a los usuarios explorar la universidad y encontrar información sobre diferentes edificios y servicios. Desarrollada en Kotlin y utiliza Supabase como backend para almacenar y gestionar la información de las localizaciones y los usuarios.",
+    url: "https://github.com/AbelHaro/DADM-Proyecto",
     technologies: [
       {
-        name: "SQLite",
-        source: "/icons/sqlite.svg",
+        name: "Kotlin",
+        source: "/icons/kotlin.svg",
       },
       {
-        name: "Express",
-        source: "/icons/express.svg",
+        name: "Android",
+        source: "/icons/android.svg",
       },
       {
-        name: "Docker",
-        source: "/icons/docker.svg",
+        name: "Supabase",
+        source: "/icons/supabase.svg",
       },
-      {
-        name: "React",
-        source: "/icons/react.svg",
-      },
-      {
-        name: "JavaScript",
-        source: "/icons/javascript.svg",
-      },
+      
     ],
-    date: "Agosto 2024",
-    image: "images/f1.webp",
-    production_url: "https://f1-sandy.vercel.app/",
+    date: "Mayo 2025",
+    image: "/images/descubreupv.webp",
   },
   {
-    title: "Lector de Tarjetas RFID",
-    description: `Proyecto IoT para desarrollar un sistema de control de acceso utilizando RFID y Bluetooth. El proyecto permite registrar usuarios y sus accesos mediante la lectura de una tarjeta RFID. El microcontrolador
-        se comunica con el servidor a través de una API REST. El servidor almacena los registros en una base de datos
-        y se visualizan en Ubidots.`,
-    url: "https://github.com/AbelHaro/RFID-RC522-Key-Reading",
+    title: "Detección de defectos en objetos mediante redes neuronales",
+    description: "Sistema para la detección de defectos en objetos a partir de imágenes, empleando redes neuronales convolucionales. Se utilizó el framework UltraLytics para el entrenamiento y la inferencia con modelos YOLO, optimizados para hardware NVIDIA Jetson mediante el SDK TensorRT. El sistema permite la detección de defectos en tiempo real y el análisis de imágenes para la identificación de fallos en productos industriales.",
+    url: undefined,
     technologies: [
-      {
-        name: "SQLite",
-        source: "/icons/sqlite.svg",
-      },
       {
         name: "Python",
         source: "/icons/python.svg",
       },
     ],
-    date: "junio 2024",
-    image: "/images/rfid2.webp",
+    date: "Octubre 2024 - Junio 2025",
+    image: undefined,
   },
-
   {
-    title : "Demo de CI/CD",
-    description:
-      "Demostración de CI/CD con GitHub Actions. El proyecto está configurado para ejecutar pruebas unitarias y desplegar automáticamente en un VPS.",
-    url: "https://github.com/AbelHaro/TRD-demo-CI-CD",
+    title: "Portfolio Personal",
+    description: "Sitio web personal desarrollado con Astro y Tailwind CSS, que muestra mi experiencia, proyectos y habilidades técnicas.",
+    url: "https://github.com/AbelHaro/porfolio",
     technologies: [
       {
-        name: "GitHub Actions",
-        source: "/icons/github.svg",
+        name: "Astro",
+        source: "/icons/astro.svg",
       },
       {
-        name: "Node.js",
-        source: "/icons/nodejs.svg",
-      },
+        name: "TypeScript",
+        source: "/icons/typescript.svg",
+      }
+      ,
       {
-        name: "Docker",
-        source: "/icons/docker.svg",
+        name: "Tailwind CSS",
+        source: "/icons/tailwindcss.svg",
       },
+      
     ],
-    date: "diciembre 2024",
-    image: "/images/cicd.webp",
-  },
-  
+    date: "Mayo 2024",
+    image: undefined,
+    production_url: "https://porfolio-red-sigma.vercel.app/"
+  }
 ];

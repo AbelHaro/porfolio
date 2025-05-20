@@ -1,0 +1,262 @@
+%---- Required Packages and Functions ----
+\documentclass[11pt,a4paper]{article}
+
+% Language selection
+\ifdefined\spanish
+  \usepackage[spanish,es-tabla]{babel}
+\else
+  \usepackage[english]{babel}
+  \selectlanguage{english}
+\fi
+
+% Rest of packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage{ifthen}
+
+\setlength{\footskip}{4.08003pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=1cm, right=1.4cm, bottom=1cm}
+
+\usepackage[most]{tcolorbox}
+\tcbset{
+	frame code={}
+	center title,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	bottom=0pt,
+	colback=gray!20,
+	colframe=white,
+	width=\dimexpr\textwidth\relax,
+	enlarge left by=-2mm,
+	boxsep=4pt,
+	arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+\raggedright
+\setlength{\footskip}{4.08003pt}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+%---- End of Packages and Functions ------
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{Abel Haro Armero}
+\newcommand{\course}{Altea / Valencia}
+\newcommand{\phone}{685 018 048}
+\newcommand{\emaila}{abelh2003@gmail.com}
+\newcommand{\emailb}{ahararm@upv.es}
+\newcommand{\cvdate}{26 - 02 - 2003}
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+
+%----------HEADER-----------------
+\parbox{2.6cm}{%
+\includegraphics[width=2.35cm,clip]{CV_foto.jpeg}
+}
+\parbox{\dimexpr\linewidth-2.9cm\relax}{
+\begin{tabularx}{\linewidth}{L r}
+  \textbf{\Large \name} & \href{mailto:\emaila}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {\emaila}} \\
+  \cvdate & \href{mailto:\emailb}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {\emailb}} \\
+  {} & \href{https://github.com/AbelHaro}{\raisebox{0.0\height}{\footnotesize \faGithub}\ {AbelHaro}} \\
+  {} & \href{https://www.linkedin.com/in/abel-haro-54bb6518a}{\raisebox{0.0\height}{\footnotesize \faLinkedin}\ {Abel Haro}}
+\end{tabularx}
+}
+
+%-----------ABOUT ME-----------
+\section{\textbf{\ifdefined\spanish Sobre mí\else About me\fi}}
+\vspace{0.1cm}
+\ifdefined\spanish
+  Estudiante de Ingeniería Informática, actualmente en el cuarto año. Poseo una sólida base teórica
+y habilidades técnicas en desarrollo de software y resolución de
+problemas. Aprendo rápido, trabajo bien en equipo y soy hábil para enfrentar
+desafíos con creatividad y determinación.
+\else
+  Computer Engineering student, currently in the fourth year. Possess a strong theoretical foundation
+and technical skills in software development and problem-solving. Quick learner, 
+team player, and adept at facing challenges with creativity and determination.
+\fi
+\vspace{-5.5mm}
+\vspace{0.3cm}
+
+%-----------EDUCATION-----------
+\section{\textbf{\ifdefined\spanish Educación\else Education\fi}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Universitat Politècnica de València}{\ifdefined\spanish nota media 8,4\else average grade 8.4\fi}
+      {\ifdefined\spanish Ingeniería Informática\else Computer Engineering\fi}
+      {\ifdefined\spanish 2021 - presente\else 2021 - present\fi}
+  \resumeSubHeadingListEnd
+\vspace{-5.5mm}
+
+%-----------LANGUAGES-----------------
+\section{\textbf{\ifdefined\spanish Idiomas\else Languages\fi}}
+\begin{itemize}[leftmargin=0.1in, label={}]
+    \small{\item{
+     \ifdefined\spanish Español - Nativo\else Spanish - Native\fi \\
+     \ifdefined\spanish Inglés - B2\else English - B2\fi
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+%-----------TECHNICAL SKILLS-----------------
+% \section{\textbf{\ifdefined\spanish Tecnologías utilizadas\else Technologies used\fi}}
+%  \begin{itemize}[leftmargin=0.1in, label={}]
+%     \small{\item{
+%      \textbf{\ifdefined\spanish Lenguajes\else Languages\fi}{: Java, C, Python, SQL } \\
+%      \textbf{\ifdefined\spanish Herramientas de desarrollo\else Developer Tools\fi}{: GitHub }
+%     }}
+%  \end{itemize}
+%  \vspace{-16pt}
+
+%-----------EXPERIENCE-----------------
+\section{\textbf{\ifdefined\spanish Experiencia Profesional\else Professional Experience\fi}}
+  \resumeSubHeadingListStart
+    \resumeProject
+      {\ifdefined\spanish Prácticas en el Departamento DISCA de la UPV\else Internship at the DISCA Department, UPV\fi}
+      {\ifdefined\spanish Universitat Politècnica de València\else Universitat Politècnica de València\fi}
+      {\ifdefined\spanish Octubre 2024 - presente\else October 2024 - Present\fi}
+      {}
+    \resumeItemListStart
+        \item {\ifdefined\spanish Desarrollo de un sistema de detección de defectos en objetos mediante imágenes, utilizando redes neuronales.\else Developed a system for detecting defects in objects from images using neural networks.\fi}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+  \vspace{-5.5mm}
+
+  \resumeSubHeadingListStart
+    \resumeProject
+      {\ifdefined\spanish Prácticas en SOLTECSIS S.L.\else Internship at SOLTECSIS S.L.\fi}
+      {\ifdefined\spanish SOLTECSIS S.L.\else SOLTECSIS S.L.\fi}
+      {\ifdefined\spanish Julio 2024\else July 2024\fi}
+      {}
+    \resumeItemListStart
+        \item {\ifdefined\spanish Depuración y corrección de errores durante la migración del proyecto de código abierto \href{https://github.com/soltecsis/fwcloud-api}{\underline{FWCloud}} de JavaScript a TypeScript.\else Performed debugging and bug fixing during the migration of the open-source \href{https://github.com/soltecsis/fwcloud-api}{\underline{FWCloud}} project from JavaScript to TypeScript.\fi}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{\textbf{\ifdefined\spanish Proyectos Personales y Académicos\else Personal and Student projects\fi}}
+\resumeSubHeadingListStart
+
+    \resumeProject
+      {\href{https://github.com/AbelHaro/DADM-Proyecto}{\ifdefined\spanish DescubreUPV\else DescubreUPV\fi}}
+      {\ifdefined\spanish Proyecto para la asignatura DADM(Desarrollo de Aplicaciones para Dispositivos Móviles).\else Project for the DADM (Mobile Device Application Development) subject.\fi}
+      {\ifdefined\spanish Mayo 2025\else May 2025\fi}
+      {}
+
+      \resumeItemListStart
+        \item {\ifdefined\spanish Herramientas y tecnologías utilizadas\else Tools \& technologies used\fi: Kotlin, Android Studio, Supabase.}
+        \item {\ifdefined\spanish El objetivo de la aplicación es ayudar a los nuevos estudiantes a conocer la universidad, sus instalaciones y servicios. Para ello, la aplicación cuenta con un mapa interactivo que permite a los usuarios explorar la universidad y encontrar información sobre diferentes edificios y servicios. \else The goal of the application is to help new students get to know the university, its facilities, and services. To achieve this, the application features an interactive map that allows users to explore the university and find information about different buildings and services.\fi}
+        \item {\ifdefined\spanish La aplicación esta desarrollada en Kotlin y utiliza Android Studio como entorno de desarrollo. Además, se ha utilizado Supabase como backend para almacenar y gestionar la información de las localizaciones y los usuarios. \else The application is developed in Kotlin and uses Android Studio as the development environment. Additionally, Supabase has been used as the backend to store and manage information about locations and users.\fi}
+      \resumeItemListEnd
+
+    \resumeProject
+      {\ifdefined\spanish Detección de defectos en objetos mediante redes neuronales convolucionales\else Defect detection in objects using convolutional neural networks\fi}
+      {\ifdefined\spanish Proyecto de Fin de Grado en Ingeniería Informática.\else Final Degree Project in Computer Engineering.\fi}
+      {\ifdefined\spanish Octubre 2024 - Junio 2025\else October 2024 - June 2025\fi}
+      {}
+    \resumeItemListStart
+        \item {
+          \ifdefined\spanish
+            Desarrollo de un sistema para la detección de defectos en objetos a partir de imágenes, empleando redes neuronales convolucionales. Se utilizó el framework UltraLytics para el entrenamiento y la inferencia con modelos YOLO, optimizados para hardware NVIDIA Jetson mediante el SDK TensorRT. El sistema permite la detección de defectos en tiempo real y el análisis de imágenes para la identificación de fallos en productos industriales.
+          \else
+            Developed a system for detecting defects in objects from images using convolutional neural networks. Utilized the Ultralytics framework for training and deploying YOLO models, which were optimized for NVIDIA Jetson hardware with the TensorRT SDK. The system enables real-time defect detection and image analysis for identifying defects in industrial products.
+          \fi
+        }
+    \resumeItemListEnd
+
+    
+  \resumeSubHeadingListEnd
+\vspace{-5.5mm}
+
+%-------------------------------------------
+\end{document}

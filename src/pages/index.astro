@@ -13,7 +13,7 @@ import Contact from '../sections/Contact.astro';
 <Layout title="Porfolio de Abel Haro Armero">
 	<Intro/>
 	<Hero />
-	<main class="flex flex-col min-h-screen px-96">
+	<main class="flex flex-col min-h-screen main-content">
 		<PersonalInfo />
 		<AboutMe />
 		<Experience />
@@ -33,4 +33,26 @@ import Contact from '../sections/Contact.astro';
 		font-family: 'RobotoSlab', sans-serif;
 		scroll-behavior: smooth;
 	}
+
+    .main-content {
+        padding-left: 24rem; /* 96 * 0.25rem if using Tailwind's default spacing scale */
+        padding-right: 24rem;
+    }
+
+    /* Small screens (e.g., mobile phones) */
+    @media (max-width: 768px) {
+        .main-content {
+            padding-left: 1rem; /* Example: 16px */
+            padding-right: 1rem; /* Example: 16px */
+        }
+    }
+
+    /* Medium screens (e.g., tablets) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .main-content {
+            padding-left: 4rem; /* Example: 64px */
+            padding-right: 4rem; /* Example: 64px */
+        }
+    }
+    /* Large screens (desktops) will use the initial padding-left/right: 24rem */
 </style>

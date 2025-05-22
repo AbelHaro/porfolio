@@ -1,4 +1,5 @@
 ---
+const { t } = Astro.props;
 import Layout from '../layouts/Layout.astro';
 import Hero from '../sections/Hero.astro';
 import AboutMe from '../sections/AboutMe.astro';
@@ -10,17 +11,17 @@ import Intro from '../sections/Intro.astro';
 import Contact from '../sections/Contact.astro';
 ---
 
-<Layout title="Porfolio de Abel Haro Armero">
-	<Intro/>
-	<Hero />
+<Layout title={t.pageTitle}>
+	<Intro t={t}/>
+	<Hero t={t} />
 	<main class="flex flex-col min-h-screen px-96">
-		<PersonalInfo />
-		<AboutMe />
-		<Experience />
-		<Projects/>
-		<Contact/>
+		<PersonalInfo t={t} />
+		<AboutMe t={t} />
+		<Experience t={t} />
+		<Projects t={t} />
+		<Contact t={t} />
 	</main>
-	<Footer/>
+	<Footer t={t} />
 </Layout>
 <style>
 	@font-face {

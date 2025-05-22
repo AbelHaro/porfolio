@@ -2,20 +2,21 @@
 import { projects } from '../data/projects';
 import IconPill from '../components/IconPill.astro';
 import ArticleContainer from '../components/ArticleContainer.astro';
+const { t, lang } = Astro.props; // Added lang
 ---
 
-<ArticleContainer title="Proyectos" articleId="projects">
+<ArticleContainer title={t['projects.title']} articleId="projects">
     <div class="flex flex-col gap-14">
         {projects.map((project) => (
             <section class="flex flex-row">
                 <div class="flex flex-col">
                     <header class="flex flex-row gap-6 items-center align-middle">
-                        <h3 class="text-4xl font-bold">{project.title}</h3>
+                        <h3 class="text-4xl font-bold">{project.title[lang] || project.title['en']}</h3>
                         { project.url && (
                         <a href={project.url} target="_blank" rel="noreferrer" class="flex gap-4 items-center">
                             <IconPill>
                                 <img src="icons/github.svg" alt="GitHub icon" class="w-5 hover:scale-110" loading="lazy" />
-                                <p class="ml-2">Ver en GitHub</p>
+                                <p class="ml-2">{t['projects.viewGithub']}</p>
                             </IconPill>
                         </a>
                         )
@@ -24,16 +25,18 @@ import ArticleContainer from '../components/ArticleContainer.astro';
                             <a href={project.production_url} target="_blank" rel="noreferrer" class="flex gap-4 items-center">
                                 <IconPill>
                                     <img src="icons/link.svg" alt="External link icon" class="w-5" loading="lazy" />
-                                    <p class="ml-2">Ver en producción</p>
+                                    <p class="ml-2">{t['projects.viewLive']}</p>
                                 </IconPill>
                             </a>
                         )}
                     </header>
                     <main class="flex flex-row items-center gap-6 mt-8">
-                        {project.image &&<img src={project.image} alt={project.title} class="w-[200px] rounded-lg" loading="lazy" />
+                        {project.image && <img src={project.image} alt={project.title[lang] || project.title['en']} class="w-[200px] rounded-lg" loading="lazy" />
                         }
                         <div>
-                            <p class="text-lg">{project.description}</p>
+                            <p class="text-lg">{project.description[lang] || project.description['en']}</p>
+                            {/* project.date is not directly displayed here, but if it were, it would be project.date[lang] */}
+                            {/* Technologies are not translated in this scope */}
                             <div class="mt-8 flex flex-row flex-wrap gap-3">
                                 {project.technologies.map((technology) => (
                                     <IconPill key={technology.name}>

@@ -1,19 +1,42 @@
 {
+  "pageTitle": "Abel Haro Armero's Portfolio",
   "nav": {
     "home": "Home",
-    "about": "About",
+    "about": "About me",
     "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact"
+  },
+  "intro": {
+    "viewPortfolioButton": "View Portfolio",
+    "typewriterText": "Abel Haro Armero, Computer Engineering student at the Polytechnic University of Valencia."
+  },
+  "personalInfo": {
+    "name": "Abel Haro Armero",
+    "age": "21 years",
+    "location": "Altea / Valencia",
+    "cvESButton": "CV (ES)",
+    "cvENButton": "CV (EN)"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Software developer passionate about creating solutions that make a difference. I specialize in web development and enjoy learning new technologies."
+  },
+  "aboutMe": {
+    "paragraph1_pt1": "Computer Engineering student specializing in Computer Engineering, currently in my fourth year with an ",
+    "paragraph1_highlight1": "average grade of 8.5",
+    "paragraph1_pt2": ". Solid theoretical foundation and technical skills in software development and problem-solving. Able to learn quickly, work in a team, and face challenges with creativity and determination.",
+    "educationTitle": "Education",
+    "degree": "Degree in Computer Engineering at the Polytechnic University of Valencia",
+    "degreeDatePrefix": "September 2021",
+    "languagesTitle": "Languages",
+    "languageSpanish": "Spanish - Native",
+    "languageEnglish": "English - B2"
   },
   "projects": {
     "title": "Projects",
     "viewGithub": "View on GitHub",
     "viewLive": "View Live"
-  },
-  "about": {
-    "title": "About Me",
-    "description": "Software developer passionate about creating solutions that make a difference. I specialize in web development and enjoy learning new technologies."
   },
   "experience": {
     "title": "Experience",

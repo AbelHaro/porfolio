@@ -1,4 +1,5 @@
 {
+  "pageTitle": "Porfolio de Abel Haro Armero",
   "nav": {
     "home": "Inicio",
     "about": "Sobre mí",
@@ -6,14 +7,36 @@
     "projects": "Proyectos",
     "contact": "Contacto"
   },
-  "projects": {
-    "title": "Proyectos",
-    "viewGithub": "Ver en GitHub",
-    "viewLive": "Ver en producción"
+  "intro": {
+    "viewPortfolioButton": "Ver Porfolio",
+    "typewriterText": "Abel Haro Armero, estudiante de Ingeniería Informática en la Universidad Politécnica de Valencia."
+  },
+  "personalInfo": {
+    "name": "Abel Haro Armero",
+    "age": "21 años",
+    "location": "Altea / Valencia",
+    "cvESButton": "CV (ES)",
+    "cvENButton": "CV (EN)"
   },
   "about": {
     "title": "Sobre Mí",
     "description": "Desarrollador de software apasionado por crear soluciones que marquen la diferencia. Me especializo en desarrollo web y disfruto aprendiendo nuevas tecnologías."
+  },
+  "aboutMe": {
+    "paragraph1_pt1": "Estudiante de Ingeniería Informática en la mención de Ingeniería de Computadores, actualmente cursando el cuarto año con una ",
+    "paragraph1_highlight1": "nota media de 8,5",
+    "paragraph1_pt2": ". Sólida base teórica y habilidades técnicas en desarrollo de software y resolución de problemas. Capaz de aprender rápidamente, trabajar en equipo y enfrentar desafíos con creatividad y determinación.",
+    "educationTitle": "Educación",
+    "degree": "Grado en Ingeniería Informática en la Universitat Politècnica de València",
+    "degreeDatePrefix": "Septiembre 2021",
+    "languagesTitle": "Idiomas",
+    "languageSpanish": "Español - Nativo",
+    "languageEnglish": "Inglés - B2"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "viewGithub": "Ver en GitHub",
+    "viewLive": "Ver en producción"
   },
   "experience": {
     "title": "Experiencia",

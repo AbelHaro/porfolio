@@ -1,13 +1,25 @@
 ---
+import enTranslations from "../i18n/en.json";
+import esTranslations from "../i18n/es.json";
+import Nabvar from "../components/Nabvar.astro"; // Import Nabvar
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+
+const acceptLanguage = Astro.request.headers.get("accept-language");
+let lang = "en"; // Default to English
+if (acceptLanguage && acceptLanguage.toLowerCase().includes("es")) {
+	lang = "es";
+}
+
+const t = lang === "es" ? esTranslations : enTranslations;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -18,8 +30,9 @@ const { title } = Astro.props;
 	</head>
 	<body class="text-white/95 bg-black/90">
 		<header>
+			<Nabvar t={t} /> {/* Use Nabvar and pass t prop */}
 		</header>
-		<slot />
+		<slot t={t} lang={lang} />
 	</body>
 </html>
 

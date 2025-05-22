@@ -1,38 +1,36 @@
 ---
 import Tecnologies from "./Tecnologies.astro"
 import ArticleContainer from "../components/ArticleContainer.astro"
+const { t } = Astro.props;
 ---
-<ArticleContainer title="Sobre mí" articleId="aboutMe">
+<ArticleContainer title={t['about.title']} articleId="aboutMe">
     <section>
         <p class="text-wrap text-xl">
-            Estudiante de <bold class="text-custom-blue">Ingeniería Informática</bold> en la mención de Ingeniería de Computadores, actualmente cursando el
-            cuarto año con una <bold class="text-custom-blue">nota media de 8,5</bold>. Sólida base teórica y habilidades técnicas en desarrollo de software y
-            resolución de problemas. Capaz de aprender rápidamente, trabajar en equipo y enfrentar desafíos con
-            creatividad y determinación.
+            {t['aboutMe.paragraph1_pt1']}<strong class="text-custom-blue">{t['aboutMe.paragraph1_highlight1']}</strong>{t['aboutMe.paragraph1_pt2']}
         </p>
     </section>
     <section class="gap-2 mt-10">
         <h4 class=" text-3xl">
-            Educación
+            {t['aboutMe.educationTitle']}
         </h4>
         <div class="flex flex-row justify-between items-center">
             <p class="text-xl">
-                Grado en Ingeniería Informática en la Universitat Politècnica de València
+                {t['aboutMe.degree']}
             </p>
             <p class="text-xl">
-                Septiembre 2021 - Actualidad
+                {t['aboutMe.degreeDatePrefix']} - {t['experience.present']}
             </p>
         </div>
     </section>
     <section class="flex flex-col mt-10">
         <h4 class=" text-3xl">
-            Idiomas
+            {t['aboutMe.languagesTitle']}
         </h4>
         <p class="text-xl">
-            Español - Nativo
+            {t['aboutMe.languageSpanish']}
         </p>
         <p class="text-xl mt-1">
-            Inglés - B2
+            {t['aboutMe.languageEnglish']}
         </p>
     </section>
     <!-- <section class="mt-10">

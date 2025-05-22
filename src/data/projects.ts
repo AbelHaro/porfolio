@@ -14,7 +14,8 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "DescubreUPV",
-    description: "Aplicación móvil para ayudar a los nuevos estudiantes a conocer la universidad, sus instalaciones y servicios. La aplicación cuenta con un mapa interactivo que permite a los usuarios explorar la universidad y encontrar información sobre diferentes edificios y servicios. Desarrollada en Kotlin y utiliza Supabase como backend para almacenar y gestionar la información de las localizaciones y los usuarios.",
+    description:
+      "Aplicación móvil para ayudar a los nuevos estudiantes a conocer la universidad, sus instalaciones y servicios. La aplicación cuenta con un mapa interactivo que permite a los usuarios explorar la universidad y encontrar información sobre diferentes edificios y servicios. Desarrollada en Kotlin y utiliza Supabase como backend para almacenar y gestionar la información de las localizaciones y los usuarios.",
     url: "https://github.com/AbelHaro/DADM-Proyecto",
     technologies: [
       {
@@ -29,14 +30,14 @@ export const projects: Project[] = [
         name: "Supabase",
         source: "/icons/supabase.svg",
       },
-      
     ],
     date: "Mayo 2025",
     image: "/images/descubreupv.webp",
   },
   {
     title: "Detección de defectos en objetos mediante redes neuronales",
-    description: "Sistema para la detección de defectos en objetos a partir de imágenes, empleando redes neuronales convolucionales. Se utilizó el framework UltraLytics para el entrenamiento y la inferencia con modelos YOLO, optimizados para hardware NVIDIA Jetson mediante el SDK TensorRT. El sistema permite la detección de defectos en tiempo real y el análisis de imágenes para la identificación de fallos en productos industriales.",
+    description:
+      "Sistema para la detección de defectos en objetos a partir de imágenes, empleando redes neuronales convolucionales. Se utilizó el framework UltraLytics para el entrenamiento y la inferencia con modelos YOLO, optimizados para hardware NVIDIA Jetson mediante el SDK TensorRT. El sistema permite la detección de defectos en tiempo real y el análisis de imágenes para la identificación de fallos en productos industriales.",
     url: undefined,
     technologies: [
       {
@@ -49,7 +50,8 @@ export const projects: Project[] = [
   },
   {
     title: "Portfolio Personal",
-    description: "Sitio web personal desarrollado con Astro y Tailwind CSS, que muestra mi experiencia, proyectos y habilidades técnicas.",
+    description:
+      "Sitio web personal desarrollado con Astro y Tailwind CSS, que muestra mi experiencia, proyectos y habilidades técnicas.",
     url: "https://github.com/AbelHaro/porfolio",
     technologies: [
       {
@@ -59,16 +61,14 @@ export const projects: Project[] = [
       {
         name: "TypeScript",
         source: "/icons/typescript.svg",
-      }
-      ,
+      },
       {
         name: "Tailwind CSS",
         source: "/icons/tailwindcss.svg",
       },
-      
     ],
     date: "Mayo 2024",
     image: undefined,
-    production_url: "https://porfolio-red-sigma.vercel.app/"
-  }
+    production_url: "https://porfolio-red-sigma.vercel.app/",
+  },
 ];

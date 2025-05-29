@@ -1,5 +1,4 @@
 ---
-// Assuming this is your .astro file
 import NavItem from "./NavItem.astro"
 const navItems = [
     { href: "#home", text: "Inicio" },
@@ -13,8 +12,10 @@ const navItems = [
 <style>
     nav#hero {
         backdrop-filter: blur(10px);
-        background-color: rgba(255, 255, 255, 0); /* Light background with transparency */
-        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        background-color: rgba(255, 255, 255, 0);
+        -webkit-backdrop-filter: blur(10px); /* Safari */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 </style>
 

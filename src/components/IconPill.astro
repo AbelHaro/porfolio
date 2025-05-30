@@ -1,7 +1,7 @@
 <style>
     .hover-animation {
       position: relative;
-      overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+      overflow: hidden;
       transition: transform 0.3s ease;
     }
   
@@ -12,21 +12,24 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #6366e6; /* Cambia el color a azul */
-      transition: transform 0.3s ease; /* Transición para la animación de expansión */
-      transform: scaleX(0); /* Inicialmente el pseudo-elemento está colapsado horizontalmente */
-      transform-origin: left; /* Inicia la expansión desde la izquierda */
-      z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
+      background-color: #6366e6;
+      transition: transform 0.3s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+      z-index: -1;
     }
   
     .hover-animation:hover::before {
-      transform: scaleX(1); /* Expande el pseudo-elemento horizontalmente */
+      transform: scaleX(1);
     }
+
+    @media (max-width: 640px) {
+      .hover-animation {
+        min-height: 44px; /* Ensure minimum touch target size */
+      }
+    }
+</style>
   
-    
-  </style>
-  
-  <div class="flex flex-row flex-wrap py-1 px-4 border-2 rounded-full border-custom-blue justify-center items-center hover-animation">
+<div class="flex flex-row flex-wrap py-2 sm:py-1 px-3 sm:px-4 border-2 rounded-full border-custom-blue justify-center items-center hover-animation transition-all duration-200">
     <slot />
-  </div>
-  
+</div>

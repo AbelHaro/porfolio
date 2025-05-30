@@ -22,37 +22,71 @@ import Contact from '../sections/Contact.astro';
 	</main>
 	<Footer/>
 </Layout>
+
 <style>
 	@font-face {
-            font-family: 'RobotoSlab';
-            src: url('/fonts/RobotoSlab-VariableFont_wght.ttf') format('truetype');
-            font-weight: 100 900; /* Define el rango de pesos si es aplicable */
-            font-style: normal;
-        }
+		font-family: 'RobotoSlab';
+		src: url('/fonts/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+		font-weight: 100 900;
+		font-style: normal;
+	}
+	
 	html {
 		font-family: 'RobotoSlab', sans-serif;
 		scroll-behavior: smooth;
 	}
 
-    .main-content {
-        padding-left: 24rem; /* 96 * 0.25rem if using Tailwind's default spacing scale */
-        padding-right: 24rem;
-    }
+	.main-content {
+		/* Mobile-first approach */
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
 
-    /* Small screens (e.g., mobile phones) */
-    @media (max-width: 768px) {
-        .main-content {
-            padding-left: 1rem; /* Example: 16px */
-            padding-right: 1rem; /* Example: 16px */
-        }
-    }
+	/* Small mobile devices (320px and up) */
+	@media (min-width: 320px) {
+		.main-content {
+			padding-left: 1.25rem;
+			padding-right: 1.25rem;
+		}
+	}
 
-    /* Medium screens (e.g., tablets) */
-    @media (min-width: 769px) and (max-width: 1024px) {
-        .main-content {
-            padding-left: 4rem; /* Example: 64px */
-            padding-right: 4rem; /* Example: 64px */
-        }
-    }
-    /* Large screens (desktops) will use the initial padding-left/right: 24rem */
+	/* Large mobile devices (480px and up) */
+	@media (min-width: 480px) {
+		.main-content {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+	}
+
+	/* Tablets (768px and up) */
+	@media (min-width: 768px) {
+		.main-content {
+			padding-left: 4rem;
+			padding-right: 4rem;
+		}
+	}
+
+	/* Small laptops (1024px and up) */
+	@media (min-width: 1024px) {
+		.main-content {
+			padding-left: 8rem;
+			padding-right: 8rem;
+		}
+	}
+
+	/* Large screens (1280px and up) */
+	@media (min-width: 1280px) {
+		.main-content {
+			padding-left: 16rem;
+			padding-right: 16rem;
+		}
+	}
+
+	/* Extra large screens (1536px and up) */
+	@media (min-width: 1536px) {
+		.main-content {
+			padding-left: 24rem;
+			padding-right: 24rem;
+		}
+	}
 </style>

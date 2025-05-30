@@ -10,8 +10,7 @@ import ArticleContainer from '../components/ArticleContainer.astro';
             <section class="flex flex-col">
                 <!-- Project Header -->
                 <header class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center mb-6 sm:mb-8">
-                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold">{project.title}</h3>
-                    
+                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold">{project.title}</h3>     
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
                         {project.url && (
                             <a href={project.url} target="_blank" rel="noreferrer" class="flex gap-2 items-center">
@@ -57,9 +56,6 @@ import ArticleContainer from '../components/ArticleContainer.astro';
                                 </IconPill>
                             ))}
                         </div>
-                        
-                        <!-- Date -->
-                        <p class="text-sm sm:text-base text-gray-400 mt-4">{project.date}</p>
                     </div>
                 </main>
             </section>

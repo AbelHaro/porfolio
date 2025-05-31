@@ -21,6 +21,28 @@
   },
   "contact": {
     "title": "Contacto",
-    "getInTouch": "Contactar"
+    "getInTouch": "Contactar",
+    "intro": "No dudes en ponerte en contacto si tienes alguna pregunta, idea de proyecto o simplemente quieres conectar. Siempre estoy abierto a discutir nuevas oportunidades y colaboraciones.",
+    "nameLabel": "Nombre",
+    "emailLabel": "Email",
+    "messageLabel": "Mensaje",
+    "sendButton": "Enviar"
+  },
+  "page": {
+    "index": {
+      "title": "Porfolio de Abel Haro Armero"
+    }
+  },
+  "intro": {
+    "typewriterText": "Abel Haro Armero, estudiante de Ingeniería Informática en la Universidad Politécnica de Valencia.",
+    "viewPortfolioButton": "Ver Portfolio"
+  },
+  "personalInfo": {
+    "ageSuffix": "años",
+    "cvEsLabel": "CV (ES)",
+    "cvEnLabel": "CV (EN)"
+  },
+  "footer": {
+    "rightsReserved": "Todos los derechos reservados."
   }
 }

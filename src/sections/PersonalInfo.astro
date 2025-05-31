@@ -1,5 +1,9 @@
 ---
 import IconPill from "../components/IconPill.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="home" class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-0 text-lg sm:text-xl font-medium pt-16 sm:pt-20 lg:pt-24">
@@ -10,7 +14,7 @@ import IconPill from "../components/IconPill.astro";
                 Abel Haro Armero
             </span>
             <span class="text-lg sm:text-xl">
-                22 años
+                22 {t('personalInfo.ageSuffix')}
             </span>
             <span class="text-lg sm:text-xl">
                 Altea / Valencia
@@ -41,12 +45,12 @@ import IconPill from "../components/IconPill.astro";
         <div class="flex flex-row justify-center lg:justify-end items-center gap-3 sm:gap-4 mt-4">
             <a href="/curriculum/abel_haro_armero_cv_es.pdf" target="_blank" rel="noreferrer">
                 <IconPill>
-                    <span class="text-sm sm:text-base">CV (ES)</span>
+                    <span class="text-sm sm:text-base">{t('personalInfo.cvEsLabel')}</span>
                 </IconPill>
             </a>
             <a href="/curriculum/abel_haro_armero_cv_en.pdf" target="_blank" rel="noreferrer">
                 <IconPill>
-                    <span class="text-sm sm:text-base">CV (EN)</span>
+                    <span class="text-sm sm:text-base">{t('personalInfo.cvEnLabel')}</span>
                 </IconPill>
             </a>
         </div>

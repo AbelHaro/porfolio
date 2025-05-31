@@ -1,7 +1,13 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
 <footer class="mt-8 sm:mt-12 py-6 sm:py-10">
     <div class="max-w-4xl items-center mx-auto text-center px-4">
         <p class="text-gray-400 text-sm sm:text-base">
-            © {new Date().getFullYear()} Abel Haro Armero. Todos los derechos reservados.
+            © {new Date().getFullYear()} Abel Haro Armero. {t('footer.rightsReserved')}
         </p>
     </div>
 </footer>

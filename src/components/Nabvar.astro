@@ -1,12 +1,17 @@
 ---
-import NavItem from "./NavItem.astro"
+import NavItem from "./NavItem.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const navItems = [
-    { href: "#home", text: "Inicio" },
-    { href: "#aboutMe", text: "Sobre mí" },
-    { href: "#experience", text: "Experiencia" },
-    { href: "#projects", text: "Proyectos" },
-    { href: "#contact", text: "Contacto" }
-]
+    { href: "#home", text: t("nav.home") },
+    { href: "#aboutMe", text: t("nav.about") },
+    { href: "#experience", text: t("nav.experience") },
+    { href: "#projects", text: t("nav.projects") },
+    { href: "#contact", text: t("nav.contact") }
+];
 ---
 
 <style>

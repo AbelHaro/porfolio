@@ -2,9 +2,13 @@
 import { projects } from '../data/projects';
 import IconPill from '../components/IconPill.astro';
 import ArticleContainer from '../components/ArticleContainer.astro';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<ArticleContainer title="Proyectos" articleId="projects">
+<ArticleContainer title={t('projects.title')} articleId="projects">
     <div class="flex flex-col gap-12 sm:gap-14">
         {projects.map((project) => (
             <section class="flex flex-col">
@@ -16,7 +20,7 @@ import ArticleContainer from '../components/ArticleContainer.astro';
                             <a href={project.url} target="_blank" rel="noreferrer" class="flex gap-2 items-center">
                                 <IconPill>
                                     <img src="icons/github.svg" alt="GitHub icon" class="w-4 sm:w-5 hover:scale-110 transition-transform" loading="lazy" />
-                                    <p class="ml-2 text-sm sm:text-base">Ver en GitHub</p>
+                                    <p class="ml-2 text-sm sm:text-base">{t('projects.viewGithub')}</p>
                                 </IconPill>
                             </a>
                         )}
@@ -24,7 +28,7 @@ import ArticleContainer from '../components/ArticleContainer.astro';
                             <a href={project.production_url} target="_blank" rel="noreferrer" class="flex gap-2 items-center">
                                 <IconPill>
                                     <img src="icons/link.svg" alt="External link icon" class="w-4 sm:w-5" loading="lazy" />
-                                    <p class="ml-2 text-sm sm:text-base">Ver en producción</p>
+                                    <p class="ml-2 text-sm sm:text-base">{t('projects.viewLive')}</p>
                                 </IconPill>
                             </a>
                         )}

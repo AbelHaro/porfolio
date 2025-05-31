@@ -1,34 +1,49 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const typewriterText = t('intro.typewriterText');
+---
 <section class="w-screen h-screen flex flex-col justify-center items-center px-4 -z-10 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
-    <h1 id="typewriter" class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold pb-16 sm:pb-20 lg:pb-28 text-center max-w-4xl leading-relaxed">
+    <h1 id="typewriter" data-text={typewriterText} class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold pb-16 sm:pb-20 lg:pb-28 text-center max-w-4xl leading-relaxed">
     </h1>
     <button class="hover:bg-custom-blue text-white font-bold border border-custom-blue rounded w-full max-w-sm sm:max-w-md lg:max-w-96 transition-colors">
-        <a href="#home" class="block w-full h-full py-3 sm:py-4 px-4 text-lg sm:text-xl font-medium">Ver Portfolio</a>
+        <a href="#home" class="block w-full h-full py-3 sm:py-4 px-4 text-lg sm:text-xl font-medium">{t('intro.viewPortfolioButton')}</a>
     </button>
 </section> 
 
 <script>
-    const words = ["Abel Haro Armero, estudiante de Ingeniería Informática en la Universidad Politécnica de Valencia."];
-    let i = 0;
-    let j = 0;
-    let currentWord = "";
+    const typewriterElement = document.getElementById("typewriter");
+    // Ensure typewriterElement and dataset.text are not null before proceeding
+    const textToType = typewriterElement?.dataset.text;
 
-    function type() {
-      const typewriterElement = document.getElementById("typewriter");
-      if (!typewriterElement) return;
+    if (textToType) {
+        const words = [textToType];
+        let i = 0;
+        let j = 0;
+        let currentWord = "";
 
-      currentWord = words[i];
-      typewriterElement.textContent = currentWord.substring(0, j + 1);
-      j++;
-      
-      if (j === currentWord.length) {
-        j = 0;
-        i++;
-        if (i === words.length) {
-          return;
+        function type() {
+          if (!typewriterElement) return; // Already checked but good practice
+
+          currentWord = words[i];
+          typewriterElement.textContent = currentWord.substring(0, j + 1);
+          j++;
+
+          if (j === currentWord.length) {
+            // Word finished typing
+            // If you want it to stop after one phrase, return here.
+            // If you want it to loop or type multiple phrases from `words` array:
+            j = 0;
+            i++;
+            if (i === words.length) {
+              // All words typed. If looping, set i = 0;
+              return; // Stop after one full phrase
+            }
+          }
+          setTimeout(type, 30);
         }
-      }
-      setTimeout(type, 30);
+        type();
     }
-
-    type();
 </script>

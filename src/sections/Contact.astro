@@ -1,35 +1,39 @@
 ---
 import ArticleContainer from "../components/ArticleContainer.astro"
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<ArticleContainer title="Contacto" articleId="contact">
+<ArticleContainer title={t('contact.title')} articleId="contact">
     <section>
         <p class="text-wrap text-lg sm:text-xl mb-6 sm:mb-8 leading-relaxed">
-            Si tienes alguna pregunta, sugerencia o simplemente quieres contactar conmigo, puedes usar el siguiente formulario:
+            {t('contact.intro')}
         </p>
         
         <form class="w-full max-w-2xl mx-auto" action="https://formspree.io/f/mdkeaarr" method="POST">
             <div class="mb-4 sm:mb-6">
-                <label for="name" class="block text-base sm:text-lg font-medium mb-2">Nombre</label>
+                <label for="name" class="block text-base sm:text-lg font-medium mb-2">{t('contact.nameLabel')}</label>
                 <input type="text" id="name" name="name" required 
                     class="w-full px-3 sm:px-4 py-2 sm:py-3 text-base rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-custom-blue focus:border-transparent dark:text-white text-gray-900 dark:bg-gray-800 dark:border-gray-600 transition-colors">
             </div>
             
             <div class="mb-4 sm:mb-6">
-                <label for="email" class="block text-base sm:text-lg font-medium mb-2">Email</label>
+                <label for="email" class="block text-base sm:text-lg font-medium mb-2">{t('contact.emailLabel')}</label>
                 <input type="email" id="email" name="email" required 
                     class="w-full px-3 sm:px-4 py-2 sm:py-3 text-base rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-custom-blue focus:border-transparent dark:text-white text-gray-900 dark:bg-gray-800 dark:border-gray-600 transition-colors">
             </div>
             
             <div class="mb-6 sm:mb-8">
-                <label for="message" class="block text-base sm:text-lg font-medium mb-2">Mensaje</label>
+                <label for="message" class="block text-base sm:text-lg font-medium mb-2">{t('contact.messageLabel')}</label>
                 <textarea id="message" name="message" rows="6" required 
                     class="w-full px-3 sm:px-4 py-2 sm:py-3 text-base rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-custom-blue focus:border-transparent dark:text-white text-gray-900 dark:bg-gray-800 dark:border-gray-600 transition-colors resize-vertical min-h-[120px]"></textarea>
             </div>
             
             <button type="submit" 
                 class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-custom-blue text-white text-base sm:text-lg rounded-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-custom-blue focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 font-medium">
-                Enviar mensaje
+                {t('contact.sendButton')}
             </button>
         </form>
     </section>

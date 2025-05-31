@@ -21,6 +21,28 @@
   },
   "contact": {
     "title": "Contact",
-    "getInTouch": "Get in touch"
+    "getInTouch": "Get in touch",
+    "intro": "Feel free to reach out if you have any questions, project ideas, or just want to connect. I'm always open to discussing new opportunities and collaborations.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "sendButton": "Send"
+  },
+  "page": {
+    "index": {
+      "title": "Abel Haro Armero's Portfolio"
+    }
+  },
+  "intro": {
+    "typewriterText": "Abel Haro Armero, Computer Engineering student at the Polytechnic University of Valencia.",
+    "viewPortfolioButton": "View Portfolio"
+  },
+  "personalInfo": {
+    "ageSuffix": "years old",
+    "cvEsLabel": "CV (ES)",
+    "cvEnLabel": "CV (EN)"
+  },
+  "footer": {
+    "rightsReserved": "All rights reserved."
   }
 }

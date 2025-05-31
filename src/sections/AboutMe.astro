@@ -1,15 +1,16 @@
 ---
-import Tecnologies from "./Tecnologies.astro"
+import Tecnologies from "./Tecnologies.astro" // This import was noted as unused in previous build logs
 import ArticleContainer from "../components/ArticleContainer.astro"
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<ArticleContainer title="Sobre mí" articleId="aboutMe">
+<ArticleContainer title={t('about.title')} articleId="aboutMe">
     <section>
         <p class="text-wrap text-lg sm:text-xl leading-relaxed">
-            Estudiante de <span class="text-custom-blue font-semibold">Ingeniería Informática</span> en la mención de Ingeniería de Computadores, actualmente cursando el
-            cuarto año con una <span class="text-custom-blue font-semibold">nota media de 8,5</span>. Sólida base teórica y habilidades técnicas en desarrollo de software y
-            resolución de problemas. Capaz de aprender rápidamente, trabajar en equipo y enfrentar desafíos con
-            creatividad y determinación.
+            {t('about.description')}
         </p>
     </section>
     

@@ -15,15 +15,15 @@ import ArticleContainer from '../components/ArticleContainer.astro';
                         {project.url && (
                             <a href={project.url} target="_blank" rel="noreferrer" class="flex gap-2 items-center">
                                 <IconPill>
-                                    <img src="icons/github.svg" alt="GitHub icon" class="w-4 sm:w-5 hover:scale-110 transition-transform" loading="lazy" />
-                                    <p class="ml-2 text-sm sm:text-base">Ver en GitHub</p>
+                                    <img src="icons/github.svg" alt="GitHub icon" class="w-4 sm:w-5 hover:scale-110 transition-transform filter dark:invert" loading="lazy" />
+                                    <p class="ml-2 text-sm sm:text-base ">Ver en GitHub</p>
                                 </IconPill>
                             </a>
                         )}
                         {project.production_url && (
                             <a href={project.production_url} target="_blank" rel="noreferrer" class="flex gap-2 items-center">
                                 <IconPill>
-                                    <img src="icons/link.svg" alt="External link icon" class="w-4 sm:w-5" loading="lazy" />
+                                    <img src="icons/link.svg" alt="External link icon" class="w-4 sm:w-5 dark:invert" loading="lazy" />
                                     <p class="ml-2 text-sm sm:text-base">Ver en producción</p>
                                 </IconPill>
                             </a>

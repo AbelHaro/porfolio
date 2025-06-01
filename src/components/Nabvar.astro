@@ -1,5 +1,6 @@
 ---
 import NavItem from "./NavItem.astro"
+import ThemeSwitcher from "./ThemeSwitcher.astro"
 const navItems = [
     { href: "#home", text: "Inicio" },
     { href: "#aboutMe", text: "Sobre mí" },
@@ -83,6 +84,11 @@ const navItems = [
         {navItems.map((item) => 
             <NavItem href={item.href} text={item.text}></NavItem>
         )}
+    </div>
+
+    <!-- Theme Switcher -->
+    <div class="absolute right-4">
+        <ThemeSwitcher />
     </div>
 
     <!-- Mobile Menu Button -->

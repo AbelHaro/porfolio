@@ -74,7 +74,7 @@ export const projects: Project[] = [
   },
   {
     title: "API para la gestión de comercio electrónico",
-    description: "API para una plataforma de gestión de comercios electrónicos, que permite a los usuarios administrar productos, categorías, pedidos y clientes. Idea extraída de roadmap.sh (https://roadmap.sh/projects/scalable-ecommerce-platform) y desarrollada en Java con Spring Boot. Utiliza PostgreSQL como base de datos y JWT para la autenticación y autorización de usuarios.",
+    description: "API para una plataforma de gestión de comercios electrónicos, que permite a los usuarios administrar productos, categorías, usuarios y pedidos. El objetivo del proyecto es aprender a desarrollar APIs RESTful utilizando Java y Spring Boot, implementando buenas prácticas de desarrollo y diseño de software.",
     url: "https://github.com/AbelHaro/ecommerce",
     technologies: [
       {

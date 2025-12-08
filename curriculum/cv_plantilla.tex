@@ -157,14 +157,9 @@
 \section{\textbf{\ifdefined\spanish Sobre mí\else About me\fi}}
 \vspace{0.1cm}
 \ifdefined\spanish
-  Estudiante de Ingeniería Informática, actualmente en el cuarto año. Poseo una sólida base teórica
-y habilidades técnicas en desarrollo de software y resolución de
-problemas. Aprendo rápido, trabajo bien en equipo y soy hábil para enfrentar
-desafíos con creatividad y determinación.
+            Estudiante del Máster en Ingeniería de Computadores y Redes en la Universitat Politècnica de València. Apasionado por la tecnología y el desarrollo de aplicaciones, siempre estoy buscando aprender nuevas habilidades y mejorar mis conocimientos en el campo de la informática.
 \else
-  Computer Engineering student, currently in the fourth year. Possess a strong theoretical foundation
-and technical skills in software development and problem-solving. Quick learner, 
-team player, and adept at facing challenges with creativity and determination.
+            Student of the Master’s Degree in Computer and Network Engineering at the Universitat Politècnica de València. Passionate about technology and application development, I am always looking to learn new skills and improve my knowledge in the field of computer science.
 \fi
 \vspace{-5.5mm}
 \vspace{0.3cm}
@@ -172,10 +167,17 @@ team player, and adept at facing challenges with creativity and determination.
 %-----------EDUCATION-----------
 \section{\textbf{\ifdefined\spanish Educación\else Education\fi}}
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {Universitat Politècnica de València}{\ifdefined\spanish nota media 8,4\else average grade 8.4\fi}
-      {\ifdefined\spanish Ingeniería Informática\else Computer Engineering\fi}
-      {\ifdefined\spanish 2021 - presente\else 2021 - present\fi}
+      \resumeSubheading
+      {\ifdefined\spanish Máster en Ingeniería de Computadores y Redes\else Master’s Degree in Computer and Network Engineering\fi}
+      {}
+      {Universitat Politècnica de València}
+      {\ifdefined\spanish septiembre 2025 - presente \else september 2025 - present\fi}
+
+      \resumeSubheading
+      {\ifdefined\spanish Grado en Ingeniería Informática\else Computer Engineering\fi}
+      {\ifdefined\spanish nota media 8,6\else average grade 8.6\fi}
+      {Universitat Politècnica de València}
+      {\ifdefined\spanish septiembre 2021 - julio 2025 \else september 2021 - july 2025\fi}
   \resumeSubHeadingListEnd
 \vspace{-5.5mm}
 
@@ -205,7 +207,7 @@ team player, and adept at facing challenges with creativity and determination.
     \resumeProject
       {\ifdefined\spanish Prácticas en el Departamento DISCA de la UPV\else Internship at the DISCA Department, UPV\fi}
       {\ifdefined\spanish Universitat Politècnica de València\else Universitat Politècnica de València\fi}
-      {\ifdefined\spanish Octubre 2024 - presente\else October 2024 - Present\fi}
+      {\ifdefined\spanish octubre 2024 - julio 2025 \else october 2024 - july 2025\fi}
       {}
     \resumeItemListStart
         \item {\ifdefined\spanish Desarrollo de un sistema de detección de defectos en objetos mediante imágenes, utilizando redes neuronales.\else Developed a system for detecting defects in objects from images using neural networks.\fi}
@@ -218,7 +220,7 @@ team player, and adept at facing challenges with creativity and determination.
     \resumeProject
       {\ifdefined\spanish Prácticas en SOLTECSIS S.L.\else Internship at SOLTECSIS S.L.\fi}
       {\ifdefined\spanish SOLTECSIS S.L.\else SOLTECSIS S.L.\fi}
-      {\ifdefined\spanish Julio 2024\else July 2024\fi}
+      {\ifdefined\spanish julio 2024\else july 2024\fi}
       {}
     \resumeItemListStart
         \item {\ifdefined\spanish Depuración y corrección de errores durante la migración del proyecto de código abierto \href{https://github.com/soltecsis/fwcloud-api}{\underline{FWCloud}} de JavaScript a TypeScript.\else Performed debugging and bug fixing during the migration of the open-source \href{https://github.com/soltecsis/fwcloud-api}{\underline{FWCloud}} project from JavaScript to TypeScript.\fi}
@@ -242,29 +244,42 @@ team player, and adept at facing challenges with creativity and determination.
       \resumeItemListEnd
 
     \resumeProject
-      {\ifdefined\spanish Detección de defectos en objetos mediante redes neuronales convolucionales\else Defect detection in objects using convolutional neural networks\fi}
+      {\href{https://github.com/AbelHaro/TFG}{\ifdefined\spanish Detección de defectos en objetos mediante redes neuronales convolucionales\else Defect detection in objects using convolutional neural networks \fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGithub}}}
       {\ifdefined\spanish Proyecto de Fin de Grado en Ingeniería Informática.\else Final Degree Project in Computer Engineering.\fi}
       {\ifdefined\spanish Octubre 2024 - Junio 2025\else October 2024 - June 2025\fi}
       {}
     \resumeItemListStart
         \item {
           \ifdefined\spanish
-            Desarrollo de un sistema para la detección de defectos en objetos a partir de imágenes, empleando redes neuronales convolucionales. Se utilizó el framework UltraLytics para el entrenamiento y la inferencia con modelos YOLO, optimizados para hardware NVIDIA Jetson mediante el SDK TensorRT. El sistema permite la detección de defectos en tiempo real y el análisis de imágenes para la identificación de fallos en productos industriales.
+            Desarrollo de un sistema para la detección de defectos en objetos a partir de imágenes, empleando redes neuronales convolucionales. Se utilizó el framework Ultralytics para el entrenamiento y la inferencia con modelos YOLO, optimizados para hardware NVIDIA Jetson mediante el SDK TensorRT. El sistema permite la detección de defectos en tiempo real y el análisis de imágenes para la identificación de fallos en productos industriales.
           \else
             Developed a system for detecting defects in objects from images using convolutional neural networks. Utilized the Ultralytics framework for training and deploying YOLO models, which were optimized for NVIDIA Jetson hardware with the TensorRT SDK. The system enables real-time defect detection and image analysis for identifying defects in industrial products.
           \fi
         }
     \resumeItemListEnd
 
-    \resumeProject
-      {\href{https://porfolio-red-sigma.vercel.app/}{\ifdefined\spanish Porfolio\else Portfolio\fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGithub}}}
-      {\ifdefined\spanish Proyecto personal\else Personal project\fi}
-      {\ifdefined\spanish Mayo 2025\else May 2025\fi}
+    % \resumeProject
+    %   {\href{https://porfolio-red-sigma.vercel.app/}{\ifdefined\spanish Porfolio\else Portfolio\fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGithub}}}
+    %   {\ifdefined\spanish Proyecto personal\else Personal project\fi}
+    %   {\ifdefined\spanish Mayo 2025\else May 2025\fi}
+  
+    % \resumeItemListStart
+    %     \item {\ifdefined\spanish Herramientas y tecnologías utilizadas\else Tools \& technologies used\fi: Astro, Tailwind CSS, TypeScript.}
+    %     \item {\ifdefined\spanish El objetivo del proyecto es crear un portafolio personal para mostrar mis proyectos y habilidades. El portafolio está diseñado para ser visualmente atractivo y fácil de navegar, permitiendo a los visitantes explorar mis trabajos anteriores y obtener información sobre mis habilidades y experiencia.\else The goal of the project is to create a personal portfolio to showcase my projects and skills. The portfolio is designed to be visually appealing and easy to navigate, allowing visitors to explore my previous work and learn about my skills and experience.\fi}
+    % \resumeItemListEnd
+
+      \resumeProject
+      {\href{https://github.com/AbelHaro/ecommerce}{\ifdefined\spanish API de comercio electrónico\else E-commerce API\fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGithub}}}
+      {\ifdefined\spanish Proyecto personal (en desarrollo)\else Personal project (in development)\fi}
+      {\ifdefined\spanish Octubre 2025\else October 2025\fi}
   
     \resumeItemListStart
-        \item {\ifdefined\spanish Herramientas y tecnologías utilizadas\else Tools \& technologies used\fi: Astro, Tailwind CSS, TypeScript.}
-        \item {\ifdefined\spanish El objetivo del proyecto es crear un portafolio personal para mostrar mis proyectos y habilidades. El portafolio está diseñado para ser visualmente atractivo y fácil de navegar, permitiendo a los visitantes explorar mis trabajos anteriores y obtener información sobre mis habilidades y experiencia.\else The goal of the project is to create a personal portfolio to showcase my projects and skills. The portfolio is designed to be visually appealing and easy to navigate, allowing visitors to explore my previous work and learn about my skills and experience.\fi}
+        \item {\ifdefined\spanish Herramientas y tecnologías utilizadas\else Tools \& technologies used\fi: Java, Spring Boot, Docker, Kafka.}
+        \item {\ifdefined\spanish API para gestionar productos, usuarios y pedidos de manera eficiente.\else API to efficiently manage products, users, and orders.\fi}
+        \item {\ifdefined\spanish El objetivo del proyecto es aprender a desarrollar APIs RESTful utilizando Java y Spring Boot, implementando buenas prácticas de desarrollo y diseño de software.\else The goal of the project is to learn how to develop RESTful APIs using Java and Spring Boot, implementing best practices in software development and design.\fi}
     \resumeItemListEnd
+
+
   \resumeSubHeadingListEnd
 \vspace{-5.5mm}
 

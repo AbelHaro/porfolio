@@ -10,7 +10,7 @@ export const experience: Experience[] = [
     title: "Prácticas en el Departamento DISCA de la UPV",
     description:
       "Desarrollo de un sistema de detección de defectos en objetos mediante imágenes, utilizando redes neuronales convolucionales (CNNs). Investigación y experimentación con diferentes arquitecturas y datasets para optimizar la precisión y eficiencia del modelo. Uso de dispositivos NVIDIA Jetson para la implementación del sistema en hardware de bajo consumo.",
-    date: "Octubre 2024 - presente",
+    date: "Octubre 2024 - Julio 2025",
     place: "Valencia, España",
   },
   {

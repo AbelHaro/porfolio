@@ -12,6 +12,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+
   {
     title: "DescubreUPV",
     description:
@@ -70,5 +71,30 @@ export const projects: Project[] = [
     date: "Mayo 2024",
     image: undefined,
     production_url: "https://porfolio-red-sigma.vercel.app/",
+  },
+  {
+    title: "API para la gestión de comercio electrónico",
+    description: "API para una plataforma de gestión de comercios electrónicos, que permite a los usuarios administrar productos, categorías, pedidos y clientes. Idea extraída de roadmap.sh (https://roadmap.sh/projects/scalable-ecommerce-platform) y desarrollada en Java con Spring Boot. Utiliza PostgreSQL como base de datos y JWT para la autenticación y autorización de usuarios.",
+    url: "https://github.com/AbelHaro/ecommerce",
+    technologies: [
+      {
+        name: "Java",
+        source: "/icons/java.svg",
+      },
+      {
+        name: "Spring Boot",
+        source: "/icons/spring.svg",
+      },
+      {
+        name: "PostgreSQL",
+        source: "/icons/postgresql.svg",
+      },
+      {
+        name: "kafka",
+        source: "/icons/kafka.svg",
+      },
+    ],
+    date: "Presente",
+    image: undefined,
   },
 ];

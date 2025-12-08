@@ -2,6 +2,7 @@
 import { projects } from '../data/projects';
 import IconPill from '../components/IconPill.astro';
 import ArticleContainer from '../components/ArticleContainer.astro';
+import TechnologyIcon from '../components/TechnologyIcon.astro';
 ---
 
 <ArticleContainer title="Proyectos" articleId="projects">
@@ -24,7 +25,7 @@ import ArticleContainer from '../components/ArticleContainer.astro';
                             <a href={project.production_url} target="_blank" rel="noreferrer" class="flex gap-2 items-center">
                                 <IconPill>
                                     <img src="icons/link.svg" alt="External link icon" class="w-4 sm:w-5 dark:invert" loading="lazy" />
-                                    <p class="ml-2 text-sm sm:text-base">Ver en producción</p>
+                                    <p class="ml-2 text-sm sm:text-base"></p>
                                 </IconPill>
                             </a>
                         )}
@@ -50,10 +51,10 @@ import ArticleContainer from '../components/ArticleContainer.astro';
                         <!-- Technologies -->
                         <div class="flex flex-row flex-wrap gap-2 sm:gap-3">
                             {project.technologies.map((technology) => (
-                                <IconPill key={technology.name}>
+                                <TechnologyIcon key={technology.name}>
                                     <img src={technology.source || "/placeholder.svg"} alt={`${technology.name} logo`} class="w-3 sm:w-4" loading="lazy" />
                                     <p class="pl-2 text-sm sm:text-base">{technology.name}</p>
-                                </IconPill>
+                                </TechnologyIcon>
                             ))}
                         </div>
                     </div>

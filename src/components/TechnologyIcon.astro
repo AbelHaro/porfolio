@@ -1,0 +1,16 @@
+<style>
+    .tech-badge {
+      background: linear-gradient(135deg, rgba(99, 102, 230, 0.12), rgba(56, 189, 248, 0.08));
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    @media (max-width: 640px) {
+      .tech-badge {
+        min-height: 44px; /* Ensure minimum touch target size */
+      }
+    }
+</style>
+  
+<div class="tech-badge flex items-center gap-3 py-2 sm:py-2 px-3 sm:px-4 border border-custom-blue rounded-xl ">
+    <slot />
+</div>

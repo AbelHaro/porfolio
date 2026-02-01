@@ -16,7 +16,7 @@ export const experience: Experience[] = [
   {
     title: "Prácticas en SOLTECSIS S.L.",
     description:
-      "Depuración y corrección de errores durante la migración del proyecto de código abierto FWCloud de JavaScript a TypeScript. Colaboración en la refactorización del código base para mejorar la mantenibilidad y escalabilidad. Implementación de pruebas unitarias y de integración para garantizar la calidad del software.",
+      "Depuración y corrección de errores durante la migración del proyecto de código abierto FWCloud de JavaScript a TypeScript. Colaboración en la refactorización del código base para mejorar la mantenibilidad.",
     date: "Julio 2024",
     place: "Altea, España",
   },

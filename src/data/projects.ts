@@ -12,6 +12,36 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "Safe Art - Sensorización IoT",
+    description:
+      "Proyecto para la asignatura RISA (Redes de Sensores y Actuadores) que consiste en el desarrollo de un sistema de sensorización IoT para la monitorización y protección de obras de arte. El sistema incluye el desarrollo del comportamiento del sensor para la toma de datos y comunicación con la plataforma, así como el desarrollo de una plataforma web para la visualización de datos en tiempo real y gestión de alertas. Utiliza Typescript, Convex, MQTT, C++ y React.",
+    url: "https://github.com/AbelHaro/safe-art",
+    technologies: [
+      {
+        name: "TypeScript",
+        source: "/icons/typescript.svg",
+      },
+      {
+        name: "Convex",
+        source: "/icons/convex.svg",
+      },
+      {
+        name: "MQTT",
+        source: "/icons/mqtt.svg",
+      },
+      {
+        name: "C++",
+        source: "/icons/cpp.svg",
+      },
+      {
+        name: "React",
+        source: "/icons/react.svg",
+      },
+    ],
+    date: "Enero 2026",
+    image: undefined,
+  },
 
   {
     title: "DescubreUPV",
@@ -36,10 +66,10 @@ export const projects: Project[] = [
     image: "/images/descubreupv.webp",
   },
   {
-    title: "Detección de defectos en objetos mediante redes neuronales",
+    title: "Detección de defectos en objetos",
     description:
       "Sistema para la detección de defectos en objetos a partir de imágenes, empleando redes neuronales convolucionales. Se utilizó el framework Ultralytics para el entrenamiento y la inferencia con modelos YOLO, optimizados para hardware NVIDIA Jetson mediante el SDK TensorRT. El sistema permite la detección de defectos en tiempo real y el análisis de imágenes para la identificación de fallos en productos industriales.",
-    url: undefined,
+    url: "https://github.com/AbelHaro/TFG",
     technologies: [
       {
         name: "Python",
@@ -72,29 +102,29 @@ export const projects: Project[] = [
     image: undefined,
     production_url: "https://porfolio-red-sigma.vercel.app/",
   },
-  {
-    title: "API para la gestión de comercio electrónico",
-    description: "API para una plataforma de gestión de comercios electrónicos, que permite a los usuarios administrar productos, categorías, usuarios y pedidos. El objetivo del proyecto es aprender a desarrollar APIs RESTful utilizando Java y Spring Boot, implementando buenas prácticas de desarrollo y diseño de software.",
-    url: "https://github.com/AbelHaro/ecommerce",
-    technologies: [
-      {
-        name: "Java",
-        source: "/icons/java.svg",
-      },
-      {
-        name: "Spring Boot",
-        source: "/icons/spring.svg",
-      },
-      {
-        name: "PostgreSQL",
-        source: "/icons/postgresql.svg",
-      },
-      {
-        name: "kafka",
-        source: "/icons/kafka.svg",
-      },
-    ],
-    date: "Presente",
-    image: undefined,
-  },
+  // {
+  //   title: "API para la gestión de comercio electrónico",
+  //   description: "API para una plataforma de gestión de comercios electrónicos, que permite a los usuarios administrar productos, categorías, usuarios y pedidos. El objetivo del proyecto es aprender a desarrollar APIs RESTful utilizando Java y Spring Boot, implementando buenas prácticas de desarrollo y diseño de software.",
+  //   url: "https://github.com/AbelHaro/ecommerce",
+  //   technologies: [
+  //     {
+  //       name: "Java",
+  //       source: "/icons/java.svg",
+  //     },
+  //     {
+  //       name: "Spring Boot",
+  //       source: "/icons/spring.svg",
+  //     },
+  //     {
+  //       name: "PostgreSQL",
+  //       source: "/icons/postgresql.svg",
+  //     },
+  //     {
+  //       name: "kafka",
+  //       source: "/icons/kafka.svg",
+  //     },
+  //   ],
+  //   date: "Presente",
+  //   image: undefined,
+  // },
 ];

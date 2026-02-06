@@ -1,0 +1,93 @@
+---
+import "../../styles/global.css";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const posts = (await getCollection("blog")) as CollectionEntry<"blog">[];
+posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>Blog | Abel Haro Armero</title>
+    <meta
+      name="description"
+      content="Blog personal sobre libros y lecturas de Abel Haro Armero."
+    />
+    <script>
+      const theme = localStorage.getItem("theme") || "system";
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      const shouldUseDark =
+        theme === "dark" || (theme === "system" && prefersDark);
+      if (shouldUseDark) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      document.documentElement.dataset.theme = theme;
+    </script>
+  </head>
+  <body>
+    <main class="min-h-screen">
+      <div
+        class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-12 sm:pb-16 space-y-8"
+      >
+        <header class="space-y-3">
+          <a
+            href="/"
+            class="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors"
+          >
+            ← Volver al portafolio
+          </a>
+          <h1 class="text-3xl sm:text-4xl font-bold">Blog de lecturas</h1>
+          <p class="text-base sm:text-lg text-muted-foreground">
+            Reseñas sobre libros que vaya leyendo sobre desarrollo, tecnología y
+            otros temas de interés.
+          </p>
+        </header>
+
+        <section class="space-y-4">
+          {
+            posts.length === 0 ? (
+              <p class="text-base sm:text-lg text-muted-foreground">
+                Aún no hay entradas publicadas.
+              </p>
+            ) : (
+              <div class="grid gap-4">
+                {posts.map((post: CollectionEntry<"blog">) => (
+                  <article class="py-3 sm:py-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                      <h2 class="text-lg sm:text-xl font-semibold">
+                        <a
+                          href={`/blog/${post.slug}`}
+                          class="hover:text-custom-blue transition-colors"
+                        >
+                          {post.data.title}
+                        </a>
+                      </h2>
+                      <time class="text-xs sm:text-sm text-muted-foreground">
+                        {post.data.date.toLocaleDateString("es-ES", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </time>
+                    </div>
+                    <p class="mt-1 text-sm sm:text-base text-muted-foreground">
+                      {post.data.description}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            )
+          }
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

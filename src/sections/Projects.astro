@@ -1,32 +1,29 @@
 ---
+import { Button } from '@/components/ui/button';
 import { projects } from '../data/projects';
-import IconPill from '../components/IconPill.astro';
-import ArticleContainer from '../components/ArticleContainer.astro';
-import TechnologyIcon from '../components/TechnologyIcon.astro';
 ---
 
-<ArticleContainer title="Proyectos" articleId="projects">
     <div class="flex flex-col gap-12 sm:gap-14">
         {projects.map((project) => (
             <section class="flex flex-col">
                 <!-- Project Header -->
-                <header class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center mb-6 sm:mb-8">
-                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold">{project.title}</h3>     
+                <header class="flex flex-col sm:flex-row gap-3 sm:gap-5 items-start sm:items-center mb-5 sm:mb-7">
+                    <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold">{project.title}</h3>     
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
                         {project.url && (
                             <a href={project.url} target="_blank" rel="noreferrer" class="flex gap-2 items-center">
-                                <IconPill>
-                                    <img src="icons/github.svg" alt="GitHub icon" class="w-4 sm:w-5 hover:scale-110 transition-transform filter dark:invert" loading="lazy" />
+                                <Button variant="outline" class="flex gap-2 items-center">
+                                    <img src="/icons/github.svg" alt="GitHub icon" class="w-4 sm:w-5 hover:scale-110 transition-transform filter dark:invert" loading="lazy" />
                                     <p class="ml-2 text-sm sm:text-base ">Ver en GitHub</p>
-                                </IconPill>
+                                </Button>
                             </a>
                         )}
                         {project.production_url && (
                             <a href={project.production_url} target="_blank" rel="noreferrer" class="flex gap-2 items-center">
-                                <IconPill>
-                                    <img src="icons/link.svg" alt="External link icon" class="w-4 sm:w-5 dark:invert" loading="lazy" />
-                                    <p class="ml-2 text-sm sm:text-base"></p>
-                                </IconPill>
+                                <Button variant="outline" class="flex gap-2 items-center">
+                                    <img src="/icons/link.svg" alt="External link icon" class="w-4 sm:w-5 dark:invert" loading="lazy" />
+                                    <p class="ml-2 text-sm sm:text-base">Ver demo</p>
+                                </Button>
                             </a>
                         )}
                     </div>
@@ -39,22 +36,22 @@ import TechnologyIcon from '../components/TechnologyIcon.astro';
                             <img 
                                 src={project.image || "/placeholder.svg"} 
                                 alt={project.title} 
-                                class="w-full max-w-[280px] sm:max-w-[320px] lg:w-[200px] rounded-lg transform -rotate-1 hover:rotate-0 transition-transform duration-300 ease-in-out" 
+                                class="w-full max-w-70 sm:max-w-80 lg:w-50 rounded-lg transform -rotate-1 hover:rotate-0 transition-transform duration-300 ease-in-out" 
                                 loading="lazy" 
                             />
                         </div>
                     )}
                     
                     <div class="flex-1">
-                        <p class="text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">{project.description}</p>
+                        <p class="text-base sm:text-lg leading-relaxed mb-5 sm:mb-7">{project.description}</p>
                         
                         <!-- Technologies -->
                         <div class="flex flex-row flex-wrap gap-2 sm:gap-3">
                             {project.technologies.map((technology) => (
-                                <TechnologyIcon key={technology.name}>
-                                    <img src={technology.source || "/placeholder.svg"} alt={`${technology.name} logo`} class="w-3 sm:w-4" loading="lazy" />
-                                    <p class="pl-2 text-sm sm:text-base">{technology.name}</p>
-                                </TechnologyIcon>
+                                <span class="flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs sm:text-sm bg-background/60">
+                                    <img src={technology.source} alt={`${technology.name} icon`} class="size-4" loading="lazy" />
+                                    <span>{technology.name}</span>
+                                </span>
                             ))}
                         </div>
                     </div>
@@ -62,4 +59,3 @@ import TechnologyIcon from '../components/TechnologyIcon.astro';
             </section>
         ))}
     </div>
-</ArticleContainer>

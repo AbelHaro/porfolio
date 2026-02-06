@@ -1,18 +1,19 @@
 ---
-import IconPill from "../components/IconPill.astro";
+import { Button } from "@/components/ui/button";
+
 ---
 
-<section id="home" class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-0 text-lg sm:text-xl font-medium pt-16 sm:pt-20 lg:pt-24">
+<section id="home" class="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-0 text-base sm:text-lg font-medium pt-10 sm:pt-12 lg:pt-14">
     <!-- Personal Details -->
     <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
         <div class="flex flex-col">
-            <span class="text-2xl sm:text-3xl lg:text-2xl font-bold mb-2">
+            <span class="text-2xl sm:text-3xl lg:text-3xl font-bold mb-2">
                 Abel Haro Armero
             </span>
-            <span class="text-lg sm:text-xl">
+            <span class="text-base sm:text-lg">
                 22 años
             </span>
-            <span class="text-lg sm:text-xl">
+            <span class="text-base sm:text-lg">
                 Altea / Valencia
             </span>
         </div>
@@ -27,27 +28,27 @@ import IconPill from "../components/IconPill.astro";
         
         <!-- GitHub -->
         <a href="https://github.com/AbelHaro" class="flex flex-row items-center gap-2 hover:text-custom-blue transition-colors" target="_blank" rel="noreferrer">
-            <img src="icons/github.svg" alt="github icon" class="size-4 sm:size-5 hover:scale-110 transition-transform dark:invert" loading="lazy"/>
+            <img src="/icons/github.svg" alt="github icon" class="size-4 sm:size-5 hover:scale-110 transition-transform dark:invert" loading="lazy"/>
             <span class="text-base sm:text-lg">AbelHaro</span>
         </a>
         
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/abel-haro-54bb6518a" class="flex flex-row items-center gap-2 hover:text-custom-blue transition-colors" target="_blank" rel="noreferrer">
-            <img src="icons/linkedin.svg" alt="linkedin icon" class="size-4 sm:size-5 hover:scale-110 transition-transform" loading="lazy"/>
+            <img src="/icons/linkedin.svg" alt="linkedin icon" class="size-4 sm:size-5 hover:scale-110 transition-transform" loading="lazy"/>
             <span class="text-base sm:text-lg">Abel Haro</span>
         </a>
         
         <!-- CV Downloads -->
         <div class="flex flex-row justify-center lg:justify-end items-center gap-3 sm:gap-4 mt-4">
             <a href="/curriculum/abel_haro_armero_cv_es.pdf" target="_blank" rel="noreferrer">
-                <IconPill>
+                <Button variant="outline" class="flex gap-2 items-center">
                     <span class="text-sm sm:text-base">CV (ES)</span>
-                </IconPill>
+                </Button>
             </a>
             <a href="/curriculum/abel_haro_armero_cv_en.pdf" target="_blank" rel="noreferrer">
-                <IconPill>
+                <Button variant="outline" class="flex gap-2 items-center">
                     <span class="text-sm sm:text-base">CV (EN)</span>
-                </IconPill>
+                </Button>
             </a>
         </div>
     </div>

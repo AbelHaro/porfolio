@@ -63,7 +63,7 @@ export const projects: Project[] = [
       },
     ],
     date: "Mayo 2025",
-    image: "/images/descubreupv.webp",
+    //image: "/images/descubreupv.webp",
   },
   {
     title: "Detección de defectos en objetos",
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     ],
     date: "Mayo 2024",
     image: undefined,
-    production_url: "https://porfolio-red-sigma.vercel.app/",
+    // production_url: "https://porfolio-red-sigma.vercel.app/",
   },
   // {
   //   title: "API para la gestión de comercio electrónico",

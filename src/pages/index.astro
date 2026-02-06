@@ -1,91 +1,60 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../sections/Hero.astro';
-import AboutMe from '../sections/AboutMe.astro';
-import PersonalInfo from '../sections/PersonalInfo.astro';
-import Projects from '../sections/Projects.astro';
-import Footer from '../sections/Footer.astro';
-import Experience from '../sections/Experience.astro';
-import Contact from '../sections/Contact.astro';
+import '../styles/global.css';
+import AboutMe from '@/sections/AboutMe.astro';
+import Experience from '@/sections/Experience.astro';
+import Projects from '@/sections/Projects.astro';
+import PersonalInfo from '@/sections/PersonalInfo.astro';
+import Footer from '@/sections/Footer.astro';
+import Nabvar from '@/components/Nabvar.astro';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
 ---
 
-<Layout title="Porfolio de Abel Haro Armero">
-	<!-- <Intro/> -->
-	<Hero />
-	<main class="flex flex-col min-h-screen main-content">
-		<PersonalInfo />
-		<AboutMe />
-		<Experience />
-		<Projects/>
-		<Contact/>
-	</main>
-	<Footer/>
-</Layout>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Portafolio personal de Abel Haro Armero: experiencia, proyectos y tecnologías." />
+		<title>Abel Haro Armero | Portafolio</title>
+		<script>
+			const theme = localStorage.getItem("theme") || "system";
+			const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			const shouldUseDark = theme === "dark" || (theme === "system" && prefersDark);
+			if (shouldUseDark) {
+				document.documentElement.classList.add("dark");
+			} else {
+				document.documentElement.classList.remove("dark");
+			}
+			document.documentElement.dataset.theme = theme;
+		</script>
+	</head>
 
-<style>
-	@font-face {
-		font-family: 'RobotoSlab';
-		src: url('/fonts/RobotoSlab-VariableFont_wght.ttf') format('truetype');
-		font-weight: 100 900;
-		font-style: normal;
-	}
-	
-	html {
-		font-family: 'RobotoSlab', sans-serif;
-		scroll-behavior: smooth;
-	}
+	<body>
+		<main class="min-h-screen">
+			<div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-10 sm:pb-14 space-y-12 sm:space-y-16">
+				<Nabvar />
+				<PersonalInfo />
 
-	.main-content {
-		/* Mobile-first approach */
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
+				<section id="about" class="space-y-5">
+					<h2 class="text-2xl sm:text-3xl font-bold">Sobre mí</h2>
+					<AboutMe />
+				</section>
 
-	/* Small mobile devices (320px and up) */
-	@media (min-width: 320px) {
-		.main-content {
-			padding-left: 1.25rem;
-			padding-right: 1.25rem;
-		}
-	}
+				<section id="experience" class="space-y-5">
+					<h2 class="text-2xl sm:text-3xl font-bold">Experiencia</h2>
+					<Experience />
+				</section>
 
-	/* Large mobile devices (480px and up) */
-	@media (min-width: 480px) {
-		.main-content {
-			padding-left: 2rem;
-			padding-right: 2rem;
-		}
-	}
-
-	/* Tablets (768px and up) */
-	@media (min-width: 768px) {
-		.main-content {
-			padding-left: 4rem;
-			padding-right: 4rem;
-		}
-	}
-
-	/* Small laptops (1024px and up) */
-	@media (min-width: 1024px) {
-		.main-content {
-			padding-left: 8rem;
-			padding-right: 8rem;
-		}
-	}
-
-	/* Large screens (1280px and up) */
-	@media (min-width: 1280px) {
-		.main-content {
-			padding-left: 16rem;
-			padding-right: 16rem;
-		}
-	}
-
-	/* Extra large screens (1536px and up) */
-	@media (min-width: 1536px) {
-		.main-content {
-			padding-left: 24rem;
-			padding-right: 24rem;
-		}
-	}
-</style>
+				<section id="projects" class="space-y-5">
+					<h2 class="text-2xl sm:text-3xl font-bold">Proyectos</h2>
+					<Projects />
+				</section>
+			</div>
+			<Footer />
+		</main>
+	</body>
+</html>

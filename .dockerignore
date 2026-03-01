@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build artifacts — must be rebuilt fresh inside Docker
+dist/
+.vercel/
+.astro/
+
+# Git
+.git/
+.gitignore
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*

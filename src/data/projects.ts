@@ -13,6 +13,37 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Acortador de URLs",
+    description:
+      "Aplicación web para acortar URLs y compartir enlaces de manera sencilla. Desarrollada con React para el frontend y Go para el backend, utilizando una base de datos PostgreSQL para almacenar las URLs acortadas y sus correspondientes destinos. La aplicación permite a los usuarios generar enlaces cortos. El proyecto esta desplegado en DigitalOcean y utiliza Dokploy para la gestión de despliegues y Docker para la contenedorización de la aplicación. (Actualmente en desarrollo y mejora)",
+    url: "https://github.com/AbelHaro/url-shortener",
+    technologies: [
+      {
+        name: "React",
+        source: "/icons/react.svg",
+      },
+      {
+        name: "Golang",
+        source: "/icons/go-gopher.svg",
+      },
+      {
+        name: "PostgreSQL",
+        source: "/icons/postgresql.svg",
+      },
+      {
+        name: "Docker",
+        source: "/icons/docker.svg",
+      },
+      {
+        name: "DigitalOcean",
+        source: "/icons/digitalocean.svg",
+      },
+    ],
+    date: "Marzo 2026",
+    image: undefined,
+    production_url: "https://url-shortener.abelharo.me",
+  },
+  {
     title: "Safe Art - Sensorización IoT",
     description:
       "Proyecto para la asignatura RISA (Redes de Sensores y Actuadores) que consiste en el desarrollo de un sistema de sensorización IoT para la monitorización y protección de obras de arte. El sistema incluye el desarrollo del comportamiento del sensor para la toma de datos y comunicación con la plataforma, así como el desarrollo de una plataforma web para la visualización de datos en tiempo real y gestión de alertas. Utiliza Typescript, Convex, MQTT, C++ y React.",

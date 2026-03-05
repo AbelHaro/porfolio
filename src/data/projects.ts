@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     title: "Acortador de URLs",
     description:
-      "Aplicación web para acortar URLs y compartir enlaces de manera sencilla. Desarrollada con React para el frontend y Go para el backend, utilizando una base de datos PostgreSQL para almacenar las URLs acortadas y sus correspondientes destinos. La aplicación permite a los usuarios generar enlaces cortos. El proyecto esta desplegado en DigitalOcean y utiliza Dokploy para la gestión de despliegues y Docker para la contenedorización de la aplicación. (Actualmente en desarrollo y mejora)",
+      "Aplicación web para acortar URLs y compartir enlaces de manera sencilla. Desarrollada con React para el frontend y Go para el backend, utilizando una base de datos PostgreSQL para almacenar las URLs acortadas y sus correspondientes destinos. La aplicación permite a los usuarios generar enlaces cortos. El proyecto está desplegado en DigitalOcean y utiliza Dokploy para la gestión de despliegues y Docker para la contenedorización de la aplicación. (Actualmente en desarrollo y mejora)",
     url: "https://github.com/AbelHaro/url-shortener",
     technologies: [
       {
@@ -46,7 +46,7 @@ export const projects: Project[] = [
   {
     title: "Safe Art - Sensorización IoT",
     description:
-      "Proyecto para la asignatura RISA (Redes de Sensores y Actuadores) que consiste en el desarrollo de un sistema de sensorización IoT para la monitorización y protección de obras de arte. El sistema incluye el desarrollo del comportamiento del sensor para la toma de datos y comunicación con la plataforma, así como el desarrollo de una plataforma web para la visualización de datos en tiempo real y gestión de alertas. Utiliza Typescript, Convex, MQTT, C++ y React.",
+      "Proyecto para la asignatura RISA (Redes de Sensores y Actuadores) que consiste en el desarrollo de un sistema de sensorización IoT para la monitorización y protección de obras de arte. El sistema incluye el desarrollo del comportamiento del sensor para la toma de datos y comunicación con la plataforma, así como el desarrollo de una plataforma web para la visualización de datos en tiempo real y gestión de alertas. Utiliza TypeScript, Convex, MQTT, C++ y React.",
     url: "https://github.com/AbelHaro/safe-art",
     technologies: [
       {
@@ -94,7 +94,6 @@ export const projects: Project[] = [
       },
     ],
     date: "Mayo 2025",
-    //image: "/images/descubreupv.webp",
   },
   {
     title: "Detección de defectos en objetos",
@@ -131,31 +130,5 @@ export const projects: Project[] = [
     ],
     date: "Mayo 2024",
     image: undefined,
-    // production_url: "https://porfolio-red-sigma.vercel.app/",
   },
-  // {
-  //   title: "API para la gestión de comercio electrónico",
-  //   description: "API para una plataforma de gestión de comercios electrónicos, que permite a los usuarios administrar productos, categorías, usuarios y pedidos. El objetivo del proyecto es aprender a desarrollar APIs RESTful utilizando Java y Spring Boot, implementando buenas prácticas de desarrollo y diseño de software.",
-  //   url: "https://github.com/AbelHaro/ecommerce",
-  //   technologies: [
-  //     {
-  //       name: "Java",
-  //       source: "/icons/java.svg",
-  //     },
-  //     {
-  //       name: "Spring Boot",
-  //       source: "/icons/spring.svg",
-  //     },
-  //     {
-  //       name: "PostgreSQL",
-  //       source: "/icons/postgresql.svg",
-  //     },
-  //     {
-  //       name: "kafka",
-  //       source: "/icons/kafka.svg",
-  //     },
-  //   ],
-  //   date: "Presente",
-  //   image: undefined,
-  // },
 ];

@@ -1,5 +1,5 @@
 ---
-
+import { Button } from "@/components/ui/button";
 ---
 
 <>
@@ -12,24 +12,92 @@
     </p>
   </section>
 
-  <section class="gap-2 mt-6 sm:mt-8">
+  <section class="flex flex-col gap-2 mt-6 sm:mt-8">
     <h4 class="text-xl sm:text-2xl mb-3">Educación</h4>
-    <p class="text-base sm:text-lg">
-      Máster en Ingeniería de Computadores y Redes en la Universitat Politècnica
-      de València
-    </p>
-    <p class="text-xs sm:text-sm sm:text-left">Septiembre 2025 - actualidad</p>
-    <p class="text-base sm:text-lg">
-      Grado en Ingeniería Informática en la Universitat Politècnica de València
-    </p>
-    <p class="text-xs sm:text-sm sm:text-left">Septiembre 2021 - Julio 2025</p>
-  </section>
 
-  <section class="flex flex-col mt-6 sm:mt-8">
-    <h4 class="text-xl sm:text-2xl mb-3">Idiomas</h4>
-    <div class="space-y-2">
-      <p class="text-base sm:text-lg">Español - Nativo</p>
-      <p class="text-base sm:text-lg">Inglés - B2</p>
-    </div>
+    <article>
+      <div class="flex flex-row">
+        <p class="text-2xl sm:text-lg font-semibold">
+          Máster en Ingeniería de Computadores y Redes
+        </p>
+        <Button variant="ghost" asChild>
+          <a
+            href="https://www.upv.es/estudios/master/muicr/"
+            target="_blank"
+            rel="noreferrer"
+            class="flex items-center"
+          >
+            <img
+              src="/icons/link.svg"
+              alt="External link icon"
+              class="w-4 sm:w-5 dark:invert inline-block ml-2"
+              loading="lazy"
+            />
+          </a>
+        </Button>
+      </div>
+      <p
+        class="text-sm sm:text-base font-semibold italic mb-2 text-custom-blue"
+      >
+        Universitat Politècnica de València
+      </p>
+      <div
+        class="flex flex-col sm:flex-row sm:justify-between sm:gap-8 mt-1 text-xs sm:text-sm"
+      >
+        <p>Septiembre 2025 - actualidad</p>
+        <p
+          class="text-sm sm:text-base font-semibold italic mb-2 text-custom-blue"
+        >
+          Nota media: 9.0
+        </p>
+      </div>
+
+      <article class="pt-3">
+        <div class="flex flex-row">
+          <p class="text-2xl sm:text-lg font-semibold">
+            Grado en Ingeniería Informática
+          </p>
+          <Button variant="ghost" asChild>
+            <a
+              href="https://www.upv.es/titulaciones/GII/"
+              target="_blank"
+              rel="noreferrer"
+              class="flex items-center"
+            >
+              <img
+                src="/icons/link.svg"
+                alt="External link icon"
+                class="w-4 sm:w-5 dark:invert inline-block ml-2"
+                loading="lazy"
+              />
+            </a>
+          </Button>
+        </div>
+
+        <p
+          class="text-sm sm:text-base font-semibold italic mb-2 text-custom-blue"
+        >
+          Universitat Politècnica de València
+        </p>
+        <div
+          class="flex flex-col sm:flex-row sm:justify-between sm:gap-8 mt-1 text-xs sm:text-sm"
+        >
+          <p>Septiembre 2021 - Julio 2025</p>
+          <p
+            class="text-sm sm:text-base font-semibold italic mb-2 text-custom-blue"
+          >
+            Nota media: 8.6
+          </p>
+        </div>
+      </article>
+
+      <section class="flex flex-col mt-6 sm:mt-8">
+        <h4 class="text-xl sm:text-2xl mb-3">Idiomas</h4>
+        <div class="space-y-2">
+          <p class="text-base sm:text-lg">Español - Nativo</p>
+          <p class="text-base sm:text-lg">Inglés - B2</p>
+        </div>
+      </section>
+    </article>
   </section>
 </>

@@ -32,6 +32,8 @@
 \usepackage{graphicx}
 \usepackage{cfr-lm}
 \usepackage{ifthen}
+\input{glyphtounicode}
+\pdfgentounicode=1
 
 \setlength{\footskip}{4.08003pt} 
 \pagestyle{fancy}
@@ -129,38 +131,34 @@
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%
 %%%%%% DEFINE ELEMENTS HERE %%%%%%%
 \newcommand{\name}{Abel Haro Armero}
-\newcommand{\course}{Altea / Valencia}
-\newcommand{\phone}{685 018 048}
+\newcommand{\location}{\ifdefined\spanish Altea / Valencia, España\else Altea / Valencia, Spain\fi}
 \newcommand{\emaila}{abelh2003@gmail.com}
 \newcommand{\emailb}{ahararm@upv.es}
-\newcommand{\cvdate}{26 - 02 - 2003}
-\newcommand{\age}{\ifdefined\spanish 23 años \else 23 years old\fi}
+\newcommand{\github}{github.com/AbelHaro}
+\newcommand{\linkedin}{linkedin.com/in/abel-haro-armero-54bb6518a}
+\newcommand{\portfolio}{porfolio-red-sigma.vercel.app}
 
 \begin{document}
 \fontfamily{cmr}\selectfont
 
 %----------HEADER-----------------
-\parbox{2.6cm}{%
-\includegraphics[width=2.35cm,clip]{CV_foto.jpeg}
-}
-\parbox{\dimexpr\linewidth-2.9cm\relax}{
-\begin{tabularx}{\linewidth}{L r}
-  \textbf{\Large \name} & \href{mailto:\emaila}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {\emaila}} \\
-  \age & \href{mailto:\emailb}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {\emailb}} \\
-  {} & \href{https://github.com/AbelHaro}{\raisebox{0.0\height}{\footnotesize \faGithub}\ {AbelHaro}} \\
-  {} & \href{https://www.linkedin.com/in/abel-haro-armero-54bb6518a/}{\raisebox{0.0\height}{\footnotesize \faLinkedin}\ {Abel Haro}} \\
-  {} & \href{https://porfolio-red-sigma.vercel.app/}{\raisebox{0.0\height}{\footnotesize \faGlobe}\ {Portfolio}} \\
-
-\end{tabularx}
-}
+\begin{center}
+  {\LARGE \textbf{\name}}\\
+  \vspace{1mm}
+  \ifdefined\spanish Ingeniero Informático \else Computer Engineer \fi | \location\\
+  \vspace{1mm}
+  \href{mailto:\emaila}{\emaila} | \href{mailto:\emailb}{\emailb}\\
+  \href{https://\github}{\raisebox{0.0\height}{\footnotesize \faGithub} GitHub} | \href{https://www.\linkedin}{\raisebox{0.0\height}{\footnotesize \faLinkedin} LinkedIn} | \href{https://\portfolio}{\raisebox{0.0\height}{\footnotesize \faGlobe} Portfolio}
+\end{center}
+\vspace{-5mm}
 
 %-----------ABOUT ME-----------
-\section{\textbf{\ifdefined\spanish Sobre mí\else About me\fi}}
+\section{\textbf{\ifdefined\spanish Perfil Profesional\else Professional Summary\fi}}
 \vspace{0.1cm}
 \ifdefined\spanish
-            Estudiante del Máster en Ingeniería de Computadores y Redes en la Universitat Politècnica de València. Apasionado por la tecnología y el desarrollo de aplicaciones, siempre estoy buscando aprender nuevas habilidades y mejorar mis conocimientos en el campo de la informática.
+            Ingeniero Informático y estudiante del Máster en Ingeniería de Computadores y Redes en la Universitat Politècnica de València. Interesado especialmente en el desarrollo backend, la infraestructura cloud y el diseño de sistemas mantenibles. Motivado por resolver problemas técnicos reales, aprender de forma continua y construir soluciones robustas que conecten requisitos de producto con buenas prácticas de ingeniería.
 \else
-            Student of the Master’s Degree in Computer and Network Engineering at the Universitat Politècnica de València. Passionate about technology and application development, I am always looking to learn new skills and improve my knowledge in the field of computer science.
+            Computer Engineer and Master’s student in Computer and Network Engineering at Universitat Politècnica de València. Especially interested in backend development, cloud infrastructure and maintainable system design. Motivated by solving real technical problems, continuous learning and building robust solutions that connect product requirements with sound engineering practices.
 \fi
 \vspace{-5.5mm}
 \vspace{0.3cm}
@@ -193,11 +191,14 @@
  \vspace{-16pt}
 
 %-----------TECHNICAL SKILLS-----------------
-% \section{\textbf{\ifdefined\spanish Tecnologías utilizadas\else Technologies used\fi}}
+% \section{\textbf{\ifdefined\spanish Habilidades Técnicas\else Technical Skills\fi}}
 %  \begin{itemize}[leftmargin=0.1in, label={}]
 %     \small{\item{
-%      \textbf{\ifdefined\spanish Lenguajes\else Languages\fi}{: Java, C, Python, SQL } \\
-%      \textbf{\ifdefined\spanish Herramientas de desarrollo\else Developer Tools\fi}{: GitHub }
+%      \textbf{\ifdefined\spanish Lenguajes\else Programming Languages\fi}{: JavaScript, TypeScript, Go, Python, Java, C, C++, SQL, Kotlin} \\
+%      \textbf{\ifdefined\spanish Frontend y móvil\else Frontend and Mobile\fi}{: React, Astro, Tailwind CSS, Android} \\
+%      \textbf{\ifdefined\spanish Backend, datos y cloud\else Backend, Data and Cloud\fi}{: Node.js, PostgreSQL, SQLite, Supabase, Convex, REST APIs, Docker, DigitalOcean} \\
+%      \textbf{\ifdefined\spanish IA, IoT y sistemas\else AI, IoT and Systems\fi}{: Computer Vision, Convolutional Neural Networks, YOLO, Ultralytics, TensorRT, NVIDIA Jetson, MQTT} \\
+%      \textbf{\ifdefined\spanish Herramientas\else Tools\fi}{: Git, GitHub, Linux, CI/CD basics}
 %     }}
 %  \end{itemize}
 %  \vspace{-16pt}
@@ -211,7 +212,8 @@
       {\ifdefined\spanish octubre 2024 - julio 2025 \else october 2024 - july 2025\fi}
       {}
     \resumeItemListStart
-        \item {\ifdefined\spanish Desarrollo de un sistema de detección de defectos en objetos mediante imágenes, utilizando redes neuronales.\else Developed a system for detecting defects in objects from images using neural networks.\fi}
+        \item {\ifdefined\spanish Desarrollé un sistema de visión por computador para detectar defectos en objetos industriales a partir de imágenes, cubriendo preparación de datos, entrenamiento de modelos y validación de resultados con Python y YOLO.\else Developed a computer vision system to detect defects in industrial objects from images, covering data preparation, model training and result validation with Python and YOLO.\fi}
+        \item {\ifdefined\spanish Entrené y evalué modelos con Ultralytics, ajustando el flujo de inferencia para ejecución en hardware NVIDIA Jetson mediante TensorRT y despliegue en entornos de bajo consumo.\else Trained and evaluated models with Ultralytics, tuning the inference workflow for NVIDIA Jetson hardware with TensorRT and deployment in low-power environments.\fi}
     \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -224,7 +226,8 @@
       {\ifdefined\spanish julio 2024\else july 2024\fi}
       {}
     \resumeItemListStart
-        \item {\ifdefined\spanish Depuración y corrección de errores durante la migración del proyecto de código abierto \href{https://github.com/soltecsis/fwcloud-api}{\underline{FWCloud}} de JavaScript a TypeScript.\else Performed debugging and bug fixing during the migration of the open-source \href{https://github.com/soltecsis/fwcloud-api}{\underline{FWCloud}} project from JavaScript to TypeScript.\fi}
+        \item {\ifdefined\spanish Depuré y corregí errores durante la migración del proyecto open-source \href{https://github.com/soltecsis/fwcloud-api}{\underline{FWCloud}} de JavaScript a TypeScript, trabajando sobre módulos existentes y revisando comportamientos afectados por el tipado.\else Debugged and fixed issues during the migration of the open-source \href{https://github.com/soltecsis/fwcloud-api}{\underline{FWCloud}} project from JavaScript to TypeScript, working on existing modules and reviewing behavior affected by typing.\fi}
+        \item {\ifdefined\spanish Colaboré en la refactorización del código base para mejorar mantenibilidad, legibilidad y seguridad de tipos, siguiendo la estructura del proyecto y revisiones del equipo.\else Collaborated on codebase refactoring to improve maintainability, readability and type safety, following the project structure and team reviews.\fi}
     \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -233,79 +236,37 @@
 \resumeSubHeadingListStart
 
     \resumeProject
-      {\href{https://github.com/AbelHaro/url-shortener}{\ifdefined\spanish Url Shortener\else Url Shortener\fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGithub}}   \hspace{3mm}   \href{https://url-shortener.abelharo.me/}{\ifdefined\spanish Ver sitio web\else View website\fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGlobe}}
+      {\href{https://github.com/AbelHaro/url-shortener}{\ifdefined\spanish Url Shortener\else Url Shortener\fi}   \hspace{3mm}   \href{https://url-shortener.abelharo.me/}{\ifdefined\spanish Ver sitio web\else View website\fi}
 }
       {\ifdefined\spanish Proyecto personal\else Personal Project\fi}
       {\ifdefined\spanish Marzo 2026\else March 2026\fi}
   
     \resumeItemListStart
-        \item {\ifdefined\spanish Herramientas y tecnologías utilizadas\else Tools \& technologies used\fi: React, Golang, PostgreSQL, Docker, Digital Ocean.}
-        \item {\ifdefined\spanish Aplicación web para la creación y gestión de URLs acortadas que permite a los usuarios generar URLs cortas a partir de URLs largas, facilitando su compartición.\else Web application for creating and managing shortened URLs that allows users to generate short URLs from long URLs, making them easier to share.\fi}
-        \item {\ifdefined\spanish En este proyecto, he buscado aplicar todos mis conocimientos aprendidos durante el grado, desde el desarrollo frontend con React, hasta la implementación del backend con Golang y la gestión de la base de datos con PostgreSQL. Además, he utilizado Docker para contenerizar la aplicación y Digital Ocean para su despliegue en la nube. \else In this project, I aimed to apply all the knowledge I have acquired during my degree, from frontend development with React to backend implementation with Golang and database management with PostgreSQL. Additionally, I used Docker for containerization and Digital Ocean for cloud deployment.\fi}
-        
+        \item {\ifdefined\spanish Tecnologías: React, Go, PostgreSQL, Docker, DigitalOcean.\else Technologies: React, Go, PostgreSQL, Docker, DigitalOcean.\fi}
+        \item {\ifdefined\spanish Desarrollé una aplicación full-stack para crear, almacenar y gestionar URLs acortadas, diseñando el flujo de usuario y la comunicación entre frontend, API y base de datos.\else Developed a full-stack application to create, store and manage shortened URLs, designing the user flow and communication between frontend, API and database.\fi}
+        \item {\ifdefined\spanish Implementé frontend en React, backend en Go, persistencia en PostgreSQL, contenedorización con Docker y despliegue en DigitalOcean, priorizando una arquitectura simple y mantenible.\else Implemented the React frontend, Go backend, PostgreSQL persistence, Docker containerization and DigitalOcean deployment, prioritizing a simple and maintainable architecture.\fi}
     \resumeItemListEnd
 
     \resumeProject
-      {\href{https://github.com/AbelHaro/safe-art}{\ifdefined\spanish Safe Art - Sensorización IoT\else Safe Art - IoT Sensorization\fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGithub}}}
+      {\href{https://github.com/AbelHaro/safe-art}{\ifdefined\spanish Safe Art - Sensorización IoT\else Safe Art - IoT Sensorization\fi}}
       {\ifdefined\spanish Proyecto para la asignatura RISA (Redes de Sensores y Actuadores)\else Project for the RISA course (Sensor and Actuator Networks)\fi}
       {\ifdefined\spanish Enero 2026\else January 2026\fi}
   
     \resumeItemListStart
-        \item {\ifdefined\spanish Herramientas y tecnologías utilizadas\else Tools \& technologies used\fi: Typescript, Convex, MQTT, C++, React.}
-        \item {\ifdefined\spanish Desarrollo de un sistema de sensorización IoT para la monitorización y protección de obras de arte.\else Development of an IoT sensorization system for monitoring and protecting artworks.\fi}
-        \item {\ifdefined\spanish Desarrollo del comportamiento del sensor para la toma de datos y comunicación con la plataforma.\else Development of sensor behavior for data acquisition and communication with the platform.\fi}
-        \item {\ifdefined\spanish Desarrollo de la plataforma web para la visualización de datos en tiempo real y gestión de alertas.\else Development of the web platform for real-time data visualization and alert management.\fi}
+        \item {\ifdefined\spanish Tecnologías: TypeScript, Convex, MQTT, C++, React.\else Technologies: TypeScript, Convex, MQTT, C++, React.\fi}
+        \item {\ifdefined\spanish Desarrollé un sistema IoT para monitorizar y proteger obras de arte mediante sensores, comunicación MQTT y una plataforma orientada a alertas y datos en tiempo real.\else Developed an IoT system to monitor and protect artworks using sensors, MQTT communication and a platform focused on alerts and real-time data.\fi}
+        \item {\ifdefined\spanish Implementé la lógica del sensor en C++ y una plataforma web en React para visualizar mediciones, consultar el estado del sistema y gestionar alertas desde la interfaz.\else Implemented sensor logic in C++ and a React web platform to visualize measurements, inspect system status and manage alerts from the interface.\fi}
     \resumeItemListEnd
 
-    % \resumeProject
-    %   {\href{https://github.com/AbelHaro/DADM-Proyecto}{\ifdefined\spanish DescubreUPV\else DescubreUPV\fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGithub}}}
-    %   {\ifdefined\spanish Proyecto para la asignatura DADM(Desarrollo de Aplicaciones para Dispositivos Móviles).\else Project for the DADM (Mobile Device Application Development) subject.\fi}
-    %   {\ifdefined\spanish Mayo 2025\else May 2025\fi}
-    %   {}
-
-    %   \resumeItemListStart
-    %     \item {\ifdefined\spanish Herramientas y tecnologías utilizadas\else Tools \& technologies used\fi: Kotlin, Android Studio, Supabase.}
-    %     \item {\ifdefined\spanish El objetivo de la aplicación es ayudar a los nuevos estudiantes a conocer la universidad, sus instalaciones y servicios. Para ello, la aplicación cuenta con un mapa interactivo que permite a los usuarios explorar la universidad y encontrar información sobre diferentes edificios y servicios. \else The goal of the application is to help new students get to know the university, its facilities, and services. To achieve this, the application features an interactive map that allows users to explore the university and find information about different buildings and services.\fi}
-    %     \item {\ifdefined\spanish La aplicación esta desarrollada en Kotlin y utiliza Android Studio como entorno de desarrollo. Además, se ha utilizado Supabase como backend para almacenar y gestionar la información de las localizaciones y los usuarios. \else The application is developed in Kotlin and uses Android Studio as the development environment. Additionally, Supabase has been used as the backend to store and manage information about locations and users.\fi}
-    %   \resumeItemListEnd
-
     \resumeProject
-      {\href{https://github.com/AbelHaro/TFG}{\ifdefined\spanish Detección de defectos en objetos mediante redes neuronales convolucionales\else Defect detection in objects using convolutional neural networks \fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGithub}}}
+      {\href{https://github.com/AbelHaro/TFG}{\ifdefined\spanish Detección de defectos en objetos mediante redes neuronales convolucionales\else Defect detection in objects using convolutional neural networks \fi}}
       {\ifdefined\spanish Proyecto de Fin de Grado en Ingeniería Informática.\else Final Degree Project in Computer Engineering.\fi}
       {\ifdefined\spanish Octubre 2024 - Junio 2025\else October 2024 - June 2025\fi}
       {}
     \resumeItemListStart
-        \item {
-          \ifdefined\spanish
-            Desarrollo de un sistema para la detección de defectos en objetos a partir de imágenes, empleando redes neuronales convolucionales. Se utilizó el framework Ultralytics para el entrenamiento y la inferencia con modelos YOLO, optimizados para hardware NVIDIA Jetson mediante el SDK TensorRT. El sistema permite la detección de defectos en tiempo real y el análisis de imágenes para la identificación de fallos en productos industriales.
-          \else
-            Developed a system for detecting defects in objects from images using convolutional neural networks. Utilized the Ultralytics framework for training and deploying YOLO models, which were optimized for NVIDIA Jetson hardware with the TensorRT SDK. The system enables real-time defect detection and image analysis for identifying defects in industrial products.
-          \fi
-        }
+        \item {\ifdefined\spanish Tecnologías: Python, Computer Vision, CNN, YOLO, Ultralytics, TensorRT, NVIDIA Jetson.\else Technologies: Python, Computer Vision, CNN, YOLO, Ultralytics, TensorRT, NVIDIA Jetson.\fi}
+        \item {\ifdefined\spanish Desarrollé un sistema de detección de defectos en tiempo real para imágenes de productos industriales, comparando modelos YOLO y optimizando la inferencia en hardware de bajo consumo.\else Developed a real-time defect detection system for industrial product images, comparing YOLO models and optimizing inference on low-power hardware.\fi}
     \resumeItemListEnd
-
-    % \resumeProject
-    %   {\href{https://porfolio-red-sigma.vercel.app/}{\ifdefined\spanish Porfolio\else Portfolio\fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGithub}}}
-    %   {\ifdefined\spanish Proyecto personal\else Personal project\fi}
-    %   {\ifdefined\spanish Mayo 2025\else May 2025\fi}
-  
-    % \resumeItemListStart
-    %     \item {\ifdefined\spanish Herramientas y tecnologías utilizadas\else Tools \& technologies used\fi: Astro, Tailwind CSS, TypeScript.}
-    %     \item {\ifdefined\spanish El objetivo del proyecto es crear un portafolio personal para mostrar mis proyectos y habilidades. El portafolio está diseñado para ser visualmente atractivo y fácil de navegar, permitiendo a los visitantes explorar mis trabajos anteriores y obtener información sobre mis habilidades y experiencia.\else The goal of the project is to create a personal portfolio to showcase my projects and skills. The portfolio is designed to be visually appealing and easy to navigate, allowing visitors to explore my previous work and learn about my skills and experience.\fi}
-    % \resumeItemListEnd
-
-    %   \resumeProject
-    %   {\href{https://github.com/AbelHaro/ecommerce}{\ifdefined\spanish API de comercio electrónico\else E-commerce API\fi\hspace{1mm}\raisebox{0.0\height}{\footnotesize \faGithub}}}
-    %   {\ifdefined\spanish Proyecto personal (en desarrollo)\else Personal project (in development)\fi}
-    %   {\ifdefined\spanish Octubre 2025\else October 2025\fi}
-  
-    % \resumeItemListStart
-    %     \item {\ifdefined\spanish Herramientas y tecnologías utilizadas\else Tools \& technologies used\fi: Java, Spring Boot, Docker, Kafka.}
-    %     \item {\ifdefined\spanish API para gestionar productos, usuarios y pedidos de manera eficiente.\else API to efficiently manage products, users, and orders.\fi}
-    %     \item {\ifdefined\spanish El objetivo del proyecto es aprender a desarrollar APIs RESTful utilizando Java y Spring Boot, implementando buenas prácticas de desarrollo y diseño de software.\else The goal of the project is to learn how to develop RESTful APIs using Java and Spring Boot, implementing best practices in software development and design.\fi}
-    % \resumeItemListEnd
-
-
 
   \resumeSubHeadingListEnd
 \vspace{-5.5mm}

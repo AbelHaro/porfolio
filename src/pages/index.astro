@@ -6,20 +6,21 @@ import Projects from '@/sections/Projects.astro';
 import PersonalInfo from '@/sections/PersonalInfo.astro';
 import Footer from '@/sections/Footer.astro';
 import Nabvar from '@/components/Nabvar.astro';
+import { portfolioContent } from '@/data/portfolio';
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+const content = portfolioContent.en;
+const translations = JSON.stringify(portfolioContent);
 ---
 
-<html lang="es">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Portafolio personal de Abel Haro Armero: experiencia, proyectos y tecnologías." />
-		<title>Abel Haro Armero | Portafolio</title>
+		<meta name="description" content="Abel Haro Armero's personal portfolio: experience, projects, and technologies." />
+		<title>Abel Haro Armero | Portfolio</title>
 		<script>
 			const theme = localStorage.getItem("theme") || "system";
 			const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -36,25 +37,32 @@ import Nabvar from '@/components/Nabvar.astro';
 	<body>
 		<main class="min-h-screen">
 			<div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-10 sm:pb-14 space-y-12 sm:space-y-16">
-				<Nabvar />
-				<PersonalInfo />
-
-				<section id="about" class="space-y-5">
-					<h2 class="text-2xl sm:text-3xl font-bold">Sobre mí</h2>
-					<AboutMe />
-				</section>
-
-				<section id="experience" class="space-y-5">
-					<h2 class="text-2xl sm:text-3xl font-bold">Experiencia</h2>
-					<Experience />
-				</section>
-
-				<section id="projects" class="space-y-5">
-					<h2 class="text-2xl sm:text-3xl font-bold">Proyectos</h2>
-					<Projects />
-				</section>
+				<Nabvar content={content} />
+				<PersonalInfo content={content} />
+				<section id="about" class="space-y-5"><h2 class="text-2xl sm:text-3xl font-bold" data-i18n="headings.about">{content.headings.about}</h2><AboutMe content={content} /></section>
+				<section id="experience" class="space-y-5"><h2 class="text-2xl sm:text-3xl font-bold" data-i18n="headings.experience">{content.headings.experience}</h2><Experience content={content} /></section>
+				<section id="projects" class="space-y-5"><h2 class="text-2xl sm:text-3xl font-bold" data-i18n="headings.projects">{content.headings.projects}</h2><Projects content={content} /></section>
 			</div>
-			<Footer />
+			<Footer content={content} />
 		</main>
+		<script is:inline define:vars={{ translations }}>
+			const content = JSON.parse(translations);
+			const languageKey = "portfolio-language";
+			const read = (source, path) => path.split(".").reduce((value, segment) => value?.[segment], source);
+			const applyLanguage = (language, persist = false) => {
+				const selected = content[language];
+				document.documentElement.lang = language;
+				document.title = selected.metadata.title;
+				document.querySelector('meta[name="description"]')?.setAttribute("content", selected.metadata.description);
+				document.querySelectorAll("[data-i18n]").forEach((element) => { const value = read(selected, element.dataset.i18n); if (typeof value === "string") element.textContent = value; });
+				document.querySelectorAll("[data-i18n-attr]").forEach((element) => { const [attribute, path] = element.dataset.i18nAttr.split(":"); const value = read(selected, path); if (typeof value === "string") element.setAttribute(attribute, value); });
+				document.querySelectorAll("[data-language]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.language === language)));
+				if (persist) localStorage.setItem(languageKey, language);
+			};
+			const storedLanguage = localStorage.getItem(languageKey);
+			const initialLanguage = storedLanguage === "en" || storedLanguage === "es" ? storedLanguage : navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
+			applyLanguage(initialLanguage);
+			document.querySelectorAll("[data-language]").forEach((button) => button.addEventListener("click", () => applyLanguage(button.dataset.language, true)));
+		</script>
 	</body>
 </html>

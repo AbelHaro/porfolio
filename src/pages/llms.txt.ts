@@ -2,11 +2,11 @@ export const prerender = true;
 
 const llmsTxt = `# Abel Haro Armero
 
-> Personal portfolio of Abel Haro Armero, a computer engineer and student of the Master's Degree in Computer Engineering and Networks at the Universitat Politècnica de València (UPV). His interests include backend development, cloud infrastructure, and maintainable systems.
+> Personal portfolio of Abel Haro Armero, a computer engineer with a Master's Degree in Computer Engineering and Networks from the Universitat Politècnica de València (UPV). His focus includes backend development, cloud infrastructure, and maintainable systems.
 
 ## Main pages
 
-- [Portfolio](https://abelharo.me/): Profile, education, professional experience, technical projects, and contact information.
+- [Portfolio](https://abelharo.me/): Bilingual English/Spanish profile, education, professional experience, technical projects, and contact information.
 - [Blog](https://abelharo.me/blog/): Reading reviews about development, technology, and other topics of interest.
 
 ## Contact and profiles
@@ -20,7 +20,7 @@ const llmsTxt = `# Abel Haro Armero
 
 ## Education
 
-- Master's Degree in Computer Engineering and Networks, Universitat Politècnica de València (September 2025–present). Average grade: 9.0.
+- Master's Degree in Computer Engineering and Networks, Universitat Politècnica de València (September 2025–July 2026). Average grade: 9.0.
 - Bachelor's Degree in Computer Engineering, Universitat Politècnica de València (September 2021–July 2025). Average grade: 8.6.
 
 ## Experience

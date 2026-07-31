@@ -1,0 +1,42 @@
+---
+const { labels } = Astro.props;
+---
+
+<details class="relative">
+  <summary
+    class="list-none cursor-pointer focus-visible:border-ring focus-visible:ring-ring/50 rounded-none border border-border bg-background hover:bg-muted hover:text-foreground h-7 px-2.5 inline-flex items-center justify-center text-xs font-medium outline-none"
+    data-i18n-attr="aria-label:actions.theme"
+    aria-label={labels.theme}
+  >
+    <span aria-hidden="true">◐</span>
+    <span class="sr-only" data-i18n="actions.theme">{labels.theme}</span>
+  </summary>
+  <div class="absolute right-0 z-10 mt-2 min-w-24 border border-border bg-popover p-1 shadow-md">
+    <button type="button" class="block w-full px-2 py-1 text-left text-xs hover:bg-muted" data-theme="light" data-i18n="actions.light">{labels.light}</button>
+    <button type="button" class="block w-full px-2 py-1 text-left text-xs hover:bg-muted" data-theme="dark" data-i18n="actions.dark">{labels.dark}</button>
+    <button type="button" class="block w-full px-2 py-1 text-left text-xs hover:bg-muted" data-theme="system" data-i18n="actions.system">{labels.system}</button>
+  </div>
+</details>
+
+<script>
+  type Theme = "light" | "dark" | "system";
+
+  const applyTheme = (theme: Theme) => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.classList.toggle("dark", theme === "dark" || (theme === "system" && prefersDark));
+    document.documentElement.dataset.theme = theme;
+  };
+
+  document.querySelectorAll<HTMLButtonElement>("[data-theme]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const theme = button.dataset.theme as Theme;
+      localStorage.setItem("theme", theme);
+      applyTheme(theme);
+      button.closest("details")?.removeAttribute("open");
+    });
+  });
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (localStorage.getItem("theme") === "system" || !localStorage.getItem("theme")) applyTheme("system");
+  });
+</script>

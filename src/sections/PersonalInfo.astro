@@ -1,5 +1,5 @@
 ---
-import { Button } from "@/components/ui/button";
+const { content } = Astro.props;
 ---
 
 <section
@@ -14,8 +14,8 @@ import { Button } from "@/components/ui/button";
       <span class="text-2xl sm:text-3xl lg:text-3xl font-bold mb-2">
         Abel Haro Armero
       </span>
-      <span class="text-base sm:text-lg"> 23 años </span>
-      <span class="text-base sm:text-lg"> Altea / Valencia </span>
+      <span class="text-base sm:text-lg" data-i18n="personal.age">{content.personal.age}</span>
+      <span class="text-base sm:text-lg" data-i18n="personal.location">{content.personal.location}</span>
     </div>
   </div>
 
@@ -46,7 +46,8 @@ import { Button } from "@/components/ui/button";
     >
       <img
         src="/icons/github.svg"
-        alt="github icon"
+        alt={content.alt.github}
+        data-i18n-attr="alt:alt.github"
         class="size-4 sm:size-5 hover:scale-110 transition-transform dark:invert"
         loading="lazy"
       />
@@ -62,7 +63,8 @@ import { Button } from "@/components/ui/button";
     >
       <img
         src="/icons/linkedin.svg"
-        alt="linkedin icon"
+        alt={content.alt.linkedin}
+        data-i18n-attr="alt:alt.linkedin"
         class="size-4 sm:size-5 hover:scale-110 transition-transform"
         loading="lazy"
       />
@@ -78,18 +80,14 @@ import { Button } from "@/components/ui/button";
         target="_blank"
         rel="noreferrer"
       >
-        <Button variant="outline" class="flex gap-2 items-center">
-          <span class="text-sm sm:text-base">CV (ES)</span>
-        </Button>
+        <span class="focus-visible:border-ring focus-visible:ring-ring/50 rounded-none border border-border bg-background hover:bg-muted hover:text-foreground h-8 px-2.5 inline-flex items-center justify-center text-sm outline-none">CV (ES)</span>
       </a>
       <a
         href="/curriculum/abel_haro_armero_cv_en.pdf"
         target="_blank"
         rel="noreferrer"
       >
-        <Button variant="outline" class="flex gap-2 items-center">
-          <span class="text-sm sm:text-base">CV (EN)</span>
-        </Button>
+        <span class="focus-visible:border-ring focus-visible:ring-ring/50 rounded-none border border-border bg-background hover:bg-muted hover:text-foreground h-8 px-2.5 inline-flex items-center justify-center text-sm outline-none">CV (EN)</span>
       </a>
     </div>
   </div>

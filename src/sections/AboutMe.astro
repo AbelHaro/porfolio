@@ -3,28 +3,77 @@ const { content } = Astro.props;
 ---
 
 <section>
-  <p class="text-wrap text-base sm:text-lg leading-relaxed" data-i18n="personal.bio">{content.personal.bio}</p>
+  <p
+    class="text-wrap text-base sm:text-lg leading-relaxed"
+    data-i18n="personal.bio"
+  >
+    {content.personal.bio}
+  </p>
 </section>
 
 <section class="flex flex-col gap-2 mt-6 sm:mt-8">
-  <h3 class="text-xl sm:text-2xl mb-3" data-i18n="headings.education">{content.headings.education}</h3>
-  {(["masters", "bachelors"] as const).map((degree, index) => (
-    <article class="pt-3">
-      <div class="flex flex-row">
-        <p class="text-2xl sm:text-lg font-semibold" data-i18n={`education.${degree}`}>{content.education[degree]}</p>
-        <a href={degree === "masters" ? "https://www.upv.es/estudios/master/muicr/" : "https://www.upv.es/titulaciones/GII/"} target="_blank" rel="noreferrer" class="ml-2 flex items-center">
-          <img src="/icons/link.svg" alt={content.alt.externalLink} data-i18n-attr="alt:alt.externalLink" class="w-4 sm:w-5 dark:invert" loading="lazy" />
-        </a>
-      </div>
-      <p class="text-sm sm:text-base font-semibold italic mb-2 text-custom-blue" data-i18n="education.university">{content.education.university}</p>
-      <div class="flex flex-col sm:flex-row sm:justify-between sm:gap-8 mt-1 text-xs sm:text-sm">
-        <p data-i18n={`education.${degree}Date`}>{content.education[`${degree}Date`]}</p>
-        <p class="text-sm sm:text-base font-semibold italic mb-2 text-custom-blue"><span data-i18n="education.averageGrade">{content.education.averageGrade}</span>{index === 0 ? "9.0" : "8.6"}</p>
-      </div>
-    </article>
-  ))}
+  <h3 class="text-xl sm:text-2xl mb-3" data-i18n="headings.education">
+    {content.headings.education}
+  </h3>
+  {
+    (["masters", "bachelors"] as const).map((degree, index) => (
+      <article class="pt-3">
+        <div class="flex flex-row">
+          <p
+            class="text-2xl sm:text-lg font-semibold"
+            data-i18n={`education.${degree}`}
+          >
+            {content.education[degree]}
+          </p>
+          <a
+            href={
+              degree === "masters"
+                ? "https://www.upv.es/estudios/master/muicr/"
+                : "https://www.upv.es/titulaciones/GII/"
+            }
+            target="_blank"
+            rel="noreferrer"
+            class="ml-2 flex items-center"
+          >
+            <img
+              src="/icons/link.svg"
+              alt={content.alt.externalLink}
+              data-i18n-attr="alt:alt.externalLink"
+              class="w-4 sm:w-5 dark:invert"
+              loading="lazy"
+            />
+          </a>
+        </div>
+        <p
+          class="text-sm sm:text-base font-semibold italic mb-2 text-custom-blue"
+          data-i18n="education.university"
+        >
+          {content.education.university}
+        </p>
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:gap-8 mt-1 text-xs sm:text-sm">
+          <p data-i18n={`education.${degree}Date`}>
+            {content.education[`${degree}Date`]}
+          </p>
+          <p class="text-sm sm:text-base font-semibold italic mb-2 text-custom-blue">
+            <span data-i18n="education.averageGrade">
+              {content.education.averageGrade}
+            </span>
+            {index === 0 ? "9.0" : "8.6"}
+          </p>
+        </div>
+      </article>
+    ))
+  }
   <section class="flex flex-col mt-6 sm:mt-8">
-    <h3 class="text-xl sm:text-2xl mb-3" data-i18n="headings.languages">{content.headings.languages}</h3>
-    <div class="space-y-2"><p class="text-base sm:text-lg" data-i18n="education.spanish">{content.education.spanish}</p><p class="text-base sm:text-lg" data-i18n="education.english">{content.education.english}</p></div>
+    <h3 class="text-xl sm:text-2xl mb-3" data-i18n="headings.languages">
+      {content.headings.languages}
+    </h3>
+    <div class="space-y-2">
+      <p class="text-base sm:text-lg" data-i18n="education.spanish">
+        {content.education.spanish}
+      </p><p class="text-base sm:text-lg" data-i18n="education.english">
+        {content.education.english}
+      </p>
+    </div>
   </section>
 </section>

@@ -98,11 +98,11 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
     personal: {
       age: "23 years old",
       location: "Altea / Valencia",
-      bio: "Computer Engineer with a Master's Degree in Computer Engineering and Networks from the Universitat Politècnica de València. I focus on backend development, cloud infrastructure, and maintainable system design. I enjoy turning real product needs into robust, well-engineered solutions while continuing to learn and explore new technologies.",
+      bio: "Computer Engineer with a Master's Degree in Computer Engineering and Networks and Bachelor's Degree in Informatics Engineering from the Universitat Politècnica de València. I focus on backend development, cloud infrastructure, and maintainable system design. I enjoy turning real product needs into robust, well-engineered solutions while continuing to learn and explore new technologies.",
     },
     education: {
       masters: "Master's Degree in Computer Engineering and Networks",
-      bachelors: "Bachelor's Degree in Computer Engineering",
+      bachelors: "Bachelor's Degree in Informatics Engineering",
       university: "Universitat Politècnica de València",
       mastersDate: "September 2025 - July 2026",
       bachelorsDate: "September 2021 - July 2025",
@@ -222,7 +222,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
     personal: {
       age: "23 años",
       location: "Altea / Valencia",
-      bio: "Ingeniero Informático con un Máster en Ingeniería de Computadores y Redes por la Universitat Politècnica de València. Me centro en el desarrollo backend, la infraestructura cloud y el diseño de sistemas mantenibles. Disfruto transformando necesidades reales de producto en soluciones robustas y bien diseñadas, mientras continúo aprendiendo y explorando nuevas tecnologías.",
+      bio: "Ingeniero Informático con un Máster en Ingeniería de Computadores y Redes y un Grado en Ingeniería Informática por la Universitat Politècnica de València. Me centro en el desarrollo backend, la infraestructura cloud y el diseño de sistemas mantenibles. Disfruto transformando necesidades reales de producto en soluciones robustas y bien diseñadas, mientras continúo aprendiendo y explorando nuevas tecnologías.",
     },
     education: {
       masters: "Máster en Ingeniería de Computadores y Redes",

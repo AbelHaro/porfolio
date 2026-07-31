@@ -7,21 +7,46 @@ const { content } = Astro.props;
   class="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
 >
   <div class="flex flex-wrap items-center gap-4">
-    <a href="#about" class="hover:text-custom-blue transition-colors"
+    <a
+      href="#about"
+      class="hover:text-custom-blue transition-colors"
       data-i18n="navigation.about">{content.navigation.about}</a
     >
-    <a href="#experience" class="hover:text-custom-blue transition-colors"
+    <a
+      href="#experience"
+      class="hover:text-custom-blue transition-colors"
       data-i18n="navigation.experience">{content.navigation.experience}</a
     >
-    <a href="#projects" class="hover:text-custom-blue transition-colors"
+    <a
+      href="#projects"
+      class="hover:text-custom-blue transition-colors"
       data-i18n="navigation.projects">{content.navigation.projects}</a
     >
-    <a href="/blog" class="hover:text-custom-blue transition-colors" data-i18n="navigation.blog">{content.navigation.blog}</a>
+    <a
+      href="/blog"
+      class="hover:text-custom-blue transition-colors"
+      data-i18n="navigation.blog">{content.navigation.blog}</a
+    >
   </div>
   <div class="self-end sm:self-auto flex items-center gap-2">
-    <div class="flex border border-border" role="group" aria-label={content.actions.language} data-i18n-attr="aria-label:actions.language">
-      <button type="button" class="h-7 px-2.5 text-xs font-medium transition-colors hover:bg-muted aria-pressed:bg-muted" data-language="en" aria-pressed="true">EN</button>
-      <button type="button" class="h-7 px-2.5 text-xs font-medium transition-colors hover:bg-muted aria-pressed:bg-muted" data-language="es" aria-pressed="false">ES</button>
+    <div
+      class="flex border border-border"
+      role="group"
+      aria-label={content.actions.language}
+      data-i18n-attr="aria-label:actions.language"
+    >
+      <button
+        type="button"
+        class="h-7 px-2.5 text-xs font-medium transition-colors hover:bg-muted aria-pressed:bg-muted"
+        data-language="en"
+        aria-pressed="true">EN</button
+      >
+      <button
+        type="button"
+        class="h-7 px-2.5 text-xs font-medium transition-colors hover:bg-muted aria-pressed:bg-muted"
+        data-language="es"
+        aria-pressed="false">ES</button
+      >
     </div>
     <ThemeToggle labels={content.actions} />
   </div>

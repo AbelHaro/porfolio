@@ -11,10 +11,27 @@ const { labels } = Astro.props;
     <span aria-hidden="true">◐</span>
     <span class="sr-only" data-i18n="actions.theme">{labels.theme}</span>
   </summary>
-  <div class="absolute right-0 z-10 mt-2 min-w-24 border border-border bg-popover p-1 shadow-md">
-    <button type="button" class="block w-full px-2 py-1 text-left text-xs hover:bg-muted" data-theme="light" data-i18n="actions.light">{labels.light}</button>
-    <button type="button" class="block w-full px-2 py-1 text-left text-xs hover:bg-muted" data-theme="dark" data-i18n="actions.dark">{labels.dark}</button>
-    <button type="button" class="block w-full px-2 py-1 text-left text-xs hover:bg-muted" data-theme="system" data-i18n="actions.system">{labels.system}</button>
+  <div
+    class="absolute right-0 z-10 mt-2 min-w-24 border border-border bg-popover p-1 shadow-md"
+  >
+    <button
+      type="button"
+      class="block w-full px-2 py-1 text-left text-xs hover:bg-muted"
+      data-theme="light"
+      data-i18n="actions.light">{labels.light}</button
+    >
+    <button
+      type="button"
+      class="block w-full px-2 py-1 text-left text-xs hover:bg-muted"
+      data-theme="dark"
+      data-i18n="actions.dark">{labels.dark}</button
+    >
+    <button
+      type="button"
+      class="block w-full px-2 py-1 text-left text-xs hover:bg-muted"
+      data-theme="system"
+      data-i18n="actions.system">{labels.system}</button
+    >
   </div>
 </details>
 
@@ -22,21 +39,34 @@ const { labels } = Astro.props;
   type Theme = "light" | "dark" | "system";
 
   const applyTheme = (theme: Theme) => {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    document.documentElement.classList.toggle("dark", theme === "dark" || (theme === "system" && prefersDark));
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    document.documentElement.classList.toggle(
+      "dark",
+      theme === "dark" || (theme === "system" && prefersDark),
+    );
     document.documentElement.dataset.theme = theme;
   };
 
-  document.querySelectorAll<HTMLButtonElement>("[data-theme]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const theme = button.dataset.theme as Theme;
-      localStorage.setItem("theme", theme);
-      applyTheme(theme);
-      button.closest("details")?.removeAttribute("open");
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-theme]")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        const theme = button.dataset.theme as Theme;
+        localStorage.setItem("theme", theme);
+        applyTheme(theme);
+        button.closest("details")?.removeAttribute("open");
+      });
     });
-  });
 
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-    if (localStorage.getItem("theme") === "system" || !localStorage.getItem("theme")) applyTheme("system");
-  });
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", () => {
+      if (
+        localStorage.getItem("theme") === "system" ||
+        !localStorage.getItem("theme")
+      )
+        applyTheme("system");
+    });
 </script>

@@ -157,6 +157,16 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         ],
       },
       {
+        title: "MQTT over LPWAN Gateway",
+        description:
+          "Master's thesis project that designs and implements an MQTT↔AlLoRa↔MQTT gateway for remote environments without continuous IP connectivity. It includes a custom MQTT 3.1.1 broker built in MicroPython for LilyGo T3-S3 nodes and an AlLoRa bridge over LoRa. The broker was evaluated with stress tests and the gateway validated end to end, demonstrating transparent MQTT access to the LPWAN network.",
+        technologies: [
+          technologies.python,
+          technologies.mqtt,
+          technologies.docker,
+        ],
+      },
+      {
         title: "Safe Art - IoT Sensor System",
         description:
           "Project for the RISA (Sensor and Actuator Networks) course, consisting of an IoT sensing system for monitoring and protecting works of art. It includes sensor behaviour for collecting data and communicating with the platform, plus a web platform for real-time data visualization and alert management. Built with TypeScript, Convex, MQTT, C++, and React.",
@@ -266,6 +276,17 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
       },
     ],
     projects: [
+      {
+        title: "Pasarela MQTT sobre redes LPWAN",
+        description:
+          "Trabajo Fin de Máster que diseña e implementa una pasarela MQTT↔AlLoRa↔MQTT para entornos remotos sin conectividad IP continua. Incluye un broker MQTT 3.1.1 propio desarrollado en MicroPython para nodos LilyGo T3-S3 y un puente AlLoRa sobre LoRa. El broker se evaluó mediante pruebas de estrés y la pasarela se validó extremo a extremo, demostrando un acceso MQTT transparente a la red LPWAN.",
+        url: "https://github.com/japraga/MQTT-MicroPython-Broker",
+        technologies: [
+          technologies.python,
+          technologies.mqtt,
+          technologies.docker,
+        ],
+      },
       {
         title: "Acortador de URLs",
         description:

@@ -42,7 +42,7 @@ Backend development, cloud infrastructure, distributed and maintainable systems,
 
 ## Languages
 
-Spanish (native) and English (professional working proficiency).
+Spanish (native) and English (B2).
 `;
 
 export function GET() {

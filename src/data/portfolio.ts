@@ -108,7 +108,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
       bachelorsDate: "September 2021 - July 2025",
       averageGrade: "Average grade: ",
       spanish: "Spanish - Native",
-      english: "English - Professional working proficiency",
+      english: "English - B2",
     },
     actions: {
       github: "View on GitHub",

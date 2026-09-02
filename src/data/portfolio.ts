@@ -277,20 +277,9 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
     ],
     projects: [
       {
-        title: "Pasarela MQTT sobre redes LPWAN",
-        description:
-          "Trabajo Fin de Máster que diseña e implementa una pasarela MQTT↔AlLoRa↔MQTT para entornos remotos sin conectividad IP continua. Incluye un broker MQTT 3.1.1 propio desarrollado en MicroPython para nodos LilyGo T3-S3 y un puente AlLoRa sobre LoRa. El broker se evaluó mediante pruebas de estrés y la pasarela se validó extremo a extremo, demostrando un acceso MQTT transparente a la red LPWAN.",
-        url: "https://github.com/japraga/MQTT-MicroPython-Broker",
-        technologies: [
-          technologies.python,
-          technologies.mqtt,
-          technologies.docker,
-        ],
-      },
-      {
         title: "Acortador de URLs",
         description:
-          "Aplicación web para acortar URLs y compartir enlaces de manera sencilla. Desarrollada con React para el frontend y Go para el backend, utilizando una base de datos PostgreSQL para almacenar las URLs acortadas y sus correspondientes destinos. La aplicación permite a los usuarios generar enlaces cortos. El proyecto está desplegado en DigitalOcean y utiliza Dokploy para la gestión de despliegues y Docker para la contenedorización de la aplicación. (Actualmente en desarrollo y mejora)",
+          "Aplicación web para acortar URLs y compartir enlaces de manera sencilla. Desarrollada con React para el frontend y Go para el backend, utilizando PostgreSQL para almacenar las URLs acortadas y sus correspondientes destinos. La aplicación permite a los usuarios generar enlaces cortos. Está desplegado en Google Cloud y utiliza Coolify para la gestión de despliegues y Docker para la contenedorización. (Actualmente en desarrollo y mejora)",
         url: "https://github.com/AbelHaro/url-shortener",
         productionUrl: "https://url-shortener.abelharo.me",
         technologies: [
@@ -298,7 +287,17 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           technologies.go,
           technologies.postgresql,
           technologies.docker,
-          technologies.digitalOcean,
+          technologies.google_cloud,
+        ],
+      },
+      {
+        title: "Pasarela MQTT sobre redes LPWAN",
+        description:
+          "Trabajo Fin de Máster que diseña e implementa una pasarela MQTT↔AlLoRa↔MQTT para entornos remotos sin conectividad IP continua. Incluye un broker MQTT 3.1.1 propio desarrollado en MicroPython para nodos LilyGo T3-S3 y un puente AlLoRa sobre LoRa. El broker se evaluó mediante pruebas de estrés y la pasarela se validó extremo a extremo, demostrando un acceso MQTT transparente a la red LPWAN.",
+        technologies: [
+          technologies.python,
+          technologies.mqtt,
+          technologies.docker,
         ],
       },
       {

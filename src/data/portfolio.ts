@@ -143,6 +143,13 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
     ],
     projects: [
       {
+        title: "Tracker - Object Tracking Library",
+        description:
+          "Object tracking library built in C++23 with Python bindings. Implements ByteTrack to associate detections across video frames and maintain an ID for each object. Includes an example integrating YOLO and OpenCV for object detection and tracking in video. (Under development)",
+        url: "https://github.com/AbelHaro/tracker",
+        technologies: [technologies.cpp, technologies.python],
+      },
+      {
         title: "URL Shortener",
         description:
           "Web application for shortening URLs and sharing links easily. Built with React for the frontend and Go for the backend, using PostgreSQL to store shortened URLs and their destinations. The app lets users generate short links. It is deployed on Google Cloud and uses Coolify for deployment management and Docker for containerization. (Currently under development and improvement)",
@@ -276,6 +283,13 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
       },
     ],
     projects: [
+      {
+        title: "Tracker - Librería de seguimiento de objetos",
+        description:
+          "Librería de seguimiento de objetos desarrollada en C++23 con bindings para Python. Implementa ByteTrack para asociar detecciones entre fotogramas de vídeo y mantener un identificador para cada objeto. Incluye un ejemplo de integración con YOLO y OpenCV para la detección y el seguimiento de objetos en vídeo. (En desarrollo)",
+        url: "https://github.com/AbelHaro/tracker",
+        technologies: [technologies.cpp, technologies.python],
+      },
       {
         title: "Acortador de URLs",
         description:

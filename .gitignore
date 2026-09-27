@@ -24,3 +24,12 @@ pnpm-debug.log*
 .idea/
 
 /cosas
+
+# CV adaptados, cartas y documentación personal (solo local)
+/curriculum/personal/
+
+# En la web solo se permite el CV genérico en español e inglés
+/public/curriculum/*
+!/public/curriculum/abel_haro_armero_cv_es.pdf
+!/public/curriculum/abel_haro_armero_cv_en.pdf
+AGENTS.md

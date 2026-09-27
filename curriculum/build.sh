@@ -1,14 +1,19 @@
 #!/bin/bash
+set -euo pipefail
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
-# Compilar versión en español
-echo '\def\spanish{1}\input{cv_plantilla.tex}' > temp_es.tex
-TEXINPUTS=".:" pdflatex temp_es.tex
-mv temp_es.pdf ../public/curriculum/abel_haro_armero_cv_es.pdf
+# Solo el CV genérico se publica en la web.
+output_dir="../public/curriculum"
+mkdir -p "$output_dir"
+build_dir=$(mktemp -d)
+trap 'rm -rf -- "$build_dir"' EXIT
 
-# Compilar versión en inglés
-echo '\input{cv_plantilla.tex}' > temp_en.tex
-TEXINPUTS=".:" pdflatex temp_en.tex
-mv temp_en.pdf ../public/curriculum/abel_haro_armero_cv_en.pdf
-
-# Limpiar archivos temporales
-rm -f *.aux *.log *.out *.synctex.gz temp_*.tex
+for lang in es en; do
+  input='\input{cv_plantilla.tex}'
+  if [[ "$lang" == es ]]; then
+    input='\def\spanish{1}\input{cv_plantilla.tex}'
+  fi
+  pdflatex -interaction=nonstopmode -halt-on-error \
+    -output-directory="$build_dir" -jobname="cv_$lang" "$input"
+  cp "$build_dir/cv_$lang.pdf" "$output_dir/abel_haro_armero_cv_$lang.pdf"
+done

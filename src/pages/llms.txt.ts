@@ -21,7 +21,7 @@ const llmsTxt = `# Abel Haro Armero
 ## Education
 
 - Master's Degree in Computer Engineering and Networks, Universitat Politècnica de València (September 2025–July 2026). Average grade: 9.0.
-- Bachelor's Degree in Computer Engineering, Universitat Politècnica de València (September 2021–July 2025). Average grade: 8.6.
+- Bachelor's Degree in Informatics Engineering, Universitat Politècnica de València (September 2021–July 2025). Average grade: 8.6.
 
 ## Experience
 
@@ -30,7 +30,9 @@ const llmsTxt = `# Abel Haro Armero
 
 ## Selected projects
 
-- [URL Shortener](https://github.com/AbelHaro/url-shortener): URL-shortening web app built with React, Go, PostgreSQL, Docker, DigitalOcean, and Dokploy. [Live site](https://url-shortener.abelharo.me).
+- [Tracker](https://github.com/AbelHaro/tracker): Object-tracking library built in C++23 with Python bindings. Implements ByteTrack to maintain object IDs across video frames and includes an example integrating YOLO and OpenCV. Under development.
+- [URL Shortener](https://github.com/AbelHaro/url-shortener): URL-shortening web app built with React, Go, PostgreSQL, and Docker, deployed on Google Cloud with Coolify for deployment management. Under development and improvement. [Live site](https://url-shortener.abelharo.me).
+- MQTT over LPWAN Gateway: Master's thesis implementing an MQTT↔AlLoRa↔MQTT gateway for remote environments without continuous IP connectivity. Includes a custom MQTT 3.1.1 broker in MicroPython for LilyGo T3-S3 nodes and an AlLoRa bridge over LoRa, evaluated through broker stress tests and end-to-end gateway validation.
 - [Safe Art](https://github.com/AbelHaro/safe-art): IoT system for real-time monitoring and protection of artworks, built with TypeScript, Convex, MQTT, C++, and React.
 - [DescubreUPV](https://github.com/AbelHaro/DADM-Proyecto): Kotlin mobile app that helps new students explore the university, with an interactive map and Supabase backend.
 - [Object Defect Detection](https://github.com/AbelHaro/TFG): Real-time industrial defect-detection system using Python, Ultralytics YOLO, NVIDIA Jetson, and TensorRT.
@@ -38,7 +40,7 @@ const llmsTxt = `# Abel Haro Armero
 
 ## Technical focus
 
-Backend development, cloud infrastructure, distributed and maintainable systems, computer vision, IoT, TypeScript, JavaScript, Go, Python, React, Astro, PostgreSQL, Docker, MQTT, Kotlin, C++, Supabase, Convex, and NVIDIA Jetson.
+Backend development, cloud infrastructure, maintainable system design, computer vision, object tracking, IoT, and LPWAN communications. Technologies include TypeScript, JavaScript, Go, Python, MicroPython, C++23, Kotlin, React, Astro, PostgreSQL, Docker, Google Cloud, Coolify, MQTT, LoRa, AlLoRa, Supabase, Convex, ByteTrack, OpenCV, YOLO, TensorRT, and NVIDIA Jetson.
 
 ## Languages
 

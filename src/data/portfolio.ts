@@ -30,7 +30,7 @@ export interface PortfolioContent {
     education: string;
     languages: string;
   };
-  personal: { age: string; location: string; bio: string };
+  personal: { location: string; bio: string };
   education: {
     masters: string;
     bachelors: string;
@@ -96,7 +96,6 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
       languages: "Languages",
     },
     personal: {
-      age: "23 years old",
       location: "Altea / Valencia",
       bio: "Computer Engineer with a Master's Degree in Computer Engineering and Networks and Bachelor's Degree in Informatics Engineering from the Universitat Politècnica de València. I focus on backend development, cloud infrastructure, and maintainable system design. I enjoy turning real product needs into robust, well-engineered solutions while continuing to learn and explore new technologies.",
     },
@@ -237,7 +236,6 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
       languages: "Idiomas",
     },
     personal: {
-      age: "23 años",
       location: "Altea / Valencia",
       bio: "Ingeniero Informático con un Máster en Ingeniería de Computadores y Redes y un Grado en Ingeniería Informática por la Universitat Politècnica de València. Me centro en el desarrollo backend, la infraestructura cloud y el diseño de sistemas mantenibles. Disfruto transformando necesidades reales de producto en soluciones robustas y bien diseñadas, mientras continúo aprendiendo y explorando nuevas tecnologías.",
     },

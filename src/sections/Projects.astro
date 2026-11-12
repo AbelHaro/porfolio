@@ -1,77 +1,90 @@
 ---
-const { content } = Astro.props;
-const buttonClass =
-  "focus-visible:border-ring focus-visible:ring-ring/50 rounded-none border border-border bg-background hover:bg-muted hover:text-foreground h-8 px-2.5 inline-flex items-center justify-center text-xs font-medium outline-none";
+import ProjectCard from "@/components/ProjectCard.astro";
+import type { PortfolioContent } from "@/data/portfolio";
+const { content } = Astro.props as { content: PortfolioContent };
+const order = [
+  "links",
+  "cpu",
+  "tracking",
+  "workflow",
+  "network",
+  "inspection",
+  "sensors",
+];
+const featured = order.map((visual) => ({
+  project: content.projects.find((project) => project.visual === visual)!,
+  index: content.projects.findIndex((project) => project.visual === visual),
+}));
+const remaining = content.projects
+  .map((project, index) => ({ project, index }))
+  .filter(({ project }) => !order.includes(project.visual ?? ""));
 ---
 
-<div class="flex flex-col gap-12 sm:gap-14">
+<div class="bento-grid">
   {
-    content.projects.map((project, index) => (
-      <section class="flex flex-col">
-        <header class="flex flex-col sm:flex-row gap-3 sm:gap-5 items-start sm:items-center mb-5 sm:mb-7">
-          <h3
-            class="text-xl sm:text-2xl lg:text-3xl font-bold"
-            data-i18n={`projects.${index}.title`}
-          >
-            {project.title}
-          </h3>
-          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-            {project.url && (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noreferrer"
-                class={buttonClass}
-              >
-                <img
-                  src="/icons/github.svg"
-                  alt={content.alt.github}
-                  data-i18n-attr="alt:alt.github"
-                  class="w-4 dark:invert mr-2"
-                  loading="lazy"
-                />
-                <span data-i18n="actions.github">{content.actions.github}</span>
-              </a>
-            )}
-            {project.productionUrl && (
-              <a
-                href={project.productionUrl}
-                target="_blank"
-                rel="noreferrer"
-                class={buttonClass}
-              >
-                <img
-                  src="/icons/link.svg"
-                  alt={content.alt.externalLink}
-                  data-i18n-attr="alt:alt.externalLink"
-                  class="w-4 dark:invert mr-2"
-                  loading="lazy"
-                />
-                <span data-i18n="actions.demo">{content.actions.demo}</span>
-              </a>
-            )}
-          </div>
-        </header>
-        <p
-          class="text-base sm:text-lg leading-relaxed mb-5 sm:mb-7"
-          data-i18n={`projects.${index}.description`}
-        >
-          {project.description}
-        </p>
-        <div class="flex flex-row flex-wrap gap-2 sm:gap-3">
-          {project.technologies.map((technology) => (
-            <span class="flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs sm:text-sm bg-background/60">
-              <img
-                src={technology.source}
-                alt={`${technology.name} icon`}
-                class="size-4"
-                loading="lazy"
-              />
-              <span>{technology.name}</span>
-            </span>
-          ))}
-        </div>
-      </section>
+    featured.map(({ project, index }, position) => (
+      <ProjectCard
+        project={project}
+        index={index}
+        content={content}
+        wide={[0, 4, 5].includes(position)}
+        full={project.visual === "tracking"}
+      />
     ))
   }
 </div>
+<details class="more-projects">
+  <summary
+    ><span data-i18n="actions.moreProjects">{content.actions.moreProjects}</span
+    ><span class="count">{remaining.length}</span></summary
+  >
+  <div class="more-grid">
+    {
+      remaining.map(({ project, index }) => (
+        <ProjectCard project={project} index={index} content={content} />
+      ))
+    }
+  </div>
+</details>
+<style>
+  .bento-grid,
+  .more-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+  .more-projects {
+    margin-top: 1.5rem;
+  }
+  .more-projects > summary {
+    cursor: pointer;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+  .more-projects > summary:focus-visible {
+    outline: 2px solid #569a89;
+    outline-offset: 4px;
+  }
+  .count {
+    margin-left: 0.75rem;
+    color: var(--muted-foreground);
+    font-size: 0.7rem;
+  }
+  .more-grid {
+    padding-top: 1rem;
+  }
+  @media (min-width: 640px) {
+    .bento-grid,
+    .more-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+    }
+  }
+  @media (min-width: 900px) {
+    .bento-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

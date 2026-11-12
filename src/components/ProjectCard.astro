@@ -1,0 +1,490 @@
+---
+import type { PortfolioContent, PortfolioProject } from "@/data/portfolio";
+interface Props {
+  project: PortfolioProject;
+  index: number;
+  content: PortfolioContent;
+  wide?: boolean;
+  full?: boolean;
+}
+const { project, index, content, wide = false, full = false } = Astro.props;
+const key = `projects.${index}`;
+---
+
+<article class:list={["project-card", { wide, full }]}>
+  {
+    project.category && (
+      <div class="eyebrow">
+        <>
+          <span data-i18n={`${key}.category`}>{project.category}</span>
+          <span class="status" data-i18n={`${key}.status`}>
+            {project.status}
+          </span>
+        </>
+      </div>
+    )
+  }
+  {
+    project.visual === "tracking" ? (
+      <div class="tracker-player">
+        <video
+          class="tracker-video"
+          muted
+          loop
+          playsinline
+          preload="none"
+          poster="/videos/tracker-demo.jpg"
+          aria-label={project.title}
+        >
+          <source src="/videos/tracker-demo.mp4" type="video/mp4" />
+        </video>
+        <button type="button" class="video-toggle" aria-pressed="false">
+          <>
+            <span class="play-icon" aria-hidden="true">
+              ▶
+            </span>
+            <span class="pause-icon" aria-hidden="true">
+              Ⅱ
+            </span>
+            <span class="sr-only" data-i18n="actions.videoPlayback">
+              {content.actions.videoPlayback}
+            </span>
+          </>
+        </button>
+      </div>
+    ) : (
+      project.visual && (
+        <div class={`project-visual ${project.visual}`} aria-hidden="true">
+          {project.visual === "links" ? (
+            <div class="flow">
+              <span>https://…</span>
+              <i>→</i>
+              <span>/abc</span>
+            </div>
+          ) : project.visual === "cpu" ? (
+            <>
+              <span class="signal">┌──┐__┌──┐__┌──┐</span>
+              <div class="chip">
+                <span>PicoProtocol</span>
+                <strong>16 BIT</strong>
+                <span>CPU / SRAM / I/O</span>
+              </div>
+              <span class="signal">__┌──┐__┌──┐__┌─</span>
+            </>
+          ) : project.visual === "tracking" ? (
+            <>
+              <div class="track one">
+                <span>ID 01</span>
+              </div>
+              <div class="track two">
+                <span>ID 02</span>
+              </div>
+              <span class="visual-caption">SORT · ByteTrack · DeepSORT</span>
+            </>
+          ) : project.visual === "network" ? (
+            <div class="flow">
+              <span>MQTT</span>
+              <i>↔</i>
+              <span>LoRa</span>
+              <i>↔</i>
+              <span>MQTT</span>
+            </div>
+          ) : project.visual === "workflow" ? (
+            <div class="flow">
+              <span>01</span>
+              <i>→</i>
+              <span>02</span>
+              <i>→</i>
+              <span>03</span>
+            </div>
+          ) : project.visual === "inspection" ? (
+            <>
+              <div class="inspection-box">
+                <span>YOLO</span>
+                <div />
+                <div />
+                <div class="defect" />
+              </div>
+              <span class="visual-caption">NVIDIA Jetson / TensorRT</span>
+            </>
+          ) : (
+            <div class="flow">
+              <span>◉</span>
+              <i>→</i>
+              <span>MQTT</span>
+              <i>→</i>
+              <span>▥</span>
+            </div>
+          )}
+        </div>
+      )
+    )
+  }
+  <h3 data-i18n={`${key}.title`}>{project.title}</h3>
+  <p
+    class="summary"
+    data-i18n={`${key}.${project.summary ? "summary" : "description"}`}
+  >
+    {project.summary || project.description}
+  </p>
+  {
+    project.summary && (
+      <details class="project-details">
+        <>
+          <summary data-i18n="actions.details">
+            {content.actions.details}
+          </summary>
+          <p data-i18n={`${key}.description`}>{project.description}</p>
+        </>
+      </details>
+    )
+  }
+  <div class="card-bottom">
+    <ul class="technologies" aria-label="Technologies">
+      {
+        project.technologies.map((technology) => (
+          <li>
+            {technology.source && (
+              <img
+                src={technology.source}
+                alt=""
+                loading="lazy"
+                width="16"
+                height="16"
+              />
+            )}
+            <span>{technology.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="project-links">
+      {
+        project.url && (
+          <a href={project.url} target="_blank" rel="noreferrer">
+            <>
+              <span data-i18n="actions.github">{content.actions.github}</span>
+              <span aria-hidden="true">↗</span>
+            </>
+          </a>
+        )
+      }{
+        project.productionUrl && (
+          <a href={project.productionUrl} target="_blank" rel="noreferrer">
+            <>
+              <span data-i18n="actions.demo">{content.actions.demo}</span>
+              <span aria-hidden="true">↗</span>
+            </>
+          </a>
+        )
+      }
+    </div>
+  </div>
+</article>
+<script>
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  document
+    .querySelectorAll<HTMLVideoElement>(".tracker-video")
+    .forEach((video) => {
+      const button =
+        video.parentElement!.querySelector<HTMLButtonElement>(".video-toggle")!;
+      const syncButton = () =>
+        button.setAttribute("aria-pressed", String(!video.paused));
+      button.addEventListener("click", () => {
+        if (video.paused) video.play().catch(() => {});
+        else video.pause();
+      });
+      video.addEventListener("play", syncButton);
+      video.addEventListener("pause", syncButton);
+      let userPaused = false;
+      let automaticPause = false;
+      video.addEventListener("pause", () => {
+        if (!automaticPause) userPaused = true;
+        automaticPause = false;
+      });
+      video.addEventListener("play", () => {
+        userPaused = false;
+      });
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !reducedMotion.matches && !userPaused) {
+            video.play().catch(() => {});
+          } else if (!entry.isIntersecting && !video.paused) {
+            automaticPause = true;
+            video.pause();
+          }
+        },
+        { threshold: 0.35 },
+      );
+      observer.observe(video);
+      reducedMotion.addEventListener("change", () => {
+        if (reducedMotion.matches) video.pause();
+      });
+    });
+</script>
+<style>
+  .full {
+    grid-column: 1 / -1;
+  }
+  .full h3 {
+    font-size: 1.8rem;
+  }
+  .tracker-player {
+    position: relative;
+    margin: 1rem 0 1.5rem;
+  }
+  .video-toggle {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgb(0 0 0 / 0.65);
+    color: white;
+    cursor: pointer;
+    border: 1px solid rgb(255 255 255 / 0.35);
+  }
+  .video-toggle:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+  }
+  .video-toggle[aria-pressed="true"] .play-icon,
+  .video-toggle[aria-pressed="false"] .pause-icon {
+    display: none;
+  }
+  .tracker-video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    background: #111;
+    border-radius: 0.5rem;
+    display: block;
+  }
+
+  .project-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 1rem;
+    transition: border-color 0.2s;
+  }
+  .project-card:hover {
+    border-color: var(--muted-foreground);
+  }
+  .eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    font-size: 0.65rem;
+    line-height: 1.6;
+    color: var(--muted-foreground);
+  }
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .status:before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: #569a89;
+    border-radius: 50%;
+  }
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+  .summary,
+  .project-details p {
+    font-size: 0.8rem;
+    line-height: 1.85;
+    color: var(--muted-foreground);
+  }
+  .project-details {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+  }
+  .project-details summary {
+    cursor: pointer;
+    width: fit-content;
+  }
+  .project-details p {
+    padding-top: 0.8rem;
+  }
+  .card-bottom {
+    margin-top: auto;
+    padding-top: 1.5rem;
+  }
+  .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+  }
+  .technologies li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.65rem;
+  }
+  .technologies img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    font-size: 0.7rem;
+  }
+  .project-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-underline-offset: 4px;
+  }
+  .project-links a:hover {
+    text-decoration: underline;
+  }
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid #569a89;
+    outline-offset: 5px;
+    border-radius: 2px;
+  }
+  .project-visual {
+    height: 150px;
+    margin: 1rem 0 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background: radial-gradient(circle, var(--border) 1px, transparent 1px) 0
+      0/12px 12px;
+    color: #397d6c;
+  }
+  :global(.dark) .project-visual {
+    color: #8bc8b7;
+  }
+  .chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--card);
+    border: 1px solid currentColor;
+    outline: 4px solid var(--card);
+    padding: 1rem;
+    font-size: 0.55rem;
+    flex-shrink: 0;
+  }
+  .chip strong {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+  }
+  .signal {
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0.65;
+  }
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.7rem;
+  }
+  .flow span {
+    border: 1px solid var(--border);
+    background: var(--card);
+    padding: 0.6rem;
+    border-radius: 0.3rem;
+  }
+  .flow i {
+    font-style: normal;
+  }
+  .track {
+    position: absolute;
+    border: 1px solid currentColor;
+    width: 65px;
+    height: 75px;
+    background: color-mix(in srgb, currentColor 6%, transparent);
+  }
+  .track span {
+    position: absolute;
+    top: -17px;
+    font-size: 0.55rem;
+  }
+  .one {
+    left: 20%;
+    top: 32px;
+  }
+  .two {
+    right: 17%;
+    top: 48px;
+    width: 48px;
+    height: 58px;
+    opacity: 0.65;
+  }
+  .visual-caption {
+    position: absolute;
+    bottom: 7px;
+    font-size: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+  .inspection-box {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+  }
+  .inspection-box > span {
+    position: absolute;
+    top: -24px;
+    font-size: 0.6rem;
+  }
+  .inspection-box div {
+    width: 38px;
+    height: 38px;
+    border: 1px solid currentColor;
+    background: var(--card);
+  }
+  .inspection-box .defect {
+    border-style: dashed;
+    transform: rotate(12deg);
+  }
+  @media (min-width: 900px) {
+    .wide {
+      grid-column: span 2;
+    }
+    .wide h3 {
+      font-size: 1.8rem;
+    }
+    .wide .project-visual {
+      height: 170px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .project-card {
+      transition: none;
+    }
+  }
+</style>

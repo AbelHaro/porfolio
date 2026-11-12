@@ -2,6 +2,10 @@ export type Language = "en" | "es";
 
 export interface PortfolioProject {
   title: string;
+  summary?: string;
+  category?: string;
+  status?: string;
+  visual?: string;
   description: string;
   url?: string;
   productionUrl?: string;
@@ -42,6 +46,9 @@ export interface PortfolioContent {
     english: string;
   };
   actions: {
+    videoPlayback: string;
+    details: string;
+    moreProjects: string;
     github: string;
     demo: string;
     language: string;
@@ -111,6 +118,9 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
       english: "English - B2",
     },
     actions: {
+      videoPlayback: "Video playback",
+      details: "Project details",
+      moreProjects: "More projects",
       github: "View on GitHub",
       demo: "View demo",
       language: "Change language",
@@ -143,14 +153,39 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
     ],
     projects: [
       {
-        title: "Job Finder - Workflow Automation",
+        title: "PicoProtocol",
+        summary:
+          "A 16-bit CPU with its own assembly language, built to emulate protocols.",
+        category: "Digital design",
+        status: "Under development",
+        visual: "cpu",
+        description:
+          "Experimental project for Jane Street’s Protocol Emulator ASIC Competition. Designed in Verilog using Tiny Tapeout, with a 16-bit CPU, its own assembly language, SRAM and digital I/O. Includes a Python assembler, UART, SPI and I2C examples, and cocotb simulation tests. Protocol support and physical implementation are under development; I2C requires external interface circuitry.",
+        url: "https://github.com/AbelHaro/protocol-emulator-asic-competition",
+        technologies: [
+          { name: "Verilog", source: "" },
+          { name: "Python", source: "/icons/python-svgl.svg" },
+        ],
+      },
+      {
+        title: "Job Finder",
+        summary:
+          "Automating the search, ranking and preparation of job applications.",
+        category: "Automation",
+        status: "Under development",
+        visual: "workflow",
         description:
           "Personal automation project in Python that collects and normalizes LinkedIn job listings, avoids duplicates, and stores data and processing status in SQLite through SQLAlchemy. Uses LangGraph to orchestrate LLM-based job ranking and tailored LaTeX/PDF CV generation. Integrates Telegram notifications, Pydantic data validation, and failure handling to resume pending tasks. (Under development)",
         url: "https://github.com/AbelHaro/job-finder",
         technologies: [technologies.python, technologies.sqlite],
       },
       {
-        title: "Tracker - Object Tracking Library",
+        title: "Tracker",
+        summary:
+          "Keeping track of objects across video frames with SORT, ByteTrack and DeepSORT.",
+        category: "Computer vision",
+        status: "Under development",
+        visual: "tracking",
         description:
           "Object tracking library developed in C++ with Python bindings. Implements SORT, ByteTrack and DeepSORT to associate detections across frames and maintain object identities; DeepSORT also uses appearance features to help match objects. Includes a YOLO and OpenCV integration example for video detection and tracking. (Under development)",
         url: "https://github.com/AbelHaro/tracker",
@@ -158,6 +193,11 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
       },
       {
         title: "URL Shortener",
+        summary:
+          "Short links, easy sharing. A React and Go application deployed on Google Cloud.",
+        category: "Full stack",
+        status: "Under development",
+        visual: "links",
         description:
           "Web application for shortening URLs and sharing links easily. Built with React for the frontend and Go for the backend, using PostgreSQL to store shortened URLs and their destinations. The app lets users generate short links. It is deployed on Google Cloud and uses Coolify for deployment management and Docker for containerization. (Currently under development and improvement)",
         url: "https://github.com/AbelHaro/url-shortener",
@@ -171,7 +211,12 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         ],
       },
       {
-        title: "MQTT over LPWAN Gateway",
+        title: "MQTT / LoRa Gateway",
+        summary:
+          "Connecting MQTT systems across remote areas without continuous IP connectivity.",
+        category: "Embedded systems",
+        status: "Master’s thesis",
+        visual: "network",
         description:
           "Master's thesis project that designs and implements an MQTT↔AlLoRa↔MQTT gateway for remote environments without continuous IP connectivity. It includes a custom MQTT 3.1.1 broker built in MicroPython for LilyGo T3-S3 nodes and an AlLoRa bridge over LoRa. The broker was evaluated with stress tests and the gateway validated end to end, demonstrating transparent MQTT access to the LPWAN network.",
         technologies: [
@@ -181,7 +226,11 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         ],
       },
       {
-        title: "Safe Art - IoT Sensor System",
+        title: "Safe Art",
+        summary: "Sensors and live alerts to monitor and protect works of art.",
+        category: "IoT",
+        status: "Academic project",
+        visual: "sensors",
         description:
           "Project for the RISA (Sensor and Actuator Networks) course, consisting of an IoT sensing system for monitoring and protecting works of art. It includes sensor behaviour for collecting data and communicating with the platform, plus a web platform for real-time data visualization and alert management. Built with TypeScript, Convex, MQTT, C++, and React.",
         url: "https://github.com/AbelHaro/safe-art",
@@ -205,7 +254,12 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         ],
       },
       {
-        title: "Object Defect Detection",
+        title: "Defect detection",
+        summary:
+          "Visual quality control with YOLO, optimized for NVIDIA Jetson.",
+        category: "Computer vision",
+        status: "Bachelor’s thesis",
+        visual: "inspection",
         description:
           "System for detecting defects in objects from images using convolutional neural networks. It used Ultralytics for training and inference with YOLO models, optimized for NVIDIA Jetson hardware through the TensorRT SDK. The system enables real-time defect detection and image analysis to identify failures in industrial products.",
         url: "https://github.com/AbelHaro/TFG",
@@ -258,6 +312,9 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
       english: "Inglés - Competencia Profesional",
     },
     actions: {
+      videoPlayback: "Reproducción del vídeo",
+      details: "Detalles del proyecto",
+      moreProjects: "Más proyectos",
       github: "Ver en GitHub",
       demo: "Ver demo",
       language: "Cambiar idioma",
@@ -290,14 +347,39 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
     ],
     projects: [
       {
-        title: "Job Finder - Automatización de procesos",
+        title: "PicoProtocol",
+        summary:
+          "Una CPU de 16 bits con ensamblador propio para emular protocolos.",
+        category: "Diseño digital",
+        status: "En desarrollo",
+        visual: "cpu",
+        description:
+          "Proyecto experimental para la Protocol Emulator ASIC Competition de Jane Street. Diseñado en Verilog con Tiny Tapeout, incluye una CPU de 16 bits, lenguaje ensamblador propio, SRAM y entradas y salidas digitales. Incorpora un ensamblador en Python, ejemplos UART, SPI e I2C y pruebas de simulación con cocotb. El soporte de protocolos y la implementación física están en desarrollo; I2C requiere circuitería externa.",
+        url: "https://github.com/AbelHaro/protocol-emulator-asic-competition",
+        technologies: [
+          { name: "Verilog", source: "" },
+          { name: "Python", source: "/icons/python-svgl.svg" },
+        ],
+      },
+      {
+        title: "Job Finder",
+        summary:
+          "Automatización de la búsqueda, priorización y preparación de candidaturas.",
+        category: "Automatización",
+        status: "En desarrollo",
+        visual: "workflow",
         description:
           "Proyecto personal de automatización en Python que recopila y normaliza ofertas de LinkedIn, evita duplicados y guarda los datos y su estado de procesamiento en SQLite mediante SQLAlchemy. Orquesta con LangGraph la priorización de ofertas mediante un LLM y la generación de CV personalizados en LaTeX/PDF. Integra notificaciones por Telegram, validación de datos con Pydantic y gestión de fallos para retomar tareas pendientes. (En desarrollo)",
         url: "https://github.com/AbelHaro/job-finder",
         technologies: [technologies.python, technologies.sqlite],
       },
       {
-        title: "Tracker - Librería de seguimiento de objetos",
+        title: "Tracker",
+        summary:
+          "Seguimiento de objetos entre fotogramas con SORT, ByteTrack y DeepSORT.",
+        category: "Visión artificial",
+        status: "En desarrollo",
+        visual: "tracking",
         description:
           "Librería de seguimiento de objetos desarrollada en C++ con bindings para Python. Implementa SORT, ByteTrack y DeepSORT para asociar detecciones entre fotogramas y mantener la identidad de los objetos; DeepSORT también utiliza características de apariencia para facilitar la asociación. Incluye un ejemplo de integración con YOLO y OpenCV para detectar y seguir objetos en vídeo. (En desarrollo)",
         url: "https://github.com/AbelHaro/tracker",
@@ -305,6 +387,11 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
       },
       {
         title: "Acortador de URLs",
+        summary:
+          "Enlaces cortos, fáciles de compartir. Una aplicación en React y Go desplegada en Google Cloud.",
+        category: "Full stack",
+        status: "En desarrollo",
+        visual: "links",
         description:
           "Aplicación web para acortar URLs y compartir enlaces de manera sencilla. Desarrollada con React para el frontend y Go para el backend, utilizando PostgreSQL para almacenar las URLs acortadas y sus correspondientes destinos. La aplicación permite a los usuarios generar enlaces cortos. Está desplegado en Google Cloud y utiliza Coolify para la gestión de despliegues y Docker para la contenedorización. (Actualmente en desarrollo y mejora)",
         url: "https://github.com/AbelHaro/url-shortener",
@@ -318,7 +405,12 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         ],
       },
       {
-        title: "Pasarela MQTT sobre redes LPWAN",
+        title: "Pasarela MQTT / LoRa",
+        summary:
+          "Conexión de sistemas MQTT en entornos remotos sin conectividad IP continua.",
+        category: "Sistemas empotrados",
+        status: "Trabajo Fin de Máster",
+        visual: "network",
         description:
           "Trabajo Fin de Máster que diseña e implementa una pasarela MQTT↔AlLoRa↔MQTT para entornos remotos sin conectividad IP continua. Incluye un broker MQTT 3.1.1 propio desarrollado en MicroPython para nodos LilyGo T3-S3 y un puente AlLoRa sobre LoRa. El broker se evaluó mediante pruebas de estrés y la pasarela se validó extremo a extremo, demostrando un acceso MQTT transparente a la red LPWAN.",
         technologies: [
@@ -328,7 +420,12 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         ],
       },
       {
-        title: "Safe Art - Sensorización IoT",
+        title: "Safe Art",
+        summary:
+          "Sensores y alertas en tiempo real para monitorizar y proteger obras de arte.",
+        category: "IoT",
+        status: "Proyecto académico",
+        visual: "sensors",
         description:
           "Proyecto para la asignatura RISA (Redes de Sensores y Actuadores) que consiste en el desarrollo de un sistema de sensorización IoT para la monitorización y protección de obras de arte. El sistema incluye el desarrollo del comportamiento del sensor para la toma de datos y comunicación con la plataforma, así como el desarrollo de una plataforma web para la visualización de datos en tiempo real y gestión de alertas. Utiliza TypeScript, Convex, MQTT, C++ y React.",
         url: "https://github.com/AbelHaro/safe-art",
@@ -352,7 +449,12 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         ],
       },
       {
-        title: "Detección de defectos en objetos",
+        title: "Detección de defectos",
+        summary:
+          "Control de calidad visual con YOLO, optimizado para NVIDIA Jetson.",
+        category: "Visión artificial",
+        status: "Trabajo Fin de Grado",
+        visual: "inspection",
         description:
           "Sistema para la detección de defectos en objetos a partir de imágenes, empleando redes neuronales convolucionales. Se utilizó el framework Ultralytics para el entrenamiento y la inferencia con modelos YOLO, optimizados para hardware NVIDIA Jetson mediante el SDK TensorRT. El sistema permite la detección de defectos en tiempo real y el análisis de imágenes para la identificación de fallos en productos industriales.",
         url: "https://github.com/AbelHaro/TFG",

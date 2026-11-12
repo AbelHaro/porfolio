@@ -13,6 +13,25 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "PicoProtocol - Emulador de protocolos ASIC",
+    description:
+      "Proyecto experimental para la Protocol Emulator ASIC Competition de Jane Street. Diseñado en Verilog con la estructura de Tiny Tapeout, incorpora una CPU de 16 bits con lenguaje ensamblador propio, memoria SRAM y entradas y salidas digitales. Incluye un ensamblador en Python, ejemplos para UART, SPI e I2C y pruebas de simulación con cocotb. El soporte de protocolos y la implementación física están en desarrollo.",
+    url: "https://github.com/AbelHaro/protocol-emulator-asic-competition",
+    technologies: [{ name: "Python", source: "/icons/python-svgl.svg" }],
+    date: "En desarrollo",
+  },
+  {
+    title: "Job Finder - Automatización de procesos",
+    description:
+      "Proyecto personal de automatización en Python que recopila y normaliza ofertas de LinkedIn, evita duplicados y guarda los datos y su estado de procesamiento en SQLite mediante SQLAlchemy. Orquesta con LangGraph la priorización de ofertas mediante un LLM y la generación de CV personalizados en LaTeX/PDF. Integra notificaciones por Telegram, validación de datos con Pydantic y gestión de fallos para retomar tareas pendientes. (En desarrollo)",
+    url: "https://github.com/AbelHaro/job-finder",
+    technologies: [
+      { name: "Python", source: "/icons/python.svg" },
+      { name: "SQLite", source: "/icons/sqlite.svg" },
+    ],
+    date: "En desarrollo",
+  },
+  {
     title: "Acortador de URLs",
     description:
       "Aplicación web para acortar URLs y compartir enlaces de manera sencilla. Desarrollada con React para el frontend y Go para el backend, utilizando una base de datos PostgreSQL para almacenar las URLs acortadas y sus correspondientes destinos. La aplicación permite a los usuarios generar enlaces cortos. El proyecto está desplegado en DigitalOcean y utiliza Dokploy para la gestión de despliegues y Docker para la contenedorización de la aplicación. (Actualmente en desarrollo y mejora)",

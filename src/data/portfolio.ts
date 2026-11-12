@@ -70,6 +70,7 @@ const technologies = {
   android: { name: "Android", source: "/icons/android.svg" },
   supabase: { name: "Supabase", source: "/icons/supabase.svg" },
   python: { name: "Python", source: "/icons/python.svg" },
+  sqlite: { name: "SQLite", source: "/icons/sqlite.svg" },
   astro: { name: "Astro", source: "/icons/astro.svg" },
   tailwind: { name: "Tailwind CSS", source: "/icons/tailwindcss.svg" },
   google_cloud: { name: "Google Cloud", source: "/icons/google-cloud.svg" },
@@ -142,9 +143,16 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
     ],
     projects: [
       {
+        title: "Job Finder - Workflow Automation",
+        description:
+          "Personal automation project in Python that collects and normalizes LinkedIn job listings, avoids duplicates, and stores data and processing status in SQLite through SQLAlchemy. Uses LangGraph to orchestrate LLM-based job ranking and tailored LaTeX/PDF CV generation. Integrates Telegram notifications, Pydantic data validation, and failure handling to resume pending tasks. (Under development)",
+        url: "https://github.com/AbelHaro/job-finder",
+        technologies: [technologies.python, technologies.sqlite],
+      },
+      {
         title: "Tracker - Object Tracking Library",
         description:
-          "Object tracking library built in C++23 with Python bindings. Implements ByteTrack to associate detections across video frames and maintain an ID for each object. Includes an example integrating YOLO and OpenCV for object detection and tracking in video. (Under development)",
+          "Object tracking library developed in C++ with Python bindings. Implements SORT, ByteTrack and DeepSORT to associate detections across frames and maintain object identities; DeepSORT also uses appearance features to help match objects. Includes a YOLO and OpenCV integration example for video detection and tracking. (Under development)",
         url: "https://github.com/AbelHaro/tracker",
         technologies: [technologies.cpp, technologies.python],
       },
@@ -282,9 +290,16 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
     ],
     projects: [
       {
+        title: "Job Finder - Automatización de procesos",
+        description:
+          "Proyecto personal de automatización en Python que recopila y normaliza ofertas de LinkedIn, evita duplicados y guarda los datos y su estado de procesamiento en SQLite mediante SQLAlchemy. Orquesta con LangGraph la priorización de ofertas mediante un LLM y la generación de CV personalizados en LaTeX/PDF. Integra notificaciones por Telegram, validación de datos con Pydantic y gestión de fallos para retomar tareas pendientes. (En desarrollo)",
+        url: "https://github.com/AbelHaro/job-finder",
+        technologies: [technologies.python, technologies.sqlite],
+      },
+      {
         title: "Tracker - Librería de seguimiento de objetos",
         description:
-          "Librería de seguimiento de objetos desarrollada en C++23 con bindings para Python. Implementa ByteTrack para asociar detecciones entre fotogramas de vídeo y mantener un identificador para cada objeto. Incluye un ejemplo de integración con YOLO y OpenCV para la detección y el seguimiento de objetos en vídeo. (En desarrollo)",
+          "Librería de seguimiento de objetos desarrollada en C++ con bindings para Python. Implementa SORT, ByteTrack y DeepSORT para asociar detecciones entre fotogramas y mantener la identidad de los objetos; DeepSORT también utiliza características de apariencia para facilitar la asociación. Incluye un ejemplo de integración con YOLO y OpenCV para detectar y seguir objetos en vídeo. (En desarrollo)",
         url: "https://github.com/AbelHaro/tracker",
         technologies: [technologies.cpp, technologies.python],
       },

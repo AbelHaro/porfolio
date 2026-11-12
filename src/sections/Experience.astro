@@ -9,7 +9,7 @@ const { content } = Astro.props;
         <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
         <div class="pl-3 sm:pl-5">
           <time
-            class="mb-2 text-xs sm:text-sm font-normal block"
+            class="mb-2 text-sm sm:text-base font-normal block"
             data-i18n={`experience.${index}.date`}
           >
             {item.date}
@@ -27,7 +27,7 @@ const { content } = Astro.props;
             {item.place}
           </p>
           <p
-            class="text-sm sm:text-base font-normal leading-relaxed"
+            class="text-base font-normal leading-relaxed"
             data-i18n={`experience.${index}.description`}
           >
             {item.description}

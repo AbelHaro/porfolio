@@ -121,6 +121,27 @@ const key = `projects.${index}`;
     )
   }
   <h3 data-i18n={`${key}.title`}>{project.title}</h3>
+  <div class="project-links">
+    {
+      project.url && (
+        <a href={project.url} target="_blank" rel="noreferrer">
+          <>
+            <span data-i18n="actions.github">{content.actions.github}</span>
+            <span aria-hidden="true">↗</span>
+          </>
+        </a>
+      )
+    }{
+      project.productionUrl && (
+        <a href={project.productionUrl} target="_blank" rel="noreferrer">
+          <>
+            <span data-i18n="actions.demo">{content.actions.demo}</span>
+            <span aria-hidden="true">↗</span>
+          </>
+        </a>
+      )
+    }
+  </div>
   <p
     class="summary"
     data-i18n={`${key}.${project.summary ? "summary" : "description"}`}
@@ -158,27 +179,6 @@ const key = `projects.${index}`;
         ))
       }
     </ul>
-    <div class="project-links">
-      {
-        project.url && (
-          <a href={project.url} target="_blank" rel="noreferrer">
-            <>
-              <span data-i18n="actions.github">{content.actions.github}</span>
-              <span aria-hidden="true">↗</span>
-            </>
-          </a>
-        )
-      }{
-        project.productionUrl && (
-          <a href={project.productionUrl} target="_blank" rel="noreferrer">
-            <>
-              <span data-i18n="actions.demo">{content.actions.demo}</span>
-              <span aria-hidden="true">↗</span>
-            </>
-          </a>
-        )
-      }
-    </div>
   </div>
 </article>
 <script>
@@ -282,7 +282,7 @@ const key = `projects.${index}`;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.5rem 1rem;
-    font-size: 0.65rem;
+    font-size: 0.8125rem;
     line-height: 1.6;
     color: var(--muted-foreground);
   }
@@ -301,19 +301,19 @@ const key = `projects.${index}`;
   h3 {
     font-size: 1.4rem;
     font-weight: 700;
-    letter-spacing: -0.045em;
+    letter-spacing: -0.025em;
     line-height: 1.25;
     margin-bottom: 0.75rem;
   }
   .summary,
   .project-details p {
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.85;
     color: var(--muted-foreground);
   }
   .project-details {
     margin-top: 1rem;
-    font-size: 0.75rem;
+    font-size: 0.9375rem;
   }
   .project-details summary {
     cursor: pointer;
@@ -340,7 +340,7 @@ const key = `projects.${index}`;
     border: 1px solid var(--border);
     border-radius: 0.35rem;
     padding: 0.3rem 0.5rem;
-    font-size: 0.65rem;
+    font-size: 0.8125rem;
   }
   .technologies img {
     width: 16px;
@@ -351,8 +351,8 @@ const key = `projects.${index}`;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 1.25rem;
-    font-size: 0.7rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.9375rem;
   }
   .project-links a {
     display: flex;

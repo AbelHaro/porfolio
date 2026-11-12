@@ -309,7 +309,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
       bachelorsDate: "Septiembre 2021 - Julio 2025",
       averageGrade: "Nota media: ",
       spanish: "Español - Nativo",
-      english: "Inglés - Competencia Profesional",
+      english: "Inglés - B2",
     },
     actions: {
       videoPlayback: "Reproducción del vídeo",

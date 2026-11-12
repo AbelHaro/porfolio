@@ -20,7 +20,7 @@ const llmsTxt = `# Abel Haro Armero
 
 ## Education
 
-- Master's Degree in Computer Engineering and Networks, Universitat Politècnica de València (September 2025–July 2026). Average grade: 9.0.
+- Master's Degree in Computer Engineering and Networks, Universitat Politècnica de València (September 2025–July 2026). Average grade: 8.9.
 - Bachelor's Degree in Informatics Engineering, Universitat Politècnica de València (September 2021–July 2025). Average grade: 8.6.
 
 ## Experience

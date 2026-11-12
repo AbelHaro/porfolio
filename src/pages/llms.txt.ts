@@ -30,9 +30,10 @@ const llmsTxt = `# Abel Haro Armero
 
 ## Selected projects
 
+- [PicoProtocol](https://github.com/AbelHaro/protocol-emulator-asic-competition): Experimental programmable protocol emulator for Jane Street's Protocol Emulator ASIC Competition, designed in Verilog using the Tiny Tapeout structure. Includes a 16-bit CPU with its own assembly language, program loader, SRAM and digital I/O, plus a Python assembler, UART, SPI and I2C examples, and cocotb RTL simulations. Protocol support and physical implementation are under development; I2C requires external circuitry with the current pin assignment.
 - [Job Finder](https://github.com/AbelHaro/job-finder): Personal automation project in Python that collects and normalizes LinkedIn job listings, avoids duplicates, and stores data and processing status in SQLite through SQLAlchemy. Uses LangGraph to orchestrate LLM-based job ranking and tailored LaTeX/PDF CV generation. Integrates Telegram notifications, Pydantic data validation, and failure handling to resume pending tasks. (Under development)
 
-- [Tracker](https://github.com/AbelHaro/tracker): Object-tracking library built in C++ with Python bindings. Implements SORT, ByteTrack and DeepSORT to associate detections across frames and maintain object identities; DeepSORT also uses appearance features. Includes a YOLO and OpenCV video integration example. Under development.
+- [Tracker](https://github.com/AbelHaro/tracker): Object-tracking library built in C++ with Python bindings. Implements SORT and ByteTrack and includes a YOLO and OpenCV integration example. Under development.
 - [URL Shortener](https://github.com/AbelHaro/url-shortener): URL-shortening web app built with React, Go, PostgreSQL, and Docker, deployed on Google Cloud with Coolify for deployment management. Under development and improvement. [Live site](https://url-shortener.abelharo.me).
 - MQTT over LPWAN Gateway: Master's thesis implementing an MQTT↔AlLoRa↔MQTT gateway for remote environments without continuous IP connectivity. Includes a custom MQTT 3.1.1 broker in MicroPython for LilyGo T3-S3 nodes and an AlLoRa bridge over LoRa, evaluated through broker stress tests and end-to-end gateway validation.
 - [Safe Art](https://github.com/AbelHaro/safe-art): IoT system for real-time monitoring and protection of artworks, built with TypeScript, Convex, MQTT, C++, and React.
@@ -42,7 +43,7 @@ const llmsTxt = `# Abel Haro Armero
 
 ## Technical focus
 
-Backend development, cloud infrastructure, maintainable system design, computer vision, object tracking, IoT, and LPWAN communications. Technologies include TypeScript, JavaScript, Go, Python, MicroPython, C++23, Kotlin, React, Astro, PostgreSQL, Docker, Google Cloud, Coolify, MQTT, LoRa, AlLoRa, Supabase, Convex, ByteTrack, OpenCV, YOLO, TensorRT, and NVIDIA Jetson.
+Backend development, cloud infrastructure, maintainable system design, digital hardware, computer vision, object tracking, IoT, and LPWAN communications. Technologies include TypeScript, JavaScript, Go, Python, MicroPython, C++, Verilog, Kotlin, React, Astro, PostgreSQL, SQLite, Docker, Google Cloud, Coolify, MQTT, LoRa, AlLoRa, Supabase, Convex, ByteTrack, OpenCV, YOLO, TensorRT, and NVIDIA Jetson.
 
 ## Languages
 

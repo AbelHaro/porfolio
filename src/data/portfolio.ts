@@ -163,7 +163,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           "Experimental project for Jane Street’s Protocol Emulator ASIC Competition. Designed in Verilog using Tiny Tapeout, with a 16-bit CPU, its own assembly language, SRAM and digital I/O. Includes a Python assembler, UART, SPI and I2C examples, and cocotb simulation tests. Protocol support and physical implementation are under development; I2C requires external interface circuitry.",
         url: "https://github.com/AbelHaro/protocol-emulator-asic-competition",
         technologies: [
-          { name: "Verilog", source: "" },
+          { name: "Verilog", source: "/icons/verilog.svg" },
           { name: "Python", source: "/icons/python-svgl.svg" },
         ],
       },
@@ -357,7 +357,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           "Proyecto experimental para la Protocol Emulator ASIC Competition de Jane Street. Diseñado en Verilog con Tiny Tapeout, incluye una CPU de 16 bits, lenguaje ensamblador propio, SRAM y entradas y salidas digitales. Incorpora un ensamblador en Python, ejemplos UART, SPI e I2C y pruebas de simulación con cocotb. El soporte de protocolos y la implementación física están en desarrollo; I2C requiere circuitería externa.",
         url: "https://github.com/AbelHaro/protocol-emulator-asic-competition",
         technologies: [
-          { name: "Verilog", source: "" },
+          { name: "Verilog", source: "/icons/verilog.svg" },
           { name: "Python", source: "/icons/python-svgl.svg" },
         ],
       },

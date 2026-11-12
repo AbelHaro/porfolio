@@ -17,7 +17,7 @@ export const projects: Project[] = [
     description:
       "Proyecto experimental para la Protocol Emulator ASIC Competition de Jane Street. Diseñado en Verilog con la estructura de Tiny Tapeout, incorpora una CPU de 16 bits con lenguaje ensamblador propio, memoria SRAM y entradas y salidas digitales. Incluye un ensamblador en Python, ejemplos para UART, SPI e I2C y pruebas de simulación con cocotb. El soporte de protocolos y la implementación física están en desarrollo.",
     url: "https://github.com/AbelHaro/protocol-emulator-asic-competition",
-    technologies: [{ name: "Python", source: "/icons/python-svgl.svg" }],
+    technologies: [{ name: "Python", source: "/icons/python-svgl.svg" }, { name: "Verilog", source: "/icons/verilog.svg" }],
     date: "En desarrollo",
   },
   {
